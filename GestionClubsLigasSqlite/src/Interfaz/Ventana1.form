@@ -1,0 +1,1825 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jTabbedPane" alignment="0" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jTabbedPane" alignment="0" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JTabbedPane" name="jTabbedPane">
+      <AccessibilityProperties>
+        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="Ciudad"/>
+      </AccessibilityProperties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="jPanel_liga">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Liga">
+                <Property name="tabTitle" type="java.lang.String" value="Liga"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <Component id="jScrollPane2" min="-2" pref="452" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jButton_modificar_liga" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jButton_aniadir_liga" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jButton_borrar_liga" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel_nombre_biblioteca" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel_telefono" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel_direccion" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel_ciudades_bibliotecas" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel_ciudades_bibliotecas1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="jTextField_aniadir_club_liga" max="32767" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="jButtonAniadirClubLiga" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jComboBox_pais_liga" min="-2" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="jTextField_id_liga" alignment="0" pref="245" max="32767" attributes="0"/>
+                                                  <Component id="jTextField_nombre_liga" alignment="0" max="32767" attributes="0"/>
+                                              </Group>
+                                              <Component id="jComboBox_temporada_liga" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jScrollPane9" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="67" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                              <Component id="jButton_aniadir_liga" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <Component id="jButton_modificar_liga" min="-2" pref="23" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jButton_borrar_liga" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
+                              <Component id="jScrollPane2" min="-2" pref="92" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel_nombre_biblioteca" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextField_id_liga" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel_telefono" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextField_nombre_liga" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel_ciudades_bibliotecas" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jComboBox_pais_liga" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Component id="jLabel_direccion" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                              <Component id="jLabel_ciudades_bibliotecas1" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jComboBox_temporada_liga" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextField_aniadir_club_liga" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonAniadirClubLiga" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="jScrollPane9" min="-2" pref="139" max="-2" attributes="0"/>
+                      <EmptySpace pref="383" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane2">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="jTable_liga">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="4" rowCount="0">
+                        <Column editable="false" title="Id" type="java.lang.Object"/>
+                        <Column editable="false" title="Nombre" type="java.lang.Object"/>
+                        <Column editable="true" title="Pais" type="java.lang.Object"/>
+                        <Column editable="true" title="Temporada" type="java.lang.Object"/>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="jLabel_nombre_biblioteca">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ID:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel_telefono">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nombre:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel_direccion">
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField_id_liga">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField_nombre_liga">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton_aniadir_liga">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="A&#xf1;adir"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_aniadir_ligaActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton_modificar_liga">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Modificar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_modificar_ligaActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton_borrar_liga">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Borrar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_borrar_ligaActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="jComboBox_pais_liga">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="20">
+                    <StringItem index="0" value="Estadounidense"/>
+                    <StringItem index="1" value="Canadiense"/>
+                    <StringItem index="2" value="Mexicano"/>
+                    <StringItem index="3" value="Franc&#xe9;s"/>
+                    <StringItem index="4" value="Alem&#xe1;n"/>
+                    <StringItem index="5" value="Espa&#xf1;ol"/>
+                    <StringItem index="6" value="Italiano"/>
+                    <StringItem index="7" value="Brit&#xe1;nico"/>
+                    <StringItem index="8" value="Brasile&#xf1;o"/>
+                    <StringItem index="9" value="Argentino"/>
+                    <StringItem index="10" value="Japon&#xe9;s"/>
+                    <StringItem index="11" value="Chino"/>
+                    <StringItem index="12" value="Australiano"/>
+                    <StringItem index="13" value="Ruso"/>
+                    <StringItem index="14" value="Indio"/>
+                    <StringItem index="15" value="Sudafricano"/>
+                    <StringItem index="16" value="Sueco"/>
+                    <StringItem index="17" value="Noruego"/>
+                    <StringItem index="18" value="Griego"/>
+                    <StringItem index="19" value="Turco"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel_ciudades_bibliotecas">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Pais:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="jComboBox_temporada_liga">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="52">
+                    <StringItem index="0" value="2023"/>
+                    <StringItem index="1" value="2022"/>
+                    <StringItem index="2" value="2021"/>
+                    <StringItem index="3" value="2020"/>
+                    <StringItem index="4" value="2019"/>
+                    <StringItem index="5" value="2018"/>
+                    <StringItem index="6" value="2017"/>
+                    <StringItem index="7" value="2016"/>
+                    <StringItem index="8" value="2015"/>
+                    <StringItem index="9" value="2014"/>
+                    <StringItem index="10" value="2013"/>
+                    <StringItem index="11" value="2012"/>
+                    <StringItem index="12" value="2011"/>
+                    <StringItem index="13" value="2010"/>
+                    <StringItem index="14" value="2009"/>
+                    <StringItem index="15" value="2008"/>
+                    <StringItem index="16" value="2007"/>
+                    <StringItem index="17" value="2006"/>
+                    <StringItem index="18" value="2005"/>
+                    <StringItem index="19" value="2004"/>
+                    <StringItem index="20" value="2003"/>
+                    <StringItem index="21" value="2002"/>
+                    <StringItem index="22" value="2001"/>
+                    <StringItem index="23" value="2000"/>
+                    <StringItem index="24" value="1999"/>
+                    <StringItem index="25" value="1998"/>
+                    <StringItem index="26" value="1997"/>
+                    <StringItem index="27" value="1996"/>
+                    <StringItem index="28" value="1995"/>
+                    <StringItem index="29" value="1994"/>
+                    <StringItem index="30" value="1993"/>
+                    <StringItem index="31" value="1992"/>
+                    <StringItem index="32" value="1991"/>
+                    <StringItem index="33" value="1990"/>
+                    <StringItem index="34" value="1989"/>
+                    <StringItem index="35" value="1988"/>
+                    <StringItem index="36" value="1987"/>
+                    <StringItem index="37" value="1986"/>
+                    <StringItem index="38" value="1985"/>
+                    <StringItem index="39" value="1984"/>
+                    <StringItem index="40" value="1983"/>
+                    <StringItem index="41" value="1982"/>
+                    <StringItem index="42" value="1981"/>
+                    <StringItem index="43" value="1980"/>
+                    <StringItem index="44" value="1979"/>
+                    <StringItem index="45" value="1978"/>
+                    <StringItem index="46" value="1977"/>
+                    <StringItem index="47" value="1976"/>
+                    <StringItem index="48" value="1975"/>
+                    <StringItem index="49" value="1974"/>
+                    <StringItem index="50" value="1973"/>
+                    <StringItem index="51" value="1972"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel_ciudades_bibliotecas1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Temporada:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel8">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Clubes Liga"/>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane9">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="jTableClubesLiga">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="2" rowCount="0">
+                        <Column editable="false" title="Id" type="java.lang.Object"/>
+                        <Column editable="false" title="Nombre" type="java.lang.Object"/>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JButton" name="jButtonAniadirClubLiga">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="A&#xf1;adir Club"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonAniadirClubLigaActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel9">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="A&#xf1;adir Club"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField_aniadir_club_liga">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel_patrocinador">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Patrocinador">
+                <Property name="tabTitle" type="java.lang.String" value="Patrocinador"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <Component id="jScrollPane6" min="-2" pref="452" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jButton_modificar_biblioteca2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jButton_aniadir_patrocinador" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jButton_borrar_patrocinador" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jLabel_ciudades_bibliotecas4" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                      <Component id="jComboBox_tipo_patrocinio" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel_nombre_biblioteca2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel_telefono2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="jLabel_ciudades_bibliotecas5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="jTextField_id_patrocinador" alignment="0" pref="245" max="32767" attributes="0"/>
+                                                  <Component id="jTextField_nombre_empresa_patrocinador" alignment="0" max="32767" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
+                                              <Component id="jTextField_duracion_contrato_patrocinador" min="-2" pref="246" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jLabel_direccion2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jScrollPane8" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="67" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                              <Component id="jButton_aniadir_patrocinador" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <Component id="jButton_modificar_biblioteca2" min="-2" pref="23" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jButton_borrar_patrocinador" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
+                              <Component id="jScrollPane6" min="-2" pref="92" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel_nombre_biblioteca2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextField_id_patrocinador" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel_telefono2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextField_nombre_empresa_patrocinador" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel_ciudades_bibliotecas4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jComboBox_tipo_patrocinio" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel_ciudades_bibliotecas5" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextField_duracion_contrato_patrocinador" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jLabel_direccion2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jScrollPane8" min="-2" pref="139" max="-2" attributes="0"/>
+                      <EmptySpace pref="450" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane6">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="jTable_patrocinador">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="4" rowCount="0">
+                        <Column editable="false" title="Id" type="java.lang.Object"/>
+                        <Column editable="false" title="Nombre Empresa" type="java.lang.Object"/>
+                        <Column editable="false" title="Tipo Patrocinio" type="java.lang.Object"/>
+                        <Column editable="false" title="Duracion Contrato" type="java.lang.Object"/>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="jLabel_nombre_biblioteca2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ID:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel_telefono2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nombre Empresa:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel_direccion2">
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField_id_patrocinador">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField_nombre_empresa_patrocinador">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton_aniadir_patrocinador">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="A&#xf1;adir"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_aniadir_patrocinadorActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton_modificar_biblioteca2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Modificar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_modificar_biblioteca2ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton_borrar_patrocinador">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Borrar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_borrar_patrocinadorActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="jComboBox_tipo_patrocinio">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="3">
+                    <StringItem index="0" value="Temporal"/>
+                    <StringItem index="1" value="Indefinido"/>
+                    <StringItem index="2" value="Parcial"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel_ciudades_bibliotecas4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Tipo de Patrocinio:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel_ciudades_bibliotecas5">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Duracion Contrato:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField_duracion_contrato_patrocinador">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Semanas"/>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane8">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="jTableClubesPatrocinador">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="2" rowCount="0">
+                        <Column editable="false" title="Id" type="java.lang.Object"/>
+                        <Column editable="true" title="Nombre" type="java.lang.Object"/>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="jLabel7">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Clubes Asociados a los patrocinadores"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel_entrenador">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Entrenador">
+                <Property name="tabTitle" type="java.lang.String" value="Entrenador"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="jLabel_ciudades_bibliotecas3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel_ciudades_bibliotecas2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
+                                          <Component id="jTextField_id_entrenador" min="-2" pref="245" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="jLabel_nombre_biblioteca1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel_direccion1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jTextField_nombre_entrenador" alignment="1" min="-2" pref="245" max="-2" attributes="0"/>
+                                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                          <Component id="jComboBox_anio_nacimiento_entrenador" min="-2" pref="86" max="-2" attributes="0"/>
+                                          <Component id="jTextField_apellido_entrenador" min="-2" pref="245" max="-2" attributes="0"/>
+                                          <Component id="jComboBox_nacionalidad_entrenador" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Component id="jLabel_telefono3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel_telefono1" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <Component id="jScrollPane5" min="-2" pref="452" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jButton_modificar_entrenador" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jButton_aniadir_entrenador" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jButton_borrar_entrenador" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="67" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                              <Component id="jButton_aniadir_entrenador" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <Component id="jButton_modificar_entrenador" min="-2" pref="23" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jButton_borrar_entrenador" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
+                              <Component id="jScrollPane5" min="-2" pref="92" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel_nombre_biblioteca1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextField_id_entrenador" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel_telefono1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextField_nombre_entrenador" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel_telefono3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextField_apellido_entrenador" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel_ciudades_bibliotecas3" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jComboBox_nacionalidad_entrenador" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jLabel_ciudades_bibliotecas2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jComboBox_anio_nacimiento_entrenador" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Component id="jLabel_direccion1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="621" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane5">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="jTable_entrenadores">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="5" rowCount="0">
+                        <Column editable="false" title="Id" type="java.lang.Object"/>
+                        <Column editable="false" title="Nombre" type="java.lang.Object"/>
+                        <Column editable="true" title="Apellido" type="java.lang.Object"/>
+                        <Column editable="true" title="A&#xf1;o Nacimineto" type="java.lang.Object"/>
+                        <Column editable="true" title="Nacionalidad" type="java.lang.Object"/>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="jLabel_nombre_biblioteca1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ID:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel_telefono1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nombre:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel_direccion1">
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField_id_entrenador">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField_nombre_entrenador">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField_nombre_entrenadorActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton_aniadir_entrenador">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="A&#xf1;adir"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_aniadir_entrenadorActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton_modificar_entrenador">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Modificar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_modificar_entrenadorActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton_borrar_entrenador">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Borrar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_borrar_entrenadorActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="jComboBox_anio_nacimiento_entrenador">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="13">
+                    <StringItem index="0" value="2005"/>
+                    <StringItem index="1" value="2004"/>
+                    <StringItem index="2" value="2003"/>
+                    <StringItem index="3" value="2002"/>
+                    <StringItem index="4" value="2001"/>
+                    <StringItem index="5" value="2000"/>
+                    <StringItem index="6" value="1999"/>
+                    <StringItem index="7" value="1998"/>
+                    <StringItem index="8" value="1997"/>
+                    <StringItem index="9" value="1996"/>
+                    <StringItem index="10" value="1995"/>
+                    <StringItem index="11" value="1994"/>
+                    <StringItem index="12" value=" "/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel_ciudades_bibliotecas2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="A&#xf1;o Nacimiento:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="jComboBox_nacionalidad_entrenador">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="8">
+                    <StringItem index="0" value="Espa&#xf1;ola"/>
+                    <StringItem index="1" value="Argentina"/>
+                    <StringItem index="2" value="Alemana"/>
+                    <StringItem index="3" value="Francesa"/>
+                    <StringItem index="4" value="Inglesa"/>
+                    <StringItem index="5" value="Italiana"/>
+                    <StringItem index="6" value="Portuguesa"/>
+                    <StringItem index="7" value=" "/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel_ciudades_bibliotecas3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nacionalidad:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel_telefono3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Apellido:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField_apellido_entrenador">
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel_club">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Club">
+                <Property name="tabTitle" type="java.lang.String" value="Club"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jScrollPane1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jScrollPane3" min="-2" pref="452" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="jButton_modificar_club" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jButton_aniadir_libro" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jButton_borrar_club" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="24" pref="67" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jScrollPane7" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="15" pref="15" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="jTextField_aniadir_patrocinador_club" min="-2" pref="268" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="jLabel_nombre_libro" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel_autor" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel_biblioteca_libro" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                          <Component id="jComboBox_anio_funcdacion_club" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="jTextField_id_club" alignment="0" pref="245" max="32767" attributes="0"/>
+                                                          <Component id="jTextField_nombre_club" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="jTextField_aniadir_entrenador_club" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="jTextField_aniadir_jugador_club" alignment="0" max="32767" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                              </Group>
+                                              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                  <Component id="jButton1" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="jButtonDespedirEntrenador" alignment="1" max="32767" attributes="0"/>
+                                                  <Component id="jButton_aniadir_jugador_club" alignment="0" max="32767" attributes="0"/>
+                                                  <Component id="jButtonDespedirJugador" alignment="0" max="32767" attributes="0"/>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                          <Component id="jButtonDespedirPatrocinador" max="32767" attributes="0"/>
+                                                          <Component id="jButton_aniadir_patrocinador_club" max="32767" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
+                                          <Component id="jLabel6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                              <Component id="jButton_aniadir_libro" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <Component id="jButton_modificar_club" min="-2" pref="23" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jButton_borrar_club" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
+                              <Component id="jScrollPane3" min="-2" pref="92" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel_nombre_libro" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextField_id_club" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel_autor" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextField_nombre_club" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jComboBox_anio_funcdacion_club" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel_biblioteca_libro" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jTextField_aniadir_entrenador_club" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jButtonDespedirEntrenador" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jTextField_aniadir_jugador_club" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton_aniadir_jugador_club" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jButtonDespedirJugador" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="158" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jTextField_aniadir_patrocinador_club" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton_aniadir_patrocinador_club" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jButtonDespedirPatrocinador" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jScrollPane7" min="-2" pref="158" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="jTable_clubes">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="4" rowCount="0">
+                        <Column editable="false" title="Id" type="java.lang.Object"/>
+                        <Column editable="false" title="Nombre" type="java.lang.Object"/>
+                        <Column editable="false" title="A&#xf1;o Fundacion" type="java.lang.Object"/>
+                        <Column editable="false" title="Id_entrenador" type="java.lang.Object"/>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="jLabel_nombre_libro">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ID:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel_autor">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nombre:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel_biblioteca_libro">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="A&#xf1;o Fundacion:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="jComboBox_anio_funcdacion_club">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="91">
+                    <StringItem index="0" value="2010"/>
+                    <StringItem index="1" value="2009"/>
+                    <StringItem index="2" value="2008"/>
+                    <StringItem index="3" value="2007"/>
+                    <StringItem index="4" value="2006"/>
+                    <StringItem index="5" value="2005"/>
+                    <StringItem index="6" value="2004"/>
+                    <StringItem index="7" value="2003"/>
+                    <StringItem index="8" value="2002"/>
+                    <StringItem index="9" value="2001"/>
+                    <StringItem index="10" value="2000"/>
+                    <StringItem index="11" value="1999"/>
+                    <StringItem index="12" value="1998"/>
+                    <StringItem index="13" value="1997"/>
+                    <StringItem index="14" value="1996"/>
+                    <StringItem index="15" value="1995"/>
+                    <StringItem index="16" value="1994"/>
+                    <StringItem index="17" value="1993"/>
+                    <StringItem index="18" value="1992"/>
+                    <StringItem index="19" value="1991"/>
+                    <StringItem index="20" value="1990"/>
+                    <StringItem index="21" value="1989"/>
+                    <StringItem index="22" value="1988"/>
+                    <StringItem index="23" value="1987"/>
+                    <StringItem index="24" value="1986"/>
+                    <StringItem index="25" value="1985"/>
+                    <StringItem index="26" value="1984"/>
+                    <StringItem index="27" value="1983"/>
+                    <StringItem index="28" value="1982"/>
+                    <StringItem index="29" value="1981"/>
+                    <StringItem index="30" value="1980"/>
+                    <StringItem index="31" value="1979"/>
+                    <StringItem index="32" value="1978"/>
+                    <StringItem index="33" value="1977"/>
+                    <StringItem index="34" value="1976"/>
+                    <StringItem index="35" value="1975"/>
+                    <StringItem index="36" value="1974"/>
+                    <StringItem index="37" value="1973"/>
+                    <StringItem index="38" value="1972"/>
+                    <StringItem index="39" value="1971"/>
+                    <StringItem index="40" value="1970"/>
+                    <StringItem index="41" value="1969"/>
+                    <StringItem index="42" value="1968"/>
+                    <StringItem index="43" value="1967"/>
+                    <StringItem index="44" value="1966"/>
+                    <StringItem index="45" value="1965"/>
+                    <StringItem index="46" value="1964"/>
+                    <StringItem index="47" value="1963"/>
+                    <StringItem index="48" value="1962"/>
+                    <StringItem index="49" value="1961"/>
+                    <StringItem index="50" value="1960"/>
+                    <StringItem index="51" value="1959"/>
+                    <StringItem index="52" value="1958"/>
+                    <StringItem index="53" value="1957"/>
+                    <StringItem index="54" value="1956"/>
+                    <StringItem index="55" value="1955"/>
+                    <StringItem index="56" value="1954"/>
+                    <StringItem index="57" value="1953"/>
+                    <StringItem index="58" value="1952"/>
+                    <StringItem index="59" value="1951"/>
+                    <StringItem index="60" value="1950"/>
+                    <StringItem index="61" value="1949"/>
+                    <StringItem index="62" value="1948"/>
+                    <StringItem index="63" value="1947"/>
+                    <StringItem index="64" value="1946"/>
+                    <StringItem index="65" value="1945"/>
+                    <StringItem index="66" value="1944"/>
+                    <StringItem index="67" value="1943"/>
+                    <StringItem index="68" value="1942"/>
+                    <StringItem index="69" value="1941"/>
+                    <StringItem index="70" value="1940"/>
+                    <StringItem index="71" value="1939"/>
+                    <StringItem index="72" value="1938"/>
+                    <StringItem index="73" value="1937"/>
+                    <StringItem index="74" value="1936"/>
+                    <StringItem index="75" value="1935"/>
+                    <StringItem index="76" value="1934"/>
+                    <StringItem index="77" value="1933"/>
+                    <StringItem index="78" value="1932"/>
+                    <StringItem index="79" value="1931"/>
+                    <StringItem index="80" value="1930"/>
+                    <StringItem index="81" value="1929"/>
+                    <StringItem index="82" value="1928"/>
+                    <StringItem index="83" value="1927"/>
+                    <StringItem index="84" value="1926"/>
+                    <StringItem index="85" value="1925"/>
+                    <StringItem index="86" value="1924"/>
+                    <StringItem index="87" value="1923"/>
+                    <StringItem index="88" value="1922"/>
+                    <StringItem index="89" value="1921"/>
+                    <StringItem index="90" value="1920"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField_id_club">
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField_nombre_club">
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton_borrar_club">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Borrar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_borrar_clubActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton_modificar_club">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Modificar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_modificar_clubActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton_aniadir_libro">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="A&#xf1;adir"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_aniadir_libroActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField_aniadir_entrenador_club">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Id_entrenador"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton1">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Contratar Entrenador"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel3">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Id_jugador"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField_aniadir_jugador_club">
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton_aniadir_jugador_club">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Contratar Jugador"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_aniadir_jugador_clubActionPerformed"/>
+              </Events>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="jTableJugadoresClub">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="2" rowCount="0">
+                        <Column editable="true" title="Id" type="java.lang.Object"/>
+                        <Column editable="true" title="Nombre" type="java.lang.Object"/>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="jLabel4">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Jugadores Club Seleccionado"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel5">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Id_patrocinador"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField_aniadir_patrocinador_club">
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton_aniadir_patrocinador_club">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Contratar Patrocinador"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_aniadir_patrocinador_clubActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel6">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Patrocinadores Club Seleccionado"/>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane7">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="jTablePatrocinadoresClub">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="2" rowCount="0">
+                        <Column editable="true" title="Id" type="java.lang.Object"/>
+                        <Column editable="true" title="Nombre" type="java.lang.Object"/>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JButton" name="jButtonDespedirEntrenador">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Despedir Entrenador"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonDespedirEntrenadorActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButtonDespedirJugador">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Despedir Jugador"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonDespedirJugadorActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButtonDespedirPatrocinador">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Despedir Patrocinador"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonDespedirPatrocinadorActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel_jugador">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Jugador">
+                <Property name="tabTitle" type="java.lang.String" value="Jugador"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jScrollPane4" min="-2" pref="452" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jButton_modificar_jugador" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jButton_aniadir_jugador" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jButton_borrar_jugador" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel_nombre_jugador" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel_salario_jugador" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel_fecha_nacimiento_jugador" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel_id_jugador" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel_nombre_persona2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel_nacionalidad_jugador" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel_posicion_jugador" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="24" pref="24" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jComboBox_fecha_nacimiento_jugador" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="0" attributes="0">
+                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                          <Component id="jTextField_id_jugador" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="jTextField_salario_jugador" alignment="0" min="-2" pref="245" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="jTextField_nombre_jugador" alignment="1" min="-2" pref="245" max="-2" attributes="0"/>
+                                      <Component id="jTextField_apellido_jugador" alignment="1" min="-2" pref="245" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jComboBox_nacionalidad_jugador" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jComboBox_posicion_jugador" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="67" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                              <Component id="jButton_aniadir_jugador" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" max="-2" attributes="0"/>
+                              <Component id="jButton_modificar_jugador" min="-2" pref="23" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jButton_borrar_jugador" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
+                              <Component id="jScrollPane4" min="-2" pref="92" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jTextField_id_jugador" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel_id_jugador" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jTextField_nombre_jugador" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel_nombre_jugador" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jTextField_apellido_jugador" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel_nombre_persona2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel_salario_jugador" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextField_salario_jugador" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel_fecha_nacimiento_jugador" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jComboBox_fecha_nacimiento_jugador" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel_nacionalidad_jugador" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jComboBox_nacionalidad_jugador" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel_posicion_jugador" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jComboBox_posicion_jugador" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="516" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane4">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="jTable_jugador">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="7" rowCount="0">
+                        <Column editable="false" title="ID" type="java.lang.Object"/>
+                        <Column editable="false" title="Nombre" type="java.lang.Object"/>
+                        <Column editable="true" title="Apellido" type="java.lang.Object"/>
+                        <Column editable="true" title="Salario" type="java.lang.Object"/>
+                        <Column editable="true" title="Fecha Nacimiento" type="java.lang.Object"/>
+                        <Column editable="true" title="Nacionalidad" type="java.lang.Object"/>
+                        <Column editable="true" title="Posicion" type="java.lang.Object"/>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="false">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+                  </AuxValues>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="jLabel_nombre_jugador">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nombre:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel_salario_jugador">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Salario:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel_fecha_nacimiento_jugador">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Fecha Nacimiento:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="jComboBox_fecha_nacimiento_jugador">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="13">
+                    <StringItem index="0" value="2006"/>
+                    <StringItem index="1" value="2005"/>
+                    <StringItem index="2" value="2004"/>
+                    <StringItem index="3" value="2003"/>
+                    <StringItem index="4" value="2002"/>
+                    <StringItem index="5" value="2001"/>
+                    <StringItem index="6" value="2000"/>
+                    <StringItem index="7" value="1999"/>
+                    <StringItem index="8" value="1998"/>
+                    <StringItem index="9" value="1997"/>
+                    <StringItem index="10" value="1996"/>
+                    <StringItem index="11" value="1995"/>
+                    <StringItem index="12" value="1994"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField_id_jugador">
+              <Properties>
+                <Property name="actionCommand" type="java.lang.String" value="null"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField_salario_jugador">
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton_borrar_jugador">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Borrar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_borrar_jugadorActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton_modificar_jugador">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Modificar"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_modificar_jugadorActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton_aniadir_jugador">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="A&#xf1;adir"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButton_aniadir_jugadorMouseClicked"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton_aniadir_jugadorActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel_id_jugador">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="ID:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField_nombre_jugador">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel_nombre_persona2">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Apellido:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField_apellido_jugador">
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField_apellido_jugadorActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="jComboBox_nacionalidad_jugador">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="6">
+                    <StringItem index="0" value="Espa&#xf1;ola"/>
+                    <StringItem index="1" value="Francesa"/>
+                    <StringItem index="2" value="Inglesa"/>
+                    <StringItem index="3" value="Alemana"/>
+                    <StringItem index="4" value="Argentina"/>
+                    <StringItem index="5" value="Peruana"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel_nacionalidad_jugador">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Nacionalidad:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel_posicion_jugador">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Posicion:"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="jComboBox_posicion_jugador">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="10">
+                    <StringItem index="0" value="POR"/>
+                    <StringItem index="1" value="DFC"/>
+                    <StringItem index="2" value="LD"/>
+                    <StringItem index="3" value="LI"/>
+                    <StringItem index="4" value="DC"/>
+                    <StringItem index="5" value="MC"/>
+                    <StringItem index="6" value="MI"/>
+                    <StringItem index="7" value="ED"/>
+                    <StringItem index="8" value="EI"/>
+                    <StringItem index="9" value="MCD"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
