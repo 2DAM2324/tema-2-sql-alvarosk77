@@ -344,6 +344,8 @@ public class Controlador {
         conexionbd.consultarEntrenadores(this.entrenadores);
         
         conexionbd.consultarPatrocinadores(this.patrocinadores);
+        
+        conexionbd.consultarClubes(this.clubes);
 
         conexionbd.close();
     }

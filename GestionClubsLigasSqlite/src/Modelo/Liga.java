@@ -8,7 +8,7 @@ import java.util.ArrayList;
  *
  * @author alvar
  */
-public class Liga implements Serializable{
+public class Liga{
     private String id;
     private String nombre;
     private String pais;

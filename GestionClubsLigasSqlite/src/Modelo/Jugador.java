@@ -9,7 +9,7 @@ import java.io.Serializable;
  *
  * @author alvar
  */
-public class Jugador implements Serializable{
+public class Jugador {
     
     private int id;
     private String nombre;

@@ -8,7 +8,7 @@ import java.util.Date;
  *
  * @author alvar
  */
-public class Entrenador implements Serializable{
+public class Entrenador {
     private String id;
     private String nombre;
     private String apellido;

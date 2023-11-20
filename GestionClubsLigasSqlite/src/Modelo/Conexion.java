@@ -38,7 +38,7 @@ public class Conexion {
     }
 
     public void consultarJugadores(ArrayList<Jugador>jugadores) throws SQLException{
-        //this.getConnection();
+
         String sentenciaSql = "SELECT * FROM Jugadores";
         PreparedStatement sentencia = this.getConnection().prepareStatement(sentenciaSql);
         try {
@@ -55,7 +55,6 @@ public class Conexion {
                 jugador.setNacionalidad(resultado_consulta.getString("nacionalidad"));
                 jugador.setPosicion(resultado_consulta.getString("posicion"));
                 jugador.setSalario(resultado_consulta.getDouble("salario"));
-                //String columna2 = resultado_consulta.getString("nombre_columna_2");
                 jugadores.add(jugador);
 
                 i++;
@@ -72,7 +71,6 @@ public class Conexion {
             }
         }
         
-        //this.close();
     }
     
     public void insertarJugadorBd(Jugador jugador){
@@ -105,7 +103,7 @@ public class Conexion {
     }
     
     public void consultarEntrenadores(ArrayList<Entrenador>entrenadores) throws SQLException{
-        //this.getConnection();
+
         String sentenciaSql = "SELECT * FROM Entrenadores";
         PreparedStatement sentencia = this.getConnection().prepareStatement(sentenciaSql);
         try {
@@ -135,12 +133,11 @@ public class Conexion {
                }
             }
         }
-        
-        //this.close();
+
     }
     
     public void consultarPatrocinadores(ArrayList<Patrocinador>patrocinadores) throws SQLException{
-        //this.getConnection();
+
         String sentenciaSql = "SELECT * FROM Patrocinadores";
         PreparedStatement sentencia = this.getConnection().prepareStatement(sentenciaSql);
         try {
@@ -169,8 +166,41 @@ public class Conexion {
                }
             }
         }
-        
-        //this.close();
+
+    }
+    
+    public void consultarClubes(ArrayList<Club>clubes) throws SQLException{
+
+        String sentenciaSql = "SELECT * FROM Clubes";
+        PreparedStatement sentencia = this.getConnection().prepareStatement(sentenciaSql);
+        try {
+
+            ResultSet resultado_consulta = sentencia.executeQuery();
+            int i = 0;
+            while (resultado_consulta.next()) {
+                    // Obtener los datos de cada fila
+                Club club = new Club();
+                club.setId(Integer.toString(resultado_consulta.getInt("id_club")));
+                club.setNombre(resultado_consulta.getString("nombre"));
+                club.setAnio_fundacion(resultado_consulta.getInt("anio_fundacion"));
+                club.getEntrenador().setId(Integer.toString(resultado_consulta.getInt("id_entrenador")));
+
+                clubes.add(club);
+
+                i++;
+            }
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }
+
     }
     
     public void close() {

@@ -8,12 +8,12 @@ import java.util.ArrayList;
  *
  * @author alvar
  */
-public class Club implements Serializable{
+public class Club{
     private String id;
     private String nombre;
     private int anio_fundacion;
     private ArrayList<Jugador>jugadores = new ArrayList<>();
-    private Entrenador entrenador;
+    private Entrenador entrenador = new Entrenador();
     private ArrayList<Patrocinador>patrocinadores = new ArrayList<>();
 
     public Club(String id, String nombre, int anio_fundacion, Entrenador entrenador) {

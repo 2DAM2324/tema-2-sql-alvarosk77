@@ -8,7 +8,7 @@ import java.util.ArrayList;
  *
  * @author alvar
  */
-public class Patrocinador implements Serializable{
+public class Patrocinador{
     private String id_patrocinador;
     private String nombre_empresa;
     private String tipo_patrocinio;
