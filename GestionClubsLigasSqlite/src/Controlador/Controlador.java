@@ -214,11 +214,6 @@ public class Controlador {
 
     }
     
-    public void consultarJugadores(){
-        
-
-    }
-    
     public void serializarPatrocinador(){
 
         ObjectOutputStream serializador = null;
@@ -345,11 +340,12 @@ public class Controlador {
     public void CargarTablasBaseDatos() throws SQLException{
         
         conexionbd.consultarJugadores(this.jugadores);
-        /*this.deserializarEntrenador();
-        this.deserializarPatrocinador();
-        this.deserializarClub();
-        this.deserializarLiga();*/
+
+        conexionbd.consultarEntrenadores(this.entrenadores);
         
+        conexionbd.consultarPatrocinadores(this.patrocinadores);
+
+        conexionbd.close();
     }
     
     

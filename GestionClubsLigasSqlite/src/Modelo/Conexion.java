@@ -38,6 +38,7 @@ public class Conexion {
     }
 
     public void consultarJugadores(ArrayList<Jugador>jugadores) throws SQLException{
+        //this.getConnection();
         String sentenciaSql = "SELECT * FROM Jugadores";
         PreparedStatement sentencia = this.getConnection().prepareStatement(sentenciaSql);
         try {
@@ -71,12 +72,11 @@ public class Conexion {
             }
         }
         
-        this.close();
+        //this.close();
     }
     
     public void insertarJugadorBd(Jugador jugador){
-        //this.getConnection();
-        
+
         String sentenciaSql = "INSERT INTO Jugadores (nombre, apellido, anio_nacimineto, nacionalidad, posicion, salario) VALUES (?, ?, ?, ?, ?, ?)";
         PreparedStatement sentencia = null;
         try {
@@ -102,6 +102,75 @@ public class Conexion {
         }
         
         this.close();
+    }
+    
+    public void consultarEntrenadores(ArrayList<Entrenador>entrenadores) throws SQLException{
+        //this.getConnection();
+        String sentenciaSql = "SELECT * FROM Entrenadores";
+        PreparedStatement sentencia = this.getConnection().prepareStatement(sentenciaSql);
+        try {
+
+            ResultSet resultado_consulta = sentencia.executeQuery();
+            int i = 0;
+            while (resultado_consulta.next()) {
+                    // Obtener los datos de cada fila
+                Entrenador entrenador = new Entrenador();
+                entrenador.setId(Integer.toString(resultado_consulta.getInt("id_entrenador")));
+                entrenador.setNombre(resultado_consulta.getString("nombre"));
+                entrenador.setApellido(resultado_consulta.getString("apellido"));
+                entrenador.setAnio_nacimiento(resultado_consulta.getString("anio_nacimiento"));
+                entrenador.setNacionalidad(resultado_consulta.getString("nacionalidad"));
+                entrenadores.add(entrenador);
+
+                i++;
+            }
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }
+        
+        //this.close();
+    }
+    
+    public void consultarPatrocinadores(ArrayList<Patrocinador>patrocinadores) throws SQLException{
+        //this.getConnection();
+        String sentenciaSql = "SELECT * FROM Patrocinadores";
+        PreparedStatement sentencia = this.getConnection().prepareStatement(sentenciaSql);
+        try {
+
+            ResultSet resultado_consulta = sentencia.executeQuery();
+            int i = 0;
+            while (resultado_consulta.next()) {
+                    // Obtener los datos de cada fila
+                Patrocinador patrocinador = new Patrocinador();
+                patrocinador.setId_patrocinador(Integer.toString(resultado_consulta.getInt("id_patrocinador")));
+                patrocinador.setNombre_empresa(resultado_consulta.getString("nombre_empresa"));
+                patrocinador.setTipo_patrocinio(resultado_consulta.getString("tipo_patrocinio"));
+                patrocinador.setDuracion_contrato(resultado_consulta.getInt("duracion_contrato"));
+                patrocinadores.add(patrocinador);
+
+                i++;
+            }
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }
+        
+        //this.close();
     }
     
     public void close() {
