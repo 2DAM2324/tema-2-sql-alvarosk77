@@ -153,189 +153,8 @@ public class Controlador {
     public void setLigas(ArrayList<Liga> ligas) {
         this.ligas = ligas;
     }
-    
-    public void serializarEntrenador(){
 
-        ObjectOutputStream serializador = null;
-        try {
-            serializador = new ObjectOutputStream(new FileOutputStream("entrenadores.dat"));
-            serializador.writeObject(this.entrenadores);
-        } catch (IOException ioe) {
 
-        } finally {
-        if (serializador != null)
-        try {
-            serializador.close();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-            }
-        }
-
-    }
-    
-    public void deserializarEntrenador(){
-        
-        ObjectInputStream deserializador = null;
-        try {
-            deserializador = new ObjectInputStream(new FileInputStream("entrenadores.dat"));
-            this.entrenadores = (ArrayList<Entrenador>)deserializador.readObject();
-        } catch (FileNotFoundException fnfe ) {
-            fnfe.printStackTrace();
-        } catch (ClassNotFoundException cnfe ) {
-            cnfe.printStackTrace();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-        } finally {
-        if (deserializador != null)
-            try {
-                deserializador.close();
-            } catch (IOException ioe) {
-                ioe.printStackTrace();
-            }
-        }
-    }
-    
-    public void serializarJugador(){
-
-        ObjectOutputStream serializador = null;
-        try {
-            serializador = new ObjectOutputStream(new FileOutputStream("jugadores.dat"));
-            serializador.writeObject(this.jugadores);
-        } catch (IOException ioe) {
-
-        } finally {
-        if (serializador != null)
-        try {
-            serializador.close();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-            }
-        }
-
-    }
-    
-    public void serializarPatrocinador(){
-
-        ObjectOutputStream serializador = null;
-        try {
-            serializador = new ObjectOutputStream(new FileOutputStream("patrocinadores.dat"));
-            serializador.writeObject(this.patrocinadores);
-        } catch (IOException ioe) {
-
-        } finally {
-        if (serializador != null)
-        try {
-            serializador.close();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-            }
-        }
-
-    }
-    
-    public void deserializarPatrocinador(){
-        
-        ObjectInputStream deserializador = null;
-        try {
-            deserializador = new ObjectInputStream(new FileInputStream("patrocinadores.dat"));
-            this.patrocinadores = (ArrayList<Patrocinador>)deserializador.readObject();
-        } catch (FileNotFoundException fnfe ) {
-            fnfe.printStackTrace();
-        } catch (ClassNotFoundException cnfe ) {
-            cnfe.printStackTrace();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-        } finally {
-        if (deserializador != null)
-            try {
-                deserializador.close();
-            } catch (IOException ioe) {
-                ioe.printStackTrace();
-            }
-        }
-    }
-    
-    public void serializarClub(){
-
-        ObjectOutputStream serializador = null;
-        try {
-            serializador = new ObjectOutputStream(new FileOutputStream("clubes.dat"));
-            serializador.writeObject(this.clubes);
-        } catch (IOException ioe) {
-
-        } finally {
-        if (serializador != null)
-        try {
-            serializador.close();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-            }
-        }
-
-    }
-    
-    public void deserializarClub(){
-        
-        ObjectInputStream deserializador = null;
-        try {
-            deserializador = new ObjectInputStream(new FileInputStream("clubes.dat"));
-            this.clubes = (ArrayList<Club>)deserializador.readObject();
-        } catch (FileNotFoundException fnfe ) {
-            fnfe.printStackTrace();
-        } catch (ClassNotFoundException cnfe ) {
-            cnfe.printStackTrace();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-        } finally {
-        if (deserializador != null)
-            try {
-                deserializador.close();
-            } catch (IOException ioe) {
-                ioe.printStackTrace();
-            }
-        }
-    }
-    
-    public void serializarLiga(){
-
-        ObjectOutputStream serializador = null;
-        try {
-            serializador = new ObjectOutputStream(new FileOutputStream("ligas.dat"));
-            serializador.writeObject(this.ligas);
-        } catch (IOException ioe) {
-
-        } finally {
-        if (serializador != null)
-        try {
-            serializador.close();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-            }
-        }
-
-    }
-    
-    public void deserializarLiga(){
-        
-        ObjectInputStream deserializador = null;
-        try {
-            deserializador = new ObjectInputStream(new FileInputStream("ligas.dat"));
-            this.ligas = (ArrayList<Liga>)deserializador.readObject();
-        } catch (FileNotFoundException fnfe ) {
-            fnfe.printStackTrace();
-        } catch (ClassNotFoundException cnfe ) {
-            cnfe.printStackTrace();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-        } finally {
-        if (deserializador != null)
-            try {
-                deserializador.close();
-            } catch (IOException ioe) {
-                ioe.printStackTrace();
-            }
-        }
-    }
     
     public void CargarTablasBaseDatos() throws SQLException{
         
@@ -346,6 +165,8 @@ public class Controlador {
         conexionbd.consultarPatrocinadores(this.patrocinadores);
         
         conexionbd.consultarClubes(this.clubes);
+        
+        conexionbd.consultarLigas(this.ligas);
 
         conexionbd.close();
     }
@@ -386,7 +207,7 @@ public class Controlador {
                 }
             } 
         }
-        this.serializarClub();
+        //this.serializarClub();
         
         for (int i = 0; i < this.jugadores.size(); i++) {
             
@@ -396,7 +217,7 @@ public class Controlador {
             }
         }
         
-        this.serializarJugador();
+        //this.serializarJugador();
         
     }
     
@@ -415,14 +236,14 @@ public class Controlador {
             }
         }
         
-        this.serializarJugador();
+        //this.serializarJugador();
     }
     
     public void addEntrenador(String id, String nombre, String apellido, String anio_nacimiento, String nacionalidad){
 
         boolean id_encontrada = false;
 
-        this.deserializarEntrenador();
+        //this.deserializarEntrenador();
 
         for (int i = 0; (i < this.entrenadores.size()) && (this.entrenadores.get(i).getId() != id); i++) {
             System.out.println("id bucle = " + this.entrenadores.get(i).getId());
@@ -440,7 +261,7 @@ public class Controlador {
 
                 this.entrenadores.add(entrenador);
                 
-                this.serializarEntrenador();
+                //this.serializarEntrenador();
 
             }
             else{
@@ -485,9 +306,9 @@ public class Controlador {
             }
         }
         
-        this.serializarClub();
+        //this.serializarClub();
         
-        this.serializarEntrenador();
+        //this.serializarEntrenador();
         
          System.out.println("sale canelita remove");
     }
@@ -506,14 +327,14 @@ public class Controlador {
             }
         }
         
-        this.serializarEntrenador();
+        //this.serializarEntrenador();
     }
     
     public void addPatrocinador(String id, String nombre_empresa, String tipo_patrocinador, int duracion_contrato){
 
         boolean id_encontrada = false;
 
-        this.deserializarPatrocinador();
+        //this.deserializarPatrocinador();
 
         for (int i = 0; (i < this.patrocinadores.size()) && (this.patrocinadores.get(i).getId_patrocinador()!= id); i++) {
             
@@ -531,7 +352,7 @@ public class Controlador {
 
                 this.patrocinadores.add(patrocinador);
 
-                this.serializarPatrocinador();
+                //this.serializarPatrocinador();
 
             }
             else{
@@ -561,7 +382,7 @@ public class Controlador {
             
         }
         
-        this.serializarClub();
+        //this.serializarClub();
         
         for (int i = 0; i < this.patrocinadores.size(); i++) {
             
@@ -571,7 +392,7 @@ public class Controlador {
             }
         }
         
-        this.serializarPatrocinador();
+        //this.serializarPatrocinador();
     }
     
     public void modificarPatrocinador(String id, String nombre_empresa, String tipo_patrocinio, int duracion_contrato){
@@ -586,14 +407,14 @@ public class Controlador {
                 this.patrocinadores.get(i).setDuracion_contrato(duracion_contrato);
             }
         }
-        this.serializarPatrocinador();
+        //this.serializarPatrocinador();
     }
     
     public void addClub(String id, String nombre, int anio_fundacion){
 
         boolean id_encontrada = false;
 
-        this.deserializarClub();
+        //this.deserializarClub();
 
         for (int i = 0; (i < this.clubes.size()) && (this.clubes.get(i).getId()!= id); i++) {
             
@@ -613,7 +434,7 @@ public class Controlador {
 
                 this.clubes.add(club);
 
-                this.serializarClub();
+                //this.serializarClub();
 
             }
             else{
@@ -638,7 +459,7 @@ public class Controlador {
                 }
             }
         }
-        this.serializarPatrocinador();
+        //this.serializarPatrocinador();
         
         for (int i = 0; i < this.ligas.size(); i++) {
             for(int j = 0; j < this.ligas.get(i).getClubes().size(); j++){
@@ -648,7 +469,7 @@ public class Controlador {
             }
         }
         
-        this.serializarLiga();
+        //this.serializarLiga();
         
         for (int i = 0; i < this.clubes.size(); i++) {
             
@@ -658,7 +479,7 @@ public class Controlador {
             }
         }
         
-        this.serializarClub();
+        //this.serializarClub();
     }
     
     public void modificarClub(String id, String nombre, int anio_fundacion){
@@ -673,14 +494,14 @@ public class Controlador {
             }
         }
         
-        this.serializarClub();
+        //this.serializarClub();
     }
     
     public void addLiga(String id, String nombre, String pais, int temporada){
 
         boolean id_encontrada = false;
 
-        this.deserializarLiga();
+        //this.deserializarLiga();
 
         for (int i = 0; (i < this.ligas.size()) && (this.ligas.get(i).getId()!= id); i++) {
             
@@ -698,7 +519,7 @@ public class Controlador {
 
                 this.ligas.add(liga);
 
-                this.serializarLiga();
+                //this.serializarLiga();
 
             }
             else{
@@ -724,7 +545,7 @@ public class Controlador {
             }
         }
         
-        this.serializarLiga();
+        //this.serializarLiga();
     }
     
     public void modificarLiga(String id, String nombre, String pais, int temporada){
@@ -740,7 +561,7 @@ public class Controlador {
             }
         }
         
-        this.serializarLiga();
+        //this.serializarLiga();
     }
     
     public void comprobarIdClub(String id){
@@ -776,7 +597,7 @@ public class Controlador {
                     }
                 }
             }
-            this.serializarLiga();
+            //this.serializarLiga();
         }
     }
     
@@ -811,7 +632,7 @@ public class Controlador {
                 }
             }
             
-            this.serializarClub();
+            //this.serializarClub();
         }
     }
     
@@ -823,7 +644,7 @@ public class Controlador {
             }
         }
         
-        this.serializarClub();
+        //this.serializarClub();
     }
     
     public void comprobarIdJugador(String id){
@@ -862,7 +683,7 @@ public class Controlador {
                 }
             }
             
-            this.serializarClub();
+            //this.serializarClub();
         }
     }
     
@@ -878,7 +699,7 @@ public class Controlador {
             }
         }
         
-        this.serializarClub();
+        //this.serializarClub();
     }
     
     public void comprobarIdPatrocinador(String id){
@@ -923,7 +744,7 @@ public class Controlador {
                 }
             }
             
-            this.serializarClub();
+            //this.serializarClub();
             
             for(int i = 0; i < this.patrocinadores.size(); i++){
                 if(id_patrocinador.equals(this.patrocinadores.get(i).getId_patrocinador())){
@@ -934,7 +755,7 @@ public class Controlador {
                     }
                 }
             }
-            this.serializarPatrocinador();
+            //this.serializarPatrocinador();
         }
 
     }
@@ -951,7 +772,7 @@ public class Controlador {
             }
         }
         
-        this.serializarClub();
+        //this.serializarClub();
         
         for(int i = 0; i < this.patrocinadores.size(); i++){
             if(id_patrocinador.equals(this.patrocinadores.get(i).getId_patrocinador())){
@@ -962,6 +783,6 @@ public class Controlador {
                 }
             }
         }
-        this.serializarPatrocinador();
+        //this.serializarPatrocinador();
     }
 }

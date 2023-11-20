@@ -203,6 +203,40 @@ public class Conexion {
 
     }
     
+    public void consultarLigas(ArrayList<Liga>ligas) throws SQLException{
+
+        String sentenciaSql = "SELECT * FROM Ligas";
+        PreparedStatement sentencia = this.getConnection().prepareStatement(sentenciaSql);
+        try {
+
+            ResultSet resultado_consulta = sentencia.executeQuery();
+            int i = 0;
+            while (resultado_consulta.next()) {
+                    // Obtener los datos de cada fila
+                Liga liga = new Liga();
+                liga.setId(Integer.toString(resultado_consulta.getInt("id_liga")));
+                liga.setNombre(resultado_consulta.getString("nombre"));
+                liga.setPais(resultado_consulta.getString("pais"));
+                liga.setTemporada(resultado_consulta.getInt("temporada"));
+
+                ligas.add(liga);
+
+                i++;
+            }
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }
+
+    }
+    
     public void close() {
         try {
             if (connection != null) {

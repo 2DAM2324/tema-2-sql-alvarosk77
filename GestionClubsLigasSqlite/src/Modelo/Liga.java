@@ -21,6 +21,13 @@ public class Liga{
         this.pais = pais;
         this.temporada = temporada;
     }
+    
+    public Liga() {
+        this.id = "NULL";
+        this.nombre = "NULL";
+        this.pais = "NULL";
+        this.temporada = 0;
+    }
 
     public String getId() {
         return id;

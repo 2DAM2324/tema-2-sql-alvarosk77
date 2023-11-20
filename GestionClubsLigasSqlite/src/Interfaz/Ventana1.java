@@ -1771,8 +1771,7 @@ public class Ventana1 extends javax.swing.JFrame {
             table_model_entrenador.removeRow(i);
         
         }
-        
-        controller.deserializarEntrenador();
+
         
         this.entrenadores = controller.getEntrenadores();
         
@@ -1792,8 +1791,6 @@ public class Ventana1 extends javax.swing.JFrame {
             table_model_patrocinador.removeRow(i);
         
         }
-        
-        controller.deserializarPatrocinador();
         
         this.patrocinadores = controller.getPatrocinadores();
         
@@ -1816,7 +1813,6 @@ public class Ventana1 extends javax.swing.JFrame {
         
         }
         
-        controller.deserializarClub();
         
         this.clubes = controller.getClubes();
         
@@ -1839,8 +1835,7 @@ public class Ventana1 extends javax.swing.JFrame {
             table_model_liga.removeRow(i);
         
         }
-        
-        controller.deserializarLiga();
+
         
         this.ligas = controller.getLigas();
         
