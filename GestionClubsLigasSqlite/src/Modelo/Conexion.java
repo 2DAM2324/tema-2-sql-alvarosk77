@@ -26,7 +26,7 @@ public class Conexion {
 
                 Class.forName("org.sqlite.JDBC");
             
-                connection = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\alvar\\OneDrive\\Documentos\\ASIGNATURAS\\AD\\BaseDatosSqlite\\gestionClubesLigas.db");
+                connection = DriverManager.getConnection("jdbc:sqlite:C:\\Users\\alvar\\OneDrive\\Escritorio\\JAVA\\GestionClubsLigasSqlite\\gestionClubesLigas.db");
                 System.out.println("Conexion hecha");
             } catch (ClassNotFoundException | SQLException e) {
                 e.printStackTrace();
@@ -38,7 +38,7 @@ public class Conexion {
     }
 
     public void consultarJugadores(ArrayList<Jugador>jugadores) throws SQLException{
-        String sentenciaSql = "SELECT * FROM Jugadores;";
+        String sentenciaSql = "SELECT * FROM Jugadores";
         PreparedStatement sentencia = this.getConnection().prepareStatement(sentenciaSql);
         try {
 
