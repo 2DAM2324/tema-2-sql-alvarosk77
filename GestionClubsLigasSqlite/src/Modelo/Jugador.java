@@ -31,6 +31,16 @@ public class Jugador {
         this.salario = salario;
     }
     
+    public Jugador(String nombre, String apellido, String anio_nacimiento, String nacionalidad, String posicion, double salario) {
+        
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.anio_nacimiento = anio_nacimiento;
+        this.nacionalidad = nacionalidad;
+        this.posicion = posicion;
+        this.salario = salario;
+    }
+    
  
     public Jugador() {
         

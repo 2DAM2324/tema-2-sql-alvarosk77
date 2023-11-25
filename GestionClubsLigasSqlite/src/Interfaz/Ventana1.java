@@ -403,7 +403,6 @@ public class Ventana1 extends javax.swing.JFrame {
     }
     
     public void clearFieldsJugadores(){
-        jTextField_id_jugador.setText("");
         jTextField_nombre_jugador.setText("");
         jTextField_apellido_jugador.setText("");
         jTextField_salario_jugador.setText("");
@@ -532,12 +531,10 @@ public class Ventana1 extends javax.swing.JFrame {
         jLabel_salario_jugador = new javax.swing.JLabel();
         jLabel_fecha_nacimiento_jugador = new javax.swing.JLabel();
         jComboBox_fecha_nacimiento_jugador = new javax.swing.JComboBox<>();
-        jTextField_id_jugador = new javax.swing.JTextField();
         jTextField_salario_jugador = new javax.swing.JTextField();
         jButton_borrar_jugador = new javax.swing.JButton();
         jButton_modificar_jugador = new javax.swing.JButton();
         jButton_aniadir_jugador = new javax.swing.JButton();
-        jLabel_id_jugador = new javax.swing.JLabel();
         jTextField_nombre_jugador = new javax.swing.JTextField();
         jLabel_nombre_persona2 = new javax.swing.JLabel();
         jTextField_apellido_jugador = new javax.swing.JTextField();
@@ -1298,8 +1295,6 @@ public class Ventana1 extends javax.swing.JFrame {
 
         jComboBox_fecha_nacimiento_jugador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994" }));
 
-        jTextField_id_jugador.setActionCommand("null");
-
         jButton_borrar_jugador.setText("Borrar");
         jButton_borrar_jugador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1325,8 +1320,6 @@ public class Ventana1 extends javax.swing.JFrame {
                 jButton_aniadir_jugadorActionPerformed(evt);
             }
         });
-
-        jLabel_id_jugador.setText("ID:");
 
         jLabel_nombre_persona2.setText("Apellido:");
 
@@ -1363,7 +1356,6 @@ public class Ventana1 extends javax.swing.JFrame {
                             .addComponent(jLabel_nombre_jugador)
                             .addComponent(jLabel_salario_jugador)
                             .addComponent(jLabel_fecha_nacimiento_jugador)
-                            .addComponent(jLabel_id_jugador)
                             .addComponent(jLabel_nombre_persona2)
                             .addComponent(jLabel_nacionalidad_jugador)
                             .addComponent(jLabel_posicion_jugador))
@@ -1371,9 +1363,7 @@ public class Ventana1 extends javax.swing.JFrame {
                         .addGroup(jPanel_jugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jComboBox_fecha_nacimiento_jugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel_jugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel_jugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField_id_jugador)
-                                    .addComponent(jTextField_salario_jugador, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jTextField_salario_jugador, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jTextField_nombre_jugador, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jTextField_apellido_jugador, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jComboBox_nacionalidad_jugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1394,11 +1384,7 @@ public class Ventana1 extends javax.swing.JFrame {
                     .addGroup(jPanel_jugadorLayout.createSequentialGroup()
                         .addGap(11, 11, 11)
                         .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(44, 44, 44)
-                .addGroup(jPanel_jugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField_id_jugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel_id_jugador))
-                .addGap(18, 18, 18)
+                .addGap(79, 79, 79)
                 .addGroup(jPanel_jugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField_nombre_jugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel_nombre_jugador))
@@ -1422,7 +1408,7 @@ public class Ventana1 extends javax.swing.JFrame {
                 .addGroup(jPanel_jugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_posicion_jugador)
                     .addComponent(jComboBox_posicion_jugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(516, Short.MAX_VALUE))
+                .addContainerGap(518, Short.MAX_VALUE))
         );
 
         jTabbedPane.addTab("Jugador", jPanel_jugador);
@@ -1649,24 +1635,23 @@ public class Ventana1 extends javax.swing.JFrame {
 
     private void jButton_aniadir_jugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_aniadir_jugadorMouseClicked
         // TODO add your handling code here:
-        if(!jTextField_id_jugador.getText().equals("")){
-            controller.addJugador(Integer.parseInt(jTextField_id_jugador.getText()), jTextField_nombre_jugador.getText(),jTextField_apellido_jugador.getText() ,jComboBox_fecha_nacimiento_jugador.getSelectedItem().toString(), jComboBox_nacionalidad_jugador.getSelectedItem().toString(), jComboBox_posicion_jugador.getSelectedItem().toString(),Double.parseDouble(jTextField_salario_jugador.getText()));
+        controller.addJugador(jTextField_nombre_jugador.getText(),jTextField_apellido_jugador.getText() ,jComboBox_fecha_nacimiento_jugador.getSelectedItem().toString(), jComboBox_nacionalidad_jugador.getSelectedItem().toString(), jComboBox_posicion_jugador.getSelectedItem().toString(),Double.parseDouble(jTextField_salario_jugador.getText()));
 
-            this.clearFieldsJugadores();
+        this.clearFieldsJugadores();
 
-            this.actualizarVistaJugadores();
-        }
+        this.actualizarVistaJugadores();
+        
     }//GEN-LAST:event_jButton_aniadir_jugadorMouseClicked
 
     private void jButton_modificar_jugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_modificar_jugadorActionPerformed
         // TODO add your handling code here:
-        if(id_jugador_seleccionado != null){
+        /*if(id_jugador_seleccionado != null){
             controller.modificarJugador(jTextField_id_jugador.getText(), jTextField_nombre_jugador.getText(), jTextField_apellido_jugador.getText(), Double.parseDouble(jTextField_salario_jugador.getText()), jComboBox_fecha_nacimiento_jugador.getSelectedItem().toString(), jComboBox_nacionalidad_jugador.getSelectedItem().toString(), jComboBox_posicion_jugador.getSelectedItem().toString());
             this.actualizarVistaJugadores();
         }
         else{
             this.clearFieldsJugadores();
-        }
+        }*/
 
     }//GEN-LAST:event_jButton_modificar_jugadorActionPerformed
 
@@ -1745,21 +1730,25 @@ public class Ventana1 extends javax.swing.JFrame {
     
     public void actualizarVistaJugadores(){
         
-        for(int i = table_model_jugador.getRowCount()-1 ; i >= 0; i--){
-        
-            table_model_jugador.removeRow(i);
-        
-        }
-        
-        //controller.deserializarJugador();
-        
-        
-        this.jugadores = controller.getJugadores();
-        
-        for(Jugador jugador : this.jugadores) {
-            Vector<Object> row = new Vector<Object>();
-
-            table_model_jugador.addRow(new Object[]{jugador.getId(),jugador.getNombre(),jugador.getApellido(),jugador.getSalario(),jugador.getanio_nacimiento(),jugador.getNacionalidad(),jugador.getPosicion()});
+        try {
+            for(int i = table_model_jugador.getRowCount()-1 ; i >= 0; i--){
+                
+                table_model_jugador.removeRow(i);
+                
+            }
+            
+            //controller.deserializarJugador();
+            controller.CargarTablasBaseDatos();
+            
+            this.jugadores = controller.getJugadores();
+            
+            for(Jugador jugador : this.jugadores) {
+                Vector<Object> row = new Vector<Object>();
+                
+                table_model_jugador.addRow(new Object[]{jugador.getId(),jugador.getNombre(),jugador.getApellido(),jugador.getSalario(),jugador.getanio_nacimiento(),jugador.getNacionalidad(),jugador.getPosicion()});
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
         }
         
     }
@@ -1847,6 +1836,7 @@ public class Ventana1 extends javax.swing.JFrame {
         }
         
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
@@ -1901,7 +1891,6 @@ public class Ventana1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_direccion1;
     private javax.swing.JLabel jLabel_direccion2;
     private javax.swing.JLabel jLabel_fecha_nacimiento_jugador;
-    private javax.swing.JLabel jLabel_id_jugador;
     private javax.swing.JLabel jLabel_nacionalidad_jugador;
     private javax.swing.JLabel jLabel_nombre_biblioteca;
     private javax.swing.JLabel jLabel_nombre_biblioteca1;
@@ -1948,7 +1937,6 @@ public class Ventana1 extends javax.swing.JFrame {
     public javax.swing.JTextField jTextField_duracion_contrato_patrocinador;
     private javax.swing.JTextField jTextField_id_club;
     public javax.swing.JTextField jTextField_id_entrenador;
-    private javax.swing.JTextField jTextField_id_jugador;
     public javax.swing.JTextField jTextField_id_liga;
     public javax.swing.JTextField jTextField_id_patrocinador;
     private javax.swing.JTextField jTextField_nombre_club;

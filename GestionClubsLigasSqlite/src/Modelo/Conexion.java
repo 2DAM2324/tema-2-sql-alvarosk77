@@ -75,10 +75,10 @@ public class Conexion {
     
     public void insertarJugadorBd(Jugador jugador){
 
-        String sentenciaSql = "INSERT INTO Jugadores (nombre, apellido, anio_nacimineto, nacionalidad, posicion, salario) VALUES (?, ?, ?, ?, ?, ?)";
+        String sentenciaSql = "INSERT INTO Jugadores (nombre, apellido, anio_nacimiento, nacionalidad, posicion, salario) VALUES (?, ?, ?, ?, ?, ?)";
         PreparedStatement sentencia = null;
         try {
-
+            connection.setAutoCommit(false);
             sentencia = this.getConnection().prepareStatement(sentenciaSql);
             sentencia.setString(1,jugador.getNombre());
             sentencia.setString(2, jugador.getApellido());
@@ -87,6 +87,8 @@ public class Conexion {
             sentencia.setString(5, jugador.getPosicion());
             sentencia.setDouble(6, jugador.getSalario());
             sentencia.executeUpdate();
+            
+            connection.commit();
         } catch (SQLException sqle) {
             sqle.printStackTrace();
         } finally {
@@ -98,8 +100,7 @@ public class Conexion {
                }
             }
         }
-        
-        this.close();
+            
     }
     
     public void consultarEntrenadores(ArrayList<Entrenador>entrenadores) throws SQLException{
@@ -237,7 +238,7 @@ public class Conexion {
 
     }
     
-    public void close() {
+    public static void close() {
         try {
             if (connection != null) {
                 connection.close();

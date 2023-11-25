@@ -1520,7 +1520,6 @@
                                   <Component id="jLabel_nombre_jugador" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel_salario_jugador" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel_fecha_nacimiento_jugador" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel_id_jugador" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel_nombre_persona2" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel_nacionalidad_jugador" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel_posicion_jugador" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -1529,10 +1528,7 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jComboBox_fecha_nacimiento_jugador" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" alignment="0" groupAlignment="0" attributes="0">
-                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jTextField_id_jugador" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jTextField_salario_jugador" alignment="0" min="-2" pref="245" max="-2" attributes="0"/>
-                                      </Group>
+                                      <Component id="jTextField_salario_jugador" alignment="0" min="-2" pref="245" max="-2" attributes="0"/>
                                       <Component id="jTextField_nombre_jugador" alignment="1" min="-2" pref="245" max="-2" attributes="0"/>
                                       <Component id="jTextField_apellido_jugador" alignment="1" min="-2" pref="245" max="-2" attributes="0"/>
                                   </Group>
@@ -1562,12 +1558,7 @@
                               <Component id="jScrollPane4" min="-2" pref="92" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField_id_jugador" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel_id_jugador" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jTextField_nombre_jugador" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel_nombre_jugador" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1597,7 +1588,7 @@
                           <Component id="jLabel_posicion_jugador" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jComboBox_posicion_jugador" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="516" max="32767" attributes="0"/>
+                      <EmptySpace pref="518" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1711,11 +1702,6 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField_id_jugador">
-              <Properties>
-                <Property name="actionCommand" type="java.lang.String" value="null"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JTextField" name="jTextField_salario_jugador">
             </Component>
             <Component class="javax.swing.JButton" name="jButton_borrar_jugador">
@@ -1751,11 +1737,6 @@
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jLabel_id_jugador">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="ID:"/>
-              </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField_nombre_jugador">
             </Component>

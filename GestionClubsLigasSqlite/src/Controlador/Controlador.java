@@ -61,13 +61,14 @@ public class Controlador {
     private int numero_veces_id_club_repetida = 0;
     
     public Controlador() throws SQLException {
-        //this.deserializarEntidades();
-        this.conexionbd = new Conexion();
+
         this.jugadores = new ArrayList<>();
         this.entrenadores = new ArrayList<>();
         this.patrocinadores = new ArrayList<>();
         this.clubes = new ArrayList<>();
         this.ligas = new ArrayList<>();
+        this.conexionbd = new Conexion();
+        this.conexionbd.getConnection();
         this.CargarTablasBaseDatos();
     }
     
@@ -154,7 +155,6 @@ public class Controlador {
         this.ligas = ligas;
     }
 
-
     
     public void CargarTablasBaseDatos() throws SQLException{
         
@@ -167,12 +167,10 @@ public class Controlador {
         conexionbd.consultarClubes(this.clubes);
         
         conexionbd.consultarLigas(this.ligas);
-
-        conexionbd.close();
     }
     
     
-    public void addJugador(int id, String nombre, String apellido, String anio_nacimiento, String nacionalidad, String posicion, double salario){
+    public void addJugador(String nombre, String apellido, String anio_nacimiento, String nacionalidad, String posicion, double salario){
 
         boolean id_encontrada = false;
 
@@ -185,7 +183,7 @@ public class Controlador {
             }
         }*/
 
-        Jugador jugador = new Jugador(id,nombre, apellido, anio_nacimiento, nacionalidad, posicion, salario);
+        Jugador jugador = new Jugador(nombre, apellido, anio_nacimiento, nacionalidad, posicion, salario);
                 //this.jugadores.add(jugador);
 
                 //this.serializarJugador();
@@ -785,4 +783,5 @@ public class Controlador {
         }
         //this.serializarPatrocinador();
     }
+
 }
