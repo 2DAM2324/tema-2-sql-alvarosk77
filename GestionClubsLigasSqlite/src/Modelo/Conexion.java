@@ -103,6 +103,38 @@ public class Conexion {
             
     }
     
+    public void modificarJugadorBd(Jugador jugador){
+
+        String sentenciaSql = "UPDATE Jugadores SET nombre = ?, apellido = ?, anio_nacimiento = ?, nacionalidad = ?, posicion = ?, salario = ? " + "WHERE id_jugador = ?";
+        PreparedStatement sentencia = null;
+
+        try {
+            connection.setAutoCommit(false);
+            sentencia = this.getConnection().prepareStatement(sentenciaSql);
+            sentencia.setString(1,jugador.getNombre());
+            sentencia.setString(2, jugador.getApellido());
+            sentencia.setString(3, jugador.getanio_nacimiento());
+            sentencia.setString(4, jugador.getNacionalidad());
+            sentencia.setString(5, jugador.getPosicion());
+            sentencia.setDouble(6, jugador.getSalario());
+            sentencia.setInt(7, jugador.getId());
+            sentencia.executeUpdate();
+            
+            connection.commit();
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }
+            
+    }
+    
     public void consultarEntrenadores(ArrayList<Entrenador>entrenadores) throws SQLException{
 
         String sentenciaSql = "SELECT * FROM Entrenadores";

@@ -1645,13 +1645,13 @@ public class Ventana1 extends javax.swing.JFrame {
 
     private void jButton_modificar_jugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_modificar_jugadorActionPerformed
         // TODO add your handling code here:
-        /*if(id_jugador_seleccionado != null){
-            controller.modificarJugador(jTextField_id_jugador.getText(), jTextField_nombre_jugador.getText(), jTextField_apellido_jugador.getText(), Double.parseDouble(jTextField_salario_jugador.getText()), jComboBox_fecha_nacimiento_jugador.getSelectedItem().toString(), jComboBox_nacionalidad_jugador.getSelectedItem().toString(), jComboBox_posicion_jugador.getSelectedItem().toString());
+        if(id_jugador_seleccionado != null){
+            controller.modificarJugador( Integer.parseInt(id_jugador_seleccionado),jTextField_nombre_jugador.getText(), jTextField_apellido_jugador.getText(), Double.parseDouble(jTextField_salario_jugador.getText()), jComboBox_fecha_nacimiento_jugador.getSelectedItem().toString(), jComboBox_nacionalidad_jugador.getSelectedItem().toString(), jComboBox_posicion_jugador.getSelectedItem().toString());
             this.actualizarVistaJugadores();
         }
         else{
             this.clearFieldsJugadores();
-        }*/
+        }
 
     }//GEN-LAST:event_jButton_modificar_jugadorActionPerformed
 

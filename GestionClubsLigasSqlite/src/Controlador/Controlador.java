@@ -174,23 +174,9 @@ public class Controlador {
 
         boolean id_encontrada = false;
 
-        //this.deserializarJugador();
-
-        /*for (int i = 0; (i < this.jugadores.size()) && (this.jugadores.get(i).getId() != id); i++) {
-            if(this.jugadores.get(i).getId().equals(id)){
-
-                id_encontrada = true;
-            }
-        }*/
-
         Jugador jugador = new Jugador(nombre, apellido, anio_nacimiento, nacionalidad, posicion, salario);
-                //this.jugadores.add(jugador);
 
-                //this.serializarJugador();
-        conexionbd.insertarJugadorBd(jugador);
-                
-
-
+        conexionbd.insertarJugadorBd(jugador);       
     }
     
     public void removeJugador(String id){
@@ -219,22 +205,11 @@ public class Controlador {
         
     }
     
-    public void modificarJugador(String id, String nombre, String apellido, double salario, String anio_nacimiento, String nacionalidad, String posicion){
+    public void modificarJugador(int id, String nombre, String apellido, double salario, String anio_nacimiento, String nacionalidad, String posicion){
+
+        Jugador jugador = new Jugador(id, nombre, apellido, anio_nacimiento, nacionalidad, posicion, salario);
         
-        for (int i = 0; i < this.jugadores.size(); i++) {
-            
-            if(id.equals(this.jugadores.get(i).getId())){
-                
-                this.jugadores.get(i).setNombre(nombre);
-                this.jugadores.get(i).setApellido(apellido);
-                this.jugadores.get(i).setSalario(salario);
-                this.jugadores.get(i).setanio_nacimiento(anio_nacimiento);
-                this.jugadores.get(i).setNacionalidad(nacionalidad);
-                this.jugadores.get(i).setPosicion(posicion);
-            }
-        }
-        
-        //this.serializarJugador();
+        this.conexionbd.modificarJugadorBd(jugador);
     }
     
     public void addEntrenador(String id, String nombre, String apellido, String anio_nacimiento, String nacionalidad){
