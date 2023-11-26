@@ -23,6 +23,13 @@ public class Entrenador {
         this.nacionalidad = nacionalidad;
     }
     
+    public Entrenador(String nombre, String apellido, String anio_nacimiento, String nacionalidad) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.anio_nacimiento = anio_nacimiento;
+        this.nacionalidad = nacionalidad;
+    }
+    
     public Entrenador(String id) {
         this.id = id;
         this.nombre = "NULL";

@@ -164,6 +164,8 @@ public class Conexion {
     
     public void consultarEntrenadores(ArrayList<Entrenador>entrenadores) throws SQLException{
         
+        entrenadores.clear();
+        
         String sentenciaSql = "SELECT * FROM Entrenadores";
         PreparedStatement sentencia = this.getConnection().prepareStatement(sentenciaSql);
         try {
@@ -194,6 +196,34 @@ public class Conexion {
             }
         }
 
+    }
+    
+    public void insertarEntrenadorBd(Entrenador entrenador){
+
+        String sentenciaSql = "INSERT INTO Entrenadores (nombre, apellido, anio_nacimiento, nacionalidad) VALUES (?, ?, ?, ?)";
+        PreparedStatement sentencia = null;
+        try {
+            connection.setAutoCommit(false);
+            sentencia = this.getConnection().prepareStatement(sentenciaSql);
+            sentencia.setString(1,entrenador.getNombre());
+            sentencia.setString(2, entrenador.getApellido());
+            sentencia.setString(3, entrenador.getAnio_nacimiento());
+            sentencia.setString(4, entrenador.getNacionalidad());
+            sentencia.executeUpdate();
+            
+            connection.commit();
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }
+            
     }
     
     public void consultarPatrocinadores(ArrayList<Patrocinador>patrocinadores) throws SQLException{

@@ -732,17 +732,17 @@
                                   <Component id="jLabel_ciudades_bibliotecas3" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel_ciudades_bibliotecas2" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
-                                          <Component id="jTextField_id_entrenador" min="-2" pref="245" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="jLabel_nombre_biblioteca1" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel_direccion1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jTextField_nombre_entrenador" alignment="1" min="-2" pref="245" max="-2" attributes="0"/>
-                                      <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                          <Component id="jComboBox_anio_nacimiento_entrenador" min="-2" pref="86" max="-2" attributes="0"/>
-                                          <Component id="jTextField_apellido_entrenador" min="-2" pref="245" max="-2" attributes="0"/>
-                                          <Component id="jComboBox_nacionalidad_entrenador" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Component id="jTextField_nombre_entrenador" alignment="1" min="-2" pref="245" max="-2" attributes="0"/>
+                                              <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                                  <Component id="jComboBox_anio_nacimiento_entrenador" min="-2" pref="86" max="-2" attributes="0"/>
+                                                  <Component id="jTextField_apellido_entrenador" min="-2" pref="245" max="-2" attributes="0"/>
+                                                  <Component id="jComboBox_nacionalidad_entrenador" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
                                       </Group>
                                   </Group>
                                   <Component id="jLabel_telefono3" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -781,12 +781,7 @@
                               <Component id="jScrollPane5" min="-2" pref="92" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel_nombre_biblioteca1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField_id_entrenador" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="79" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel_telefono1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jTextField_nombre_entrenador" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -871,22 +866,12 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="jLabel_nombre_biblioteca1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="ID:"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel_telefono1">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Nombre:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel_direccion1">
-            </Component>
-            <Component class="javax.swing.JTextField" name="jTextField_id_entrenador">
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-              </AuxValues>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField_nombre_entrenador">
               <Events>

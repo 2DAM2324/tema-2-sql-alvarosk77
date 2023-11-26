@@ -411,7 +411,6 @@ public class Ventana1 extends javax.swing.JFrame {
     }
     
     public void clearFieldsEntrenadores(){
-        jTextField_id_entrenador.setText("");
         jTextField_nombre_entrenador.setText("");
         jTextField_apellido_entrenador.setText("");
     }
@@ -480,10 +479,8 @@ public class Ventana1 extends javax.swing.JFrame {
         jPanel_entrenador = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTable_entrenadores = new javax.swing.JTable();
-        jLabel_nombre_biblioteca1 = new javax.swing.JLabel();
         jLabel_telefono1 = new javax.swing.JLabel();
         jLabel_direccion1 = new javax.swing.JLabel();
-        jTextField_id_entrenador = new javax.swing.JTextField();
         jTextField_nombre_entrenador = new javax.swing.JTextField();
         jButton_aniadir_entrenador = new javax.swing.JButton();
         jButton_modificar_entrenador = new javax.swing.JButton();
@@ -904,8 +901,6 @@ public class Ventana1 extends javax.swing.JFrame {
             jTable_entrenadores.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        jLabel_nombre_biblioteca1.setText("ID:");
-
         jLabel_telefono1.setText("Nombre:");
 
         jTextField_nombre_entrenador.addActionListener(new java.awt.event.ActionListener() {
@@ -957,16 +952,15 @@ public class Ventana1 extends javax.swing.JFrame {
                             .addComponent(jLabel_ciudades_bibliotecas3, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel_ciudades_bibliotecas2, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel_entrenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel_entrenadorLayout.createSequentialGroup()
-                                    .addGap(118, 118, 118)
-                                    .addComponent(jTextField_id_entrenador, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jLabel_nombre_biblioteca1, javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(jLabel_direccion1, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField_nombre_entrenador, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel_entrenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jComboBox_anio_nacimiento_entrenador, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField_apellido_entrenador, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox_nacionalidad_entrenador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(jPanel_entrenadorLayout.createSequentialGroup()
+                                    .addGap(118, 118, 118)
+                                    .addGroup(jPanel_entrenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jTextField_nombre_entrenador, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(jPanel_entrenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jComboBox_anio_nacimiento_entrenador, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jTextField_apellido_entrenador, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jComboBox_nacionalidad_entrenador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                             .addComponent(jLabel_telefono3, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel_telefono1, javax.swing.GroupLayout.Alignment.LEADING)))
                     .addGroup(jPanel_entrenadorLayout.createSequentialGroup()
@@ -993,11 +987,7 @@ public class Ventana1 extends javax.swing.JFrame {
                     .addGroup(jPanel_entrenadorLayout.createSequentialGroup()
                         .addGap(11, 11, 11)
                         .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(42, 42, 42)
-                .addGroup(jPanel_entrenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel_nombre_biblioteca1)
-                    .addComponent(jTextField_id_entrenador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(79, 79, 79)
                 .addGroup(jPanel_entrenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_telefono1)
                     .addComponent(jTextField_nombre_entrenador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1435,14 +1425,8 @@ public class Ventana1 extends javax.swing.JFrame {
 
     private void jButton_aniadir_entrenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_aniadir_entrenadorActionPerformed
         // TODO add your handling code here:
-        if(!jTextField_id_entrenador.getText().equals("")){
-            controller.addEntrenador(jTextField_id_entrenador.getText(), jTextField_nombre_entrenador.getText(), jTextField_apellido_entrenador.getText(), jComboBox_anio_nacimiento_entrenador.getSelectedItem().toString(),jComboBox_nacionalidad_entrenador.getSelectedItem().toString());
-            this.actualizarVistaEntrenadores();
-        }
-        else{
-            System.out.println("error");
-        }
-
+        controller.addEntrenador(jTextField_nombre_entrenador.getText(), jTextField_apellido_entrenador.getText(), jComboBox_anio_nacimiento_entrenador.getSelectedItem().toString(),jComboBox_nacionalidad_entrenador.getSelectedItem().toString());
+        this.actualizarVistaEntrenadores();
         this.clearFieldsEntrenadores();
     }//GEN-LAST:event_jButton_aniadir_entrenadorActionPerformed
 
@@ -1461,14 +1445,14 @@ public class Ventana1 extends javax.swing.JFrame {
 
     private void jButton_modificar_entrenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_modificar_entrenadorActionPerformed
         // TODO add your handling code here:
-        if(id_entrenador_seleccionado != null){
+        /*if(id_entrenador_seleccionado != null){
             controller.modificarEntrenador(jTextField_id_entrenador.getText(),jTextField_nombre_entrenador.getText(), jTextField_apellido_entrenador.getText(), jComboBox_anio_nacimiento_entrenador.getSelectedItem().toString(), jComboBox_nacionalidad_entrenador.getSelectedItem().toString());
             this.actualizarVistaEntrenadores();
         }
         else{
             System.out.println("error");
         }
-        this.clearFieldsEntrenadores();
+        this.clearFieldsEntrenadores();*/
     }//GEN-LAST:event_jButton_modificar_entrenadorActionPerformed
 
     private void jButton_aniadir_patrocinadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_aniadir_patrocinadorActionPerformed
@@ -1635,17 +1619,22 @@ public class Ventana1 extends javax.swing.JFrame {
 
     private void jButton_aniadir_jugadorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_aniadir_jugadorMouseClicked
         // TODO add your handling code here:
-        controller.addJugador(jTextField_nombre_jugador.getText(),jTextField_apellido_jugador.getText() ,jComboBox_fecha_nacimiento_jugador.getSelectedItem().toString(), jComboBox_nacionalidad_jugador.getSelectedItem().toString(), jComboBox_posicion_jugador.getSelectedItem().toString(),Double.parseDouble(jTextField_salario_jugador.getText()));
-
-        this.clearFieldsJugadores();
-
-        this.actualizarVistaJugadores();
+        
+        if(Double.parseDouble(jTextField_salario_jugador.getText()) > 0.0){
+            controller.addJugador(jTextField_nombre_jugador.getText(),jTextField_apellido_jugador.getText() ,jComboBox_fecha_nacimiento_jugador.getSelectedItem().toString(), jComboBox_nacionalidad_jugador.getSelectedItem().toString(), jComboBox_posicion_jugador.getSelectedItem().toString(),Double.parseDouble(jTextField_salario_jugador.getText()));
+            this.actualizarVistaJugadores();
+        }
+        else{
+            this.clearFieldsJugadores();
+        }        
         
     }//GEN-LAST:event_jButton_aniadir_jugadorMouseClicked
 
     private void jButton_modificar_jugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_modificar_jugadorActionPerformed
         // TODO add your handling code here:
-        if(id_jugador_seleccionado != null){
+
+        
+        if((id_jugador_seleccionado != null)){
             controller.modificarJugador( Integer.parseInt(id_jugador_seleccionado),jTextField_nombre_jugador.getText(), jTextField_apellido_jugador.getText(), Double.parseDouble(jTextField_salario_jugador.getText()), jComboBox_fecha_nacimiento_jugador.getSelectedItem().toString(), jComboBox_nacionalidad_jugador.getSelectedItem().toString(), jComboBox_posicion_jugador.getSelectedItem().toString());
             this.actualizarVistaJugadores();
         }
@@ -1755,20 +1744,25 @@ public class Ventana1 extends javax.swing.JFrame {
     
     public void actualizarVistaEntrenadores(){
         
-        for(int i = table_model_entrenador.getRowCount()-1 ; i >= 0; i--){
-        
-            table_model_entrenador.removeRow(i);
-        
-        }
-
-        
-        this.entrenadores = controller.getEntrenadores();
-        
-        
-        for(Entrenador e : this.entrenadores) {
-            Vector<Object> row = new Vector<Object>();
-
-            table_model_entrenador.addRow(new Object[]{e.getId(),e.getNombre(),e.getApellido(),e.getAnio_nacimiento(),e.getNacionalidad()});
+        try {
+            for(int i = table_model_entrenador.getRowCount()-1 ; i >= 0; i--){
+                
+                table_model_entrenador.removeRow(i);
+                
+            }
+            
+            this.controller.CargarTablasBaseDatos();
+            
+            this.entrenadores = controller.getEntrenadores();
+            
+            
+            for(Entrenador e : this.entrenadores) {
+                Vector<Object> row = new Vector<Object>();
+                
+                table_model_entrenador.addRow(new Object[]{e.getId(),e.getNombre(),e.getApellido(),e.getAnio_nacimiento(),e.getNacionalidad()});
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
         }
         
     }
@@ -1893,7 +1887,6 @@ public class Ventana1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_fecha_nacimiento_jugador;
     private javax.swing.JLabel jLabel_nacionalidad_jugador;
     private javax.swing.JLabel jLabel_nombre_biblioteca;
-    private javax.swing.JLabel jLabel_nombre_biblioteca1;
     private javax.swing.JLabel jLabel_nombre_biblioteca2;
     private javax.swing.JLabel jLabel_nombre_jugador;
     private javax.swing.JLabel jLabel_nombre_libro;
@@ -1936,7 +1929,6 @@ public class Ventana1 extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField_apellido_jugador;
     public javax.swing.JTextField jTextField_duracion_contrato_patrocinador;
     private javax.swing.JTextField jTextField_id_club;
-    public javax.swing.JTextField jTextField_id_entrenador;
     public javax.swing.JTextField jTextField_id_liga;
     public javax.swing.JTextField jTextField_id_patrocinador;
     private javax.swing.JTextField jTextField_nombre_club;

@@ -172,8 +172,6 @@ public class Controlador {
     
     public void addJugador(String nombre, String apellido, String anio_nacimiento, String nacionalidad, String posicion, double salario){
 
-        boolean id_encontrada = false;
-
         Jugador jugador = new Jugador(nombre, apellido, anio_nacimiento, nacionalidad, posicion, salario);
 
         conexionbd.insertarJugadorBd(jugador);       
@@ -192,41 +190,11 @@ public class Controlador {
         this.conexionbd.modificarJugadorBd(jugador);
     }
     
-    public void addEntrenador(String id, String nombre, String apellido, String anio_nacimiento, String nacionalidad){
+    public void addEntrenador(String nombre, String apellido, String anio_nacimiento, String nacionalidad){
 
-        boolean id_encontrada = false;
-
-        //this.deserializarEntrenador();
-
-        for (int i = 0; (i < this.entrenadores.size()) && (this.entrenadores.get(i).getId() != id); i++) {
-            System.out.println("id bucle = " + this.entrenadores.get(i).getId());
-            if(this.entrenadores.get(i).getId().equals(id)){
-
-                id_encontrada = true;
-            }
-        }
-
-        if(id_encontrada == false){
-
-            Entrenador entrenador = new Entrenador(id, nombre, apellido, anio_nacimiento, nacionalidad);
-            
-            if(this.entrenadores != null){
-
-                this.entrenadores.add(entrenador);
-                
-                //this.serializarEntrenador();
-
-            }
-            else{
-
-                System.out.println("ERROR");
-            }
-
-        }
-        else{
-
-            System.out.println("ID REPETIDA");
-        }
+        Entrenador entrenador = new Entrenador(nombre, apellido, anio_nacimiento, nacionalidad);
+        
+        this.conexionbd.insertarEntrenadorBd(entrenador);
         
     }
     
