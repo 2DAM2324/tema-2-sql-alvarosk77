@@ -1445,14 +1445,14 @@ public class Ventana1 extends javax.swing.JFrame {
 
     private void jButton_modificar_entrenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_modificar_entrenadorActionPerformed
         // TODO add your handling code here:
-        /*if(id_entrenador_seleccionado != null){
-            controller.modificarEntrenador(jTextField_id_entrenador.getText(),jTextField_nombre_entrenador.getText(), jTextField_apellido_entrenador.getText(), jComboBox_anio_nacimiento_entrenador.getSelectedItem().toString(), jComboBox_nacionalidad_entrenador.getSelectedItem().toString());
+        if(id_entrenador_seleccionado != null){
+            controller.modificarEntrenador(id_entrenador_seleccionado,jTextField_nombre_entrenador.getText(), jTextField_apellido_entrenador.getText(), jComboBox_anio_nacimiento_entrenador.getSelectedItem().toString(), jComboBox_nacionalidad_entrenador.getSelectedItem().toString());
             this.actualizarVistaEntrenadores();
         }
         else{
             System.out.println("error");
         }
-        this.clearFieldsEntrenadores();*/
+        this.clearFieldsEntrenadores();
     }//GEN-LAST:event_jButton_modificar_entrenadorActionPerformed
 
     private void jButton_aniadir_patrocinadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_aniadir_patrocinadorActionPerformed

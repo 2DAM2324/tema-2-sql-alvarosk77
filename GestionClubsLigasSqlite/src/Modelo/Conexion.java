@@ -226,6 +226,36 @@ public class Conexion {
             
     }
     
+    public void modificarEntrenadorBd(Entrenador entrenador){
+
+        String sentenciaSql = "UPDATE Entrenadores SET nombre = ?, apellido = ?, anio_nacimiento = ?, nacionalidad = ?" + "WHERE id_entrenador = ?";
+        PreparedStatement sentencia = null;
+
+        try {
+            connection.setAutoCommit(false);
+            sentencia = this.getConnection().prepareStatement(sentenciaSql);
+            sentencia.setString(1,entrenador.getNombre());
+            sentencia.setString(2, entrenador.getApellido());
+            sentencia.setString(3, entrenador.getAnio_nacimiento());
+            sentencia.setString(4, entrenador.getNacionalidad());
+            sentencia.setInt(5, Integer.parseInt(entrenador.getId()));
+            sentencia.executeUpdate();
+            
+            connection.commit();
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }
+            
+    }
+    
     public void consultarPatrocinadores(ArrayList<Patrocinador>patrocinadores) throws SQLException{
 
         String sentenciaSql = "SELECT * FROM Patrocinadores";

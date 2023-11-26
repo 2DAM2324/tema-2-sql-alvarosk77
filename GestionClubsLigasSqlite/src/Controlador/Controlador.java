@@ -236,19 +236,9 @@ public class Controlador {
     
     public void modificarEntrenador(String id, String nombre, String apellido, String anio_nacimiento, String nacionalidad){
         
+        Entrenador entrenador = new Entrenador(id, nombre, apellido, anio_nacimiento, nacionalidad);
         
-        for (int i = 0; i < this.entrenadores.size(); i++) {
-            
-            if(id.equals(this.entrenadores.get(i).getId())){
-                
-                this.entrenadores.get(i).setNombre(nombre);
-                this.entrenadores.get(i).setApellido(apellido);
-                this.entrenadores.get(i).setAnio_nacimiento(anio_nacimiento);
-                this.entrenadores.get(i).setNacionalidad(nacionalidad);
-            }
-        }
-        
-        //this.serializarEntrenador();
+        this.conexionbd.modificarEntrenadorBd(entrenador);
     }
     
     public void addPatrocinador(String id, String nombre_empresa, String tipo_patrocinador, int duracion_contrato){
