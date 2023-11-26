@@ -1662,7 +1662,7 @@ public class Ventana1 extends javax.swing.JFrame {
 
             this.actualizarVistaJugadores();
 
-            this.mostrarTablaJugadoresDeUnClub();
+            //this.mostrarTablaJugadoresDeUnClub();
         }
         else{
             System.out.println("error");

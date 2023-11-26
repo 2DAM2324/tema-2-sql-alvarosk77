@@ -180,28 +180,8 @@ public class Controlador {
     }
     
     public void removeJugador(String id){
-        
-        for(int i = 0; i < this.clubes.size(); i++){
-            for(int j = 0; j < this.clubes.get(i).getJugadores().size(); j++){
-                if(id.equals(this.clubes.get(i).getJugadores().get(j).getId())){
-                    this.clubes.get(i).getJugadores().get(j).mostrarDatos();
-                    this.clubes.get(i).getJugadores().remove(j);
-                    
-                    System.out.println("remove el canelita");
-                }
-            } 
-        }
-        //this.serializarClub();
-        
-        for (int i = 0; i < this.jugadores.size(); i++) {
-            
-            if(id.equals(this.jugadores.get(i).getId())){
-                
-                this.jugadores.remove(i);
-            }
-        }
-        
-        //this.serializarJugador();
+
+        conexionbd.eliminarJugadorBd(id);
         
     }
     
