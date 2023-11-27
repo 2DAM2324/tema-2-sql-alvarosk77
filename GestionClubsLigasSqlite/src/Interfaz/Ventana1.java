@@ -1434,7 +1434,7 @@ public class Ventana1 extends javax.swing.JFrame {
 
     private void jButton_aniadir_patrocinadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_aniadir_patrocinadorActionPerformed
         // TODO add your handling code here:
-        if(Integer.parseInt(jTextField_duracion_contrato_patrocinador.getText().toString()) > 0){
+        if(Integer.parseInt(jTextField_duracion_contrato_patrocinador.getText()) > 0){
             controller.addPatrocinador(jTextField_nombre_empresa_patrocinador.getText(), jComboBox_tipo_patrocinio.getSelectedItem().toString(), Integer.parseInt(jTextField_duracion_contrato_patrocinador.getText()));
             this.actualizarVistaPatrocinadores();
             

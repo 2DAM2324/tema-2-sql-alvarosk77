@@ -459,6 +459,34 @@ public class Conexion {
             
     }
     
+    public void modificarClubBd(Club club){
+
+        String sentenciaSql = "UPDATE Clubes SET nombre = ?, anio_fundacion = ?" + "WHERE id_club = ?";
+        PreparedStatement sentencia = null;
+
+        try {
+            connection.setAutoCommit(false);
+            sentencia = this.getConnection().prepareStatement(sentenciaSql);
+            sentencia.setString(1,club.getNombre());
+            sentencia.setInt(2, club.getAnio_fundacion());
+            sentencia.setInt(3, Integer.parseInt(club.getId()));
+            sentencia.executeUpdate();
+            
+            connection.commit();
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }
+            
+    }
+    
     public void consultarLigas(ArrayList<Liga>ligas) throws SQLException{
 
         String sentenciaSql = "SELECT * FROM Ligas";

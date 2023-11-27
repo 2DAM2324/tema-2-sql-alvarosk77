@@ -275,17 +275,10 @@ public class Controlador {
     
     public void modificarClub(String id, String nombre, int anio_fundacion){
         
+        Club club = new Club(id, nombre, anio_fundacion);
         
-        for (int i = 0; i < this.clubes.size(); i++) {
-            
-            if(id.equals(this.clubes.get(i).getId())){
-                
-                this.clubes.get(i).setNombre(nombre);
-                this.clubes.get(i).setAnio_fundacion(anio_fundacion);
-            }
-        }
+        this.conexionbd.modificarClubBd(club);
         
-        //this.serializarClub();
     }
     
     public void addLiga(String id, String nombre, String pais, int temporada){
