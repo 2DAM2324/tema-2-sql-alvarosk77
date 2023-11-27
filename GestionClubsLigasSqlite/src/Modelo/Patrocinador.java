@@ -21,6 +21,12 @@ public class Patrocinador{
         this.tipo_patrocinio = tipo_patrocinio;
         this.duracion_contrato = duracion_contrato;
     }
+    
+    public Patrocinador(String nombre_empresa, String tipo_patrocinio, int duracion_contrato) {
+        this.nombre_empresa = nombre_empresa;
+        this.tipo_patrocinio = tipo_patrocinio;
+        this.duracion_contrato = duracion_contrato;
+    }
 
     public Patrocinador() {
         this.id_patrocinador = "NULL";

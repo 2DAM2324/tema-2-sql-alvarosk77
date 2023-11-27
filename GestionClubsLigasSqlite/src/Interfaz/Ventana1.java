@@ -416,7 +416,6 @@ public class Ventana1 extends javax.swing.JFrame {
     }
     
     public void clearFieldsPatrocinadores(){
-        jTextField_id_patrocinador.setText("");
         jTextField_nombre_empresa_patrocinador.setText("");
         jTextField_duracion_contrato_patrocinador.setText("");
     }
@@ -460,10 +459,8 @@ public class Ventana1 extends javax.swing.JFrame {
         jPanel_patrocinador = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         jTable_patrocinador = new javax.swing.JTable();
-        jLabel_nombre_biblioteca2 = new javax.swing.JLabel();
         jLabel_telefono2 = new javax.swing.JLabel();
         jLabel_direccion2 = new javax.swing.JLabel();
-        jTextField_id_patrocinador = new javax.swing.JTextField();
         jTextField_nombre_empresa_patrocinador = new javax.swing.JTextField();
         jButton_aniadir_patrocinador = new javax.swing.JButton();
         jButton_modificar_biblioteca2 = new javax.swing.JButton();
@@ -740,8 +737,6 @@ public class Ventana1 extends javax.swing.JFrame {
             jTable_patrocinador.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        jLabel_nombre_biblioteca2.setText("ID:");
-
         jLabel_telefono2.setText("Nombre Empresa:");
 
         jButton_aniadir_patrocinador.setText("Añadir");
@@ -765,7 +760,7 @@ public class Ventana1 extends javax.swing.JFrame {
             }
         });
 
-        jComboBox_tipo_patrocinio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Temporal", "Indefinido", "Parcial" }));
+        jComboBox_tipo_patrocinio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Temporal", "Parcial" }));
 
         jLabel_ciudades_bibliotecas4.setText("Tipo de Patrocinio:");
 
@@ -818,13 +813,10 @@ public class Ventana1 extends javax.swing.JFrame {
                                 .addGroup(jPanel_patrocinadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel_patrocinadorLayout.createSequentialGroup()
                                         .addGroup(jPanel_patrocinadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel_nombre_biblioteca2)
                                             .addComponent(jLabel_telefono2)
                                             .addComponent(jLabel_ciudades_bibliotecas5))
                                         .addGap(24, 24, 24)
-                                        .addGroup(jPanel_patrocinadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jTextField_id_patrocinador, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
-                                            .addComponent(jTextField_nombre_empresa_patrocinador)))
+                                        .addComponent(jTextField_nombre_empresa_patrocinador, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel_patrocinadorLayout.createSequentialGroup()
                                         .addGap(119, 119, 119)
                                         .addComponent(jTextField_duracion_contrato_patrocinador, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -851,11 +843,7 @@ public class Ventana1 extends javax.swing.JFrame {
                     .addGroup(jPanel_patrocinadorLayout.createSequentialGroup()
                         .addGap(11, 11, 11)
                         .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(42, 42, 42)
-                .addGroup(jPanel_patrocinadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel_nombre_biblioteca2)
-                    .addComponent(jTextField_id_patrocinador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(71, 71, 71)
                 .addGroup(jPanel_patrocinadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_telefono2)
                     .addComponent(jTextField_nombre_empresa_patrocinador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -874,7 +862,7 @@ public class Ventana1 extends javax.swing.JFrame {
                 .addComponent(jLabel_direccion2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(450, Short.MAX_VALUE))
+                .addContainerGap(452, Short.MAX_VALUE))
         );
 
         jTabbedPane.addTab("Patrocinador", jPanel_patrocinador);
@@ -1457,13 +1445,12 @@ public class Ventana1 extends javax.swing.JFrame {
 
     private void jButton_aniadir_patrocinadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_aniadir_patrocinadorActionPerformed
         // TODO add your handling code here:
-        if(!jTextField_id_patrocinador.getText().equals("")){
-            controller.addPatrocinador(jTextField_id_patrocinador.getText(), jTextField_nombre_empresa_patrocinador.getText(), jComboBox_tipo_patrocinio.getSelectedItem().toString(), Integer.parseInt(jTextField_duracion_contrato_patrocinador.getText()));
+        if(Integer.parseInt(jTextField_duracion_contrato_patrocinador.getText().toString()) > 0){
+            controller.addPatrocinador(jTextField_nombre_empresa_patrocinador.getText(), jComboBox_tipo_patrocinio.getSelectedItem().toString(), Integer.parseInt(jTextField_duracion_contrato_patrocinador.getText()));
             this.actualizarVistaPatrocinadores();
+            
         }
-        else{
-            System.out.println("error");
-        }
+        
         this.clearFieldsPatrocinadores();
     }//GEN-LAST:event_jButton_aniadir_patrocinadorActionPerformed
 
@@ -1726,7 +1713,6 @@ public class Ventana1 extends javax.swing.JFrame {
                 
             }
             
-            //controller.deserializarJugador();
             controller.CargarTablasBaseDatos();
             
             this.jugadores = controller.getJugadores();
@@ -1769,19 +1755,25 @@ public class Ventana1 extends javax.swing.JFrame {
     
     public void actualizarVistaPatrocinadores(){
         
-        for(int i = table_model_patrocinador.getRowCount()-1 ; i >= 0; i--){
-        
-            table_model_patrocinador.removeRow(i);
-        
-        }
-        
-        this.patrocinadores = controller.getPatrocinadores();
-        
-        
-        for(Patrocinador p : this.patrocinadores) {
-            Vector<Object> row = new Vector<Object>();
-
-            table_model_patrocinador.addRow(new Object[]{p.getId_patrocinador(),p.getNombre_empresa(),p.getTipo_patrocinio(),p.getDuracion_contrato()});
+        try {
+            for(int i = table_model_patrocinador.getRowCount()-1 ; i >= 0; i--){
+                
+                table_model_patrocinador.removeRow(i);
+                
+            }
+            
+            this.controller.CargarTablasBaseDatos();
+            
+            this.patrocinadores = controller.getPatrocinadores();
+            
+            
+            for(Patrocinador p : this.patrocinadores) {
+                Vector<Object> row = new Vector<Object>();
+                
+                table_model_patrocinador.addRow(new Object[]{p.getId_patrocinador(),p.getNombre_empresa(),p.getTipo_patrocinio(),p.getDuracion_contrato()});
+            }
+        } catch (SQLException ex) {
+            
         }
         
     }
@@ -1887,7 +1879,6 @@ public class Ventana1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_fecha_nacimiento_jugador;
     private javax.swing.JLabel jLabel_nacionalidad_jugador;
     private javax.swing.JLabel jLabel_nombre_biblioteca;
-    private javax.swing.JLabel jLabel_nombre_biblioteca2;
     private javax.swing.JLabel jLabel_nombre_jugador;
     private javax.swing.JLabel jLabel_nombre_libro;
     private javax.swing.JLabel jLabel_nombre_persona2;
@@ -1930,7 +1921,6 @@ public class Ventana1 extends javax.swing.JFrame {
     public javax.swing.JTextField jTextField_duracion_contrato_patrocinador;
     private javax.swing.JTextField jTextField_id_club;
     public javax.swing.JTextField jTextField_id_liga;
-    public javax.swing.JTextField jTextField_id_patrocinador;
     private javax.swing.JTextField jTextField_nombre_club;
     public javax.swing.JTextField jTextField_nombre_empresa_patrocinador;
     public javax.swing.JTextField jTextField_nombre_entrenador;

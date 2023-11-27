@@ -211,41 +211,11 @@ public class Controlador {
         this.conexionbd.modificarEntrenadorBd(entrenador);
     }
     
-    public void addPatrocinador(String id, String nombre_empresa, String tipo_patrocinador, int duracion_contrato){
+    public void addPatrocinador(String nombre_empresa, String tipo_patrocinador, int duracion_contrato){
 
-        boolean id_encontrada = false;
-
-        //this.deserializarPatrocinador();
-
-        for (int i = 0; (i < this.patrocinadores.size()) && (this.patrocinadores.get(i).getId_patrocinador()!= id); i++) {
-            
-            if(this.patrocinadores.get(i).getId_patrocinador().equals(id)){
-
-                id_encontrada = true;
-            }
-        }
-
-        if(id_encontrada == false){
-            
-            Patrocinador patrocinador = new Patrocinador(id, nombre_empresa, tipo_patrocinador, duracion_contrato);
-
-            if(this.patrocinadores != null){
-
-                this.patrocinadores.add(patrocinador);
-
-                //this.serializarPatrocinador();
-
-            }
-            else{
-
-                System.out.println("ERROR");
-            }
-
-        }
-        else{
-
-            System.out.println("ID REPETIDA");
-        }
+        Patrocinador patrocinador = new Patrocinador(nombre_empresa, tipo_patrocinador, duracion_contrato);
+        
+        this.conexionbd.insertarPatrocinadorBd(patrocinador);
 
     }
     
