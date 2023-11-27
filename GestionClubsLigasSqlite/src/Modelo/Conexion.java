@@ -399,6 +399,8 @@ public class Conexion {
     
     public void consultarClubes(ArrayList<Club>clubes) throws SQLException{
 
+        clubes.clear();
+        
         String sentenciaSql = "SELECT * FROM Clubes";
         PreparedStatement sentencia = this.getConnection().prepareStatement(sentenciaSql);
         try {
@@ -429,6 +431,32 @@ public class Conexion {
             }
         }
 
+    }
+    
+    public void insertarClubBd(Club club){
+
+        String sentenciaSql = "INSERT INTO Clubes (nombre, anio_fundacion) VALUES (?, ?)";
+        PreparedStatement sentencia = null;
+        try {
+            connection.setAutoCommit(false);
+            sentencia = this.getConnection().prepareStatement(sentenciaSql);
+            sentencia.setString(1,club.getNombre());
+            sentencia.setInt(2, club.getAnio_fundacion());
+            sentencia.executeUpdate();
+            
+            connection.commit();
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }
+            
     }
     
     public void consultarLigas(ArrayList<Liga>ligas) throws SQLException{

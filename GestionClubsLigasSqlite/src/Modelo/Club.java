@@ -23,6 +23,11 @@ public class Club{
         this.entrenador = entrenador;
     }
     
+    public Club(String nombre, int anio_fundacion) {
+        this.nombre = nombre;
+        this.anio_fundacion = anio_fundacion;
+    }
+    
     public Club() {
         this.id = "NULL";
         this.nombre = "NULL";

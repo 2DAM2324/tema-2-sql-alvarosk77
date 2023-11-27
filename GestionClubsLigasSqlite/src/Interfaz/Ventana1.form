@@ -1091,7 +1091,6 @@
                                                   <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Component id="jLabel_nombre_libro" alignment="0" min="-2" max="-2" attributes="0"/>
                                                           <Component id="jLabel_autor" alignment="0" min="-2" max="-2" attributes="0"/>
                                                           <Component id="jLabel_biblioteca_libro" alignment="0" min="-2" max="-2" attributes="0"/>
                                                           <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -1100,8 +1099,7 @@
                                                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                                           <Component id="jComboBox_anio_funcdacion_club" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                          <Component id="jTextField_id_club" alignment="0" pref="245" max="32767" attributes="0"/>
-                                                          <Component id="jTextField_nombre_club" alignment="0" max="32767" attributes="0"/>
+                                                          <Component id="jTextField_nombre_club" alignment="0" pref="245" max="32767" attributes="0"/>
                                                           <Component id="jTextField_aniadir_entrenador_club" alignment="0" max="32767" attributes="0"/>
                                                           <Component id="jTextField_aniadir_jugador_club" alignment="0" max="32767" attributes="0"/>
                                                       </Group>
@@ -1149,12 +1147,7 @@
                               <Component id="jScrollPane3" min="-2" pref="92" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel_nombre_libro" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField_id_club" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel_autor" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jTextField_nombre_club" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1180,7 +1173,7 @@
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jButtonDespedirJugador" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="7" max="32767" attributes="0"/>
                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jScrollPane1" min="-2" pref="158" max="-2" attributes="0"/>
@@ -1250,11 +1243,6 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="jLabel_nombre_libro">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="ID:"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel_autor">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Nombre:"/>
@@ -1367,8 +1355,6 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                 <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
               </AuxValues>
-            </Component>
-            <Component class="javax.swing.JTextField" name="jTextField_id_club">
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField_nombre_club">
             </Component>

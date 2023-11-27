@@ -421,7 +421,6 @@ public class Ventana1 extends javax.swing.JFrame {
     }
     
     public void clearFieldsClubes(){
-        jTextField_id_club.setText("");
         jTextField_nombre_club.setText("");
     }
     
@@ -491,11 +490,9 @@ public class Ventana1 extends javax.swing.JFrame {
         jPanel_club = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable_clubes = new javax.swing.JTable();
-        jLabel_nombre_libro = new javax.swing.JLabel();
         jLabel_autor = new javax.swing.JLabel();
         jLabel_biblioteca_libro = new javax.swing.JLabel();
         jComboBox_anio_funcdacion_club = new javax.swing.JComboBox<>();
-        jTextField_id_club = new javax.swing.JTextField();
         jTextField_nombre_club = new javax.swing.JTextField();
         jButton_borrar_club = new javax.swing.JButton();
         jButton_modificar_club = new javax.swing.JButton();
@@ -1023,8 +1020,6 @@ public class Ventana1 extends javax.swing.JFrame {
             jTable_clubes.getColumnModel().getColumn(3).setResizable(false);
         }
 
-        jLabel_nombre_libro.setText("ID:");
-
         jLabel_autor.setText("Nombre:");
 
         jLabel_biblioteca_libro.setText("Año Fundacion:");
@@ -1157,7 +1152,6 @@ public class Ventana1 extends javax.swing.JFrame {
                                             .addComponent(jLabel4)
                                             .addGroup(jPanel_clubLayout.createSequentialGroup()
                                                 .addGroup(jPanel_clubLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jLabel_nombre_libro)
                                                     .addComponent(jLabel_autor)
                                                     .addComponent(jLabel_biblioteca_libro)
                                                     .addComponent(jLabel2)
@@ -1165,8 +1159,7 @@ public class Ventana1 extends javax.swing.JFrame {
                                                 .addGap(29, 29, 29)
                                                 .addGroup(jPanel_clubLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                                     .addComponent(jComboBox_anio_funcdacion_club, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jTextField_id_club, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
-                                                    .addComponent(jTextField_nombre_club)
+                                                    .addComponent(jTextField_nombre_club, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
                                                     .addComponent(jTextField_aniadir_entrenador_club)
                                                     .addComponent(jTextField_aniadir_jugador_club))))
                                         .addGap(54, 54, 54)
@@ -1197,11 +1190,7 @@ public class Ventana1 extends javax.swing.JFrame {
                     .addGroup(jPanel_clubLayout.createSequentialGroup()
                         .addGap(11, 11, 11)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(42, 42, 42)
-                .addGroup(jPanel_clubLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel_nombre_libro)
-                    .addComponent(jTextField_id_club, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(71, 71, 71)
                 .addGroup(jPanel_clubLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_autor)
                     .addComponent(jTextField_nombre_club, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1223,7 +1212,7 @@ public class Ventana1 extends javax.swing.JFrame {
                     .addComponent(jButton_aniadir_jugador_club))
                 .addGap(18, 18, 18)
                 .addComponent(jButtonDespedirJugador)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1500,13 +1489,8 @@ public class Ventana1 extends javax.swing.JFrame {
 
     private void jButton_aniadir_libroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_aniadir_libroActionPerformed
         // TODO add your handling code here:
-        if(!jTextField_id_club.getText().equals("")){
-        controller.addClub(jTextField_id_club.getText(), jTextField_nombre_club.getText(), Integer.parseInt(jComboBox_anio_funcdacion_club.getSelectedItem().toString()));
+        controller.addClub(jTextField_nombre_club.getText(), Integer.parseInt(jComboBox_anio_funcdacion_club.getSelectedItem().toString()));
         this.actualizarVistaClubes();
-        }
-        else{
-            System.out.println("error");
-        }
         
     }//GEN-LAST:event_jButton_aniadir_libroActionPerformed
 
@@ -1780,25 +1764,27 @@ public class Ventana1 extends javax.swing.JFrame {
     
     public void actualizarVistaClubes(){
         
-        System.out.println("entra canelita");
-        
-        for(int i = table_model_club.getRowCount()-1 ; i >= 0; i--){
-        
-            table_model_club.removeRow(i);
-        
-        }
-        
-        
-        this.clubes = controller.getClubes();
-        
-        
-        for(Club c : this.clubes) {
+        try {
             
-            c.getEntrenador().mostrarDatosEntrenador();
+            for(int i = table_model_club.getRowCount()-1 ; i >= 0; i--){
+                
+                table_model_club.removeRow(i);
+                
+            }
             
-            Vector<Object> row = new Vector<Object>();
-
-            table_model_club.addRow(new Object[]{c.getId(),c.getNombre(),c.getAnio_fundacion(),c.getEntrenador().getId()});
+            this.controller.CargarTablasBaseDatos();
+            
+            this.clubes = controller.getClubes();
+            
+            
+            for(Club c : this.clubes) {
+                
+                Vector<Object> row = new Vector<Object>();
+                
+                table_model_club.addRow(new Object[]{c.getId(),c.getNombre(),c.getAnio_fundacion(),c.getEntrenador().getId()});
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
         }
         
     }
@@ -1880,7 +1866,6 @@ public class Ventana1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_nacionalidad_jugador;
     private javax.swing.JLabel jLabel_nombre_biblioteca;
     private javax.swing.JLabel jLabel_nombre_jugador;
-    private javax.swing.JLabel jLabel_nombre_libro;
     private javax.swing.JLabel jLabel_nombre_persona2;
     private javax.swing.JLabel jLabel_posicion_jugador;
     private javax.swing.JLabel jLabel_salario_jugador;
@@ -1919,7 +1904,6 @@ public class Ventana1 extends javax.swing.JFrame {
     public javax.swing.JTextField jTextField_apellido_entrenador;
     private javax.swing.JTextField jTextField_apellido_jugador;
     public javax.swing.JTextField jTextField_duracion_contrato_patrocinador;
-    private javax.swing.JTextField jTextField_id_club;
     public javax.swing.JTextField jTextField_id_liga;
     private javax.swing.JTextField jTextField_nombre_club;
     public javax.swing.JTextField jTextField_nombre_empresa_patrocinador;

@@ -232,43 +232,12 @@ public class Controlador {
         this.conexionbd.modificarPatrocinadorBd(patrocinador);
     }
     
-    public void addClub(String id, String nombre, int anio_fundacion){
+    public void addClub(String nombre, int anio_fundacion){
 
-        boolean id_encontrada = false;
+        Club club = new Club(nombre, anio_fundacion);
+        
+        this.conexionbd.insertarClubBd(club);
 
-        //this.deserializarClub();
-
-        for (int i = 0; (i < this.clubes.size()) && (this.clubes.get(i).getId()!= id); i++) {
-            
-            if(this.clubes.get(i).getId().equals(id)){
-
-                id_encontrada = true;
-            }
-        }
-
-        if(id_encontrada == false){
-            
-            Entrenador entrenador = new Entrenador();
-            
-            Club club = new Club(id, nombre, anio_fundacion,entrenador);
-
-            if(this.clubes != null){
-
-                this.clubes.add(club);
-
-                //this.serializarClub();
-
-            }
-            else{
-
-                System.out.println("ERROR");
-            }
-
-        }
-        else{
-
-            System.out.println("ID REPETIDA");
-        }
 
     }
     
