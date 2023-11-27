@@ -1472,7 +1472,7 @@ public class Ventana1 extends javax.swing.JFrame {
         if(id_patrocinador_seleccionado != null){
             controller.removePatrocinador(id_patrocinador_seleccionado);
             this.actualizarVistaPatrocinadores();
-            this.mostrarTablaPatrocinadoresDeUnClub();
+            //this.mostrarTablaPatrocinadoresDeUnClub();
         }
         else{
             

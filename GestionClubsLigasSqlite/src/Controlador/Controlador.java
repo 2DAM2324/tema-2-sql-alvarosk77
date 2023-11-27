@@ -221,29 +221,8 @@ public class Controlador {
     
     public void removePatrocinador(String id){
         
-        for(int i = 0; i < this.clubes.size(); i++){
-            for(int j = 0; j < this.clubes.get(i).getPatrocinadores().size(); j++){
-                if(id.equals(this.clubes.get(i).getPatrocinadores().get(j).getId_patrocinador())){
-                    this.clubes.get(i).getPatrocinadores().get(j).mostrarDatos();
-                    this.clubes.get(i).getPatrocinadores().remove(j);
-                    
-                    System.out.println("remove el canelita");
-                }
-            }
-            
-        }
+        this.conexionbd.eliminarPatrocinadorBd(id);
         
-        //this.serializarClub();
-        
-        for (int i = 0; i < this.patrocinadores.size(); i++) {
-            
-            if(id.equals(this.patrocinadores.get(i).getId_patrocinador())){
-                
-                this.patrocinadores.remove(i);
-            }
-        }
-        
-        //this.serializarPatrocinador();
     }
     
     public void modificarPatrocinador(String id, String nombre_empresa, String tipo_patrocinio, int duracion_contrato){

@@ -372,6 +372,31 @@ public class Conexion {
             
     }
     
+    public void eliminarPatrocinadorBd(String id){
+
+        String sentenciaSql = "DELETE FROM Patrocinadores WHERE id_patrocinador = ?";
+        PreparedStatement sentencia = null;
+        try {
+            connection.setAutoCommit(false);
+            sentencia = this.getConnection().prepareStatement(sentenciaSql);
+            sentencia.setInt(1,Integer.parseInt(id));
+            sentencia.executeUpdate();
+            
+            connection.commit();
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }
+            
+    }
+    
     public void consultarClubes(ArrayList<Club>clubes) throws SQLException{
 
         String sentenciaSql = "SELECT * FROM Clubes";
