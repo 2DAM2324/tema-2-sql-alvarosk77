@@ -248,17 +248,9 @@ public class Controlador {
     
     public void modificarPatrocinador(String id, String nombre_empresa, String tipo_patrocinio, int duracion_contrato){
         
+        Patrocinador patrocinador = new Patrocinador(id, nombre_empresa, tipo_patrocinio, duracion_contrato);
         
-        for (int i = 0; i < this.patrocinadores.size(); i++) {
-            
-            if(id.equals(this.patrocinadores.get(i).getId_patrocinador())){
-                
-                this.patrocinadores.get(i).setNombre_empresa(nombre_empresa);
-                this.patrocinadores.get(i).setTipo_patrocinio(tipo_patrocinio);
-                this.patrocinadores.get(i).setDuracion_contrato(duracion_contrato);
-            }
-        }
-        //this.serializarPatrocinador();
+        this.conexionbd.modificarPatrocinadorBd(patrocinador);
     }
     
     public void addClub(String id, String nombre, int anio_fundacion){

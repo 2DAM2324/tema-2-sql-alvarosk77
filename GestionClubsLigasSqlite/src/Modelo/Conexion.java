@@ -343,6 +343,35 @@ public class Conexion {
             
     }
     
+    public void modificarPatrocinadorBd(Patrocinador patrocinador){
+
+        String sentenciaSql = "UPDATE Patrocinadores SET nombre_empresa = ?, tipo_patrocinio = ?, duracion_contrato = ?" + "WHERE id_patrocinador = ?";
+        PreparedStatement sentencia = null;
+
+        try {
+            connection.setAutoCommit(false);
+            sentencia = this.getConnection().prepareStatement(sentenciaSql);
+            sentencia.setString(1,patrocinador.getNombre_empresa());
+            sentencia.setString(2, patrocinador.getTipo_patrocinio());
+            sentencia.setInt(3, patrocinador.getDuracion_contrato());
+            sentencia.setInt(4, Integer.parseInt(patrocinador.getId_patrocinador()));
+            sentencia.executeUpdate();
+            
+            connection.commit();
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }
+            
+    }
+    
     public void consultarClubes(ArrayList<Club>clubes) throws SQLException{
 
         String sentenciaSql = "SELECT * FROM Clubes";
