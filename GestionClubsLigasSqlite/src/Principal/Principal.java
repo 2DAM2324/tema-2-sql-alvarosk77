@@ -18,7 +18,6 @@ public class Principal {
 
     public static void main(String avgr[]) throws IOException, FileNotFoundException, ClassNotFoundException, NotSerializableException, SAXException, SQLException{
         
-        
         Ventana1 prueba = new Ventana1();
         prueba.setVisible(true);
         

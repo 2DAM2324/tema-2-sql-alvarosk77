@@ -908,20 +908,71 @@
             <Component class="javax.swing.JComboBox" name="jComboBox_anio_nacimiento_entrenador">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="13">
-                    <StringItem index="0" value="2005"/>
-                    <StringItem index="1" value="2004"/>
-                    <StringItem index="2" value="2003"/>
-                    <StringItem index="3" value="2002"/>
-                    <StringItem index="4" value="2001"/>
-                    <StringItem index="5" value="2000"/>
-                    <StringItem index="6" value="1999"/>
-                    <StringItem index="7" value="1998"/>
-                    <StringItem index="8" value="1997"/>
-                    <StringItem index="9" value="1996"/>
-                    <StringItem index="10" value="1995"/>
-                    <StringItem index="11" value="1994"/>
-                    <StringItem index="12" value=" "/>
+                  <StringArray count="64">
+                    <StringItem index="0" value="2002"/>
+                    <StringItem index="1" value="2001"/>
+                    <StringItem index="2" value="2000"/>
+                    <StringItem index="3" value="1999"/>
+                    <StringItem index="4" value="1998"/>
+                    <StringItem index="5" value="1997"/>
+                    <StringItem index="6" value="1996"/>
+                    <StringItem index="7" value="1995"/>
+                    <StringItem index="8" value="1994"/>
+                    <StringItem index="9" value="1993"/>
+                    <StringItem index="10" value="1992"/>
+                    <StringItem index="11" value="1991"/>
+                    <StringItem index="12" value="1990"/>
+                    <StringItem index="13" value="1989"/>
+                    <StringItem index="14" value="1988"/>
+                    <StringItem index="15" value="1987"/>
+                    <StringItem index="16" value="1986"/>
+                    <StringItem index="17" value="1985"/>
+                    <StringItem index="18" value="1984"/>
+                    <StringItem index="19" value="1983"/>
+                    <StringItem index="20" value="1982"/>
+                    <StringItem index="21" value="1981"/>
+                    <StringItem index="22" value="1980"/>
+                    <StringItem index="23" value="1979"/>
+                    <StringItem index="24" value="1978"/>
+                    <StringItem index="25" value="1977"/>
+                    <StringItem index="26" value="1976"/>
+                    <StringItem index="27" value="1975"/>
+                    <StringItem index="28" value="1974"/>
+                    <StringItem index="29" value="1973"/>
+                    <StringItem index="30" value="1972"/>
+                    <StringItem index="31" value="1971"/>
+                    <StringItem index="32" value="1970"/>
+                    <StringItem index="33" value="1969"/>
+                    <StringItem index="34" value="1968"/>
+                    <StringItem index="35" value="1967"/>
+                    <StringItem index="36" value="1966"/>
+                    <StringItem index="37" value="1965"/>
+                    <StringItem index="38" value="1964"/>
+                    <StringItem index="39" value="1963"/>
+                    <StringItem index="40" value="1962"/>
+                    <StringItem index="41" value="1961"/>
+                    <StringItem index="42" value="1960"/>
+                    <StringItem index="43" value="1959"/>
+                    <StringItem index="44" value="1958"/>
+                    <StringItem index="45" value="1957"/>
+                    <StringItem index="46" value="1956"/>
+                    <StringItem index="47" value="1955"/>
+                    <StringItem index="48" value="1954"/>
+                    <StringItem index="49" value="1953"/>
+                    <StringItem index="50" value="1952"/>
+                    <StringItem index="51" value="1951"/>
+                    <StringItem index="52" value="1950"/>
+                    <StringItem index="53" value="1949"/>
+                    <StringItem index="54" value="1948"/>
+                    <StringItem index="55" value="1947"/>
+                    <StringItem index="56" value="1946"/>
+                    <StringItem index="57" value="1945"/>
+                    <StringItem index="58" value="1944"/>
+                    <StringItem index="59" value="1943"/>
+                    <StringItem index="60" value="1942"/>
+                    <StringItem index="61" value="1941"/>
+                    <StringItem index="62" value="1940"/>
+                    <StringItem index="63" value=" "/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -938,15 +989,57 @@
             <Component class="javax.swing.JComboBox" name="jComboBox_nacionalidad_entrenador">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="8">
-                    <StringItem index="0" value="Espa&#xf1;ola"/>
-                    <StringItem index="1" value="Argentina"/>
-                    <StringItem index="2" value="Alemana"/>
-                    <StringItem index="3" value="Francesa"/>
-                    <StringItem index="4" value="Inglesa"/>
-                    <StringItem index="5" value="Italiana"/>
-                    <StringItem index="6" value="Portuguesa"/>
-                    <StringItem index="7" value=" "/>
+                  <StringArray count="50">
+                    <StringItem index="0" value="brasil"/>
+                    <StringItem index="1" value="alemania"/>
+                    <StringItem index="2" value="Argentina"/>
+                    <StringItem index="3" value="italia"/>
+                    <StringItem index="4" value="francia"/>
+                    <StringItem index="5" value="Espa&#xf1;a"/>
+                    <StringItem index="6" value="Pa&#xed;ses Bajos"/>
+                    <StringItem index="7" value="Uruguay"/>
+                    <StringItem index="8" value="inglaterra"/>
+                    <StringItem index="9" value="Portugal"/>
+                    <StringItem index="10" value="M&#xe9;xico"/>
+                    <StringItem index="11" value="Suecia"/>
+                    <StringItem index="12" value="B&#xe9;lgica"/>
+                    <StringItem index="13" value="croacia"/>
+                    <StringItem index="14" value="Colombia"/>
+                    <StringItem index="15" value="Chile"/>
+                    <StringItem index="16" value="Nigeria"/>
+                    <StringItem index="17" value="Ghana"/>
+                    <StringItem index="18" value="Costa de Marfil"/>
+                    <StringItem index="19" value="Camer&#xfa;n"/>
+                    <StringItem index="20" value="rusia"/>
+                    <StringItem index="21" value="dinamarca"/>
+                    <StringItem index="22" value="Senegal"/>
+                    <StringItem index="23" value="Polonia"/>
+                    <StringItem index="24" value="Japon"/>
+                    <StringItem index="25" value="Corea del Sur"/>
+                    <StringItem index="26" value="Estados Unidos"/>
+                    <StringItem index="27" value="Turqu&#xed;a"/>
+                    <StringItem index="28" value="Grecia"/>
+                    <StringItem index="29" value="Paraguay"/>
+                    <StringItem index="30" value="Australia"/>
+                    <StringItem index="31" value="Suiza"/>
+                    <StringItem index="32" value="Rumania"/>
+                    <StringItem index="33" value="Hungr&#xed;a"/>
+                    <StringItem index="34" value="Austria"/>
+                    <StringItem index="35" value="Escocia"/>
+                    <StringItem index="36" value="irlanda"/>
+                    <StringItem index="37" value="Egipto"/>
+                    <StringItem index="38" value="marruecos"/>
+                    <StringItem index="39" value="Argelia"/>
+                    <StringItem index="40" value="T&#xfa;nez"/>
+                    <StringItem index="41" value="Ghana"/>
+                    <StringItem index="42" value="Costa Rica"/>
+                    <StringItem index="43" value="Ecuador"/>
+                    <StringItem index="44" value="Serbia"/>
+                    <StringItem index="45" value="Montenegro"/>
+                    <StringItem index="46" value="Bosnia y Herzegovina"/>
+                    <StringItem index="47" value="Ucrania"/>
+                    <StringItem index="48" value="Eslovaquia"/>
+                    <StringItem index="49" value="Eslovenia"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -1666,20 +1759,74 @@
             <Component class="javax.swing.JComboBox" name="jComboBox_fecha_nacimiento_jugador">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="13">
-                    <StringItem index="0" value="2006"/>
-                    <StringItem index="1" value="2005"/>
-                    <StringItem index="2" value="2004"/>
-                    <StringItem index="3" value="2003"/>
-                    <StringItem index="4" value="2002"/>
-                    <StringItem index="5" value="2001"/>
-                    <StringItem index="6" value="2000"/>
-                    <StringItem index="7" value="1999"/>
-                    <StringItem index="8" value="1998"/>
-                    <StringItem index="9" value="1997"/>
-                    <StringItem index="10" value="1996"/>
-                    <StringItem index="11" value="1995"/>
-                    <StringItem index="12" value="1994"/>
+                  <StringArray count="67">
+                    <StringItem index="0" value="2005"/>
+                    <StringItem index="1" value="2004"/>
+                    <StringItem index="2" value="2003"/>
+                    <StringItem index="3" value="2002"/>
+                    <StringItem index="4" value="2001"/>
+                    <StringItem index="5" value="2000"/>
+                    <StringItem index="6" value="1999"/>
+                    <StringItem index="7" value="1998"/>
+                    <StringItem index="8" value="1997"/>
+                    <StringItem index="9" value="1996"/>
+                    <StringItem index="10" value="1995"/>
+                    <StringItem index="11" value="1994"/>
+                    <StringItem index="12" value="1993"/>
+                    <StringItem index="13" value="1992"/>
+                    <StringItem index="14" value="1991"/>
+                    <StringItem index="15" value="1990"/>
+                    <StringItem index="16" value="1989"/>
+                    <StringItem index="17" value="1988"/>
+                    <StringItem index="18" value="1987"/>
+                    <StringItem index="19" value="1986"/>
+                    <StringItem index="20" value="1985"/>
+                    <StringItem index="21" value="1984"/>
+                    <StringItem index="22" value="1983"/>
+                    <StringItem index="23" value="1982"/>
+                    <StringItem index="24" value="1981"/>
+                    <StringItem index="25" value="1980"/>
+                    <StringItem index="26" value="1979"/>
+                    <StringItem index="27" value="1978"/>
+                    <StringItem index="28" value="1977"/>
+                    <StringItem index="29" value="1976"/>
+                    <StringItem index="30" value="1975"/>
+                    <StringItem index="31" value="1974"/>
+                    <StringItem index="32" value="1973"/>
+                    <StringItem index="33" value="1972"/>
+                    <StringItem index="34" value="1971"/>
+                    <StringItem index="35" value="1970"/>
+                    <StringItem index="36" value="1969"/>
+                    <StringItem index="37" value="1968"/>
+                    <StringItem index="38" value="1967"/>
+                    <StringItem index="39" value="1966"/>
+                    <StringItem index="40" value="1965"/>
+                    <StringItem index="41" value="1964"/>
+                    <StringItem index="42" value="1963"/>
+                    <StringItem index="43" value="1962"/>
+                    <StringItem index="44" value="1961"/>
+                    <StringItem index="45" value="1960"/>
+                    <StringItem index="46" value="1959"/>
+                    <StringItem index="47" value="1958"/>
+                    <StringItem index="48" value="1957"/>
+                    <StringItem index="49" value="1956"/>
+                    <StringItem index="50" value="1955"/>
+                    <StringItem index="51" value="1954"/>
+                    <StringItem index="52" value="1953"/>
+                    <StringItem index="53" value="1952"/>
+                    <StringItem index="54" value="1951"/>
+                    <StringItem index="55" value="1950"/>
+                    <StringItem index="56" value="1949"/>
+                    <StringItem index="57" value="1948"/>
+                    <StringItem index="58" value="1947"/>
+                    <StringItem index="59" value="1946"/>
+                    <StringItem index="60" value="1945"/>
+                    <StringItem index="61" value="1944"/>
+                    <StringItem index="62" value="1943"/>
+                    <StringItem index="63" value="1942"/>
+                    <StringItem index="64" value="1941"/>
+                    <StringItem index="65" value="1940"/>
+                    <StringItem index="66" value=" "/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -1738,13 +1885,57 @@
             <Component class="javax.swing.JComboBox" name="jComboBox_nacionalidad_jugador">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="6">
-                    <StringItem index="0" value="Espa&#xf1;ola"/>
-                    <StringItem index="1" value="Francesa"/>
-                    <StringItem index="2" value="Inglesa"/>
-                    <StringItem index="3" value="Alemana"/>
-                    <StringItem index="4" value="Argentina"/>
-                    <StringItem index="5" value="Peruana"/>
+                  <StringArray count="50">
+                    <StringItem index="0" value="brasil"/>
+                    <StringItem index="1" value="alemania"/>
+                    <StringItem index="2" value="Argentina"/>
+                    <StringItem index="3" value="italia"/>
+                    <StringItem index="4" value="francia"/>
+                    <StringItem index="5" value="Espa&#xf1;a"/>
+                    <StringItem index="6" value="Pa&#xed;ses Bajos"/>
+                    <StringItem index="7" value="Uruguay"/>
+                    <StringItem index="8" value="inglaterra"/>
+                    <StringItem index="9" value="Portugal"/>
+                    <StringItem index="10" value="M&#xe9;xico"/>
+                    <StringItem index="11" value="Suecia"/>
+                    <StringItem index="12" value="B&#xe9;lgica"/>
+                    <StringItem index="13" value="croacia"/>
+                    <StringItem index="14" value="Colombia"/>
+                    <StringItem index="15" value="Chile"/>
+                    <StringItem index="16" value="Nigeria"/>
+                    <StringItem index="17" value="Ghana"/>
+                    <StringItem index="18" value="Costa de Marfil"/>
+                    <StringItem index="19" value="Camer&#xfa;n"/>
+                    <StringItem index="20" value="rusia"/>
+                    <StringItem index="21" value="dinamarca"/>
+                    <StringItem index="22" value="Senegal"/>
+                    <StringItem index="23" value="Polonia"/>
+                    <StringItem index="24" value="Japon"/>
+                    <StringItem index="25" value="Corea del Sur"/>
+                    <StringItem index="26" value="Estados Unidos"/>
+                    <StringItem index="27" value="Turqu&#xed;a"/>
+                    <StringItem index="28" value="Grecia"/>
+                    <StringItem index="29" value="Paraguay"/>
+                    <StringItem index="30" value="Australia"/>
+                    <StringItem index="31" value="Suiza"/>
+                    <StringItem index="32" value="Rumania"/>
+                    <StringItem index="33" value="Hungr&#xed;a"/>
+                    <StringItem index="34" value="Austria"/>
+                    <StringItem index="35" value="Escocia"/>
+                    <StringItem index="36" value="irlanda"/>
+                    <StringItem index="37" value="Egipto"/>
+                    <StringItem index="38" value="marruecos"/>
+                    <StringItem index="39" value="Argelia"/>
+                    <StringItem index="40" value="T&#xfa;nez"/>
+                    <StringItem index="41" value="Ghana"/>
+                    <StringItem index="42" value="Costa Rica"/>
+                    <StringItem index="43" value="Ecuador"/>
+                    <StringItem index="44" value="Serbia"/>
+                    <StringItem index="45" value="Montenegro"/>
+                    <StringItem index="46" value="Bosnia y Herzegovina"/>
+                    <StringItem index="47" value="Ucrania"/>
+                    <StringItem index="48" value="Eslovaquia"/>
+                    <StringItem index="49" value="Eslovenia"/>
                   </StringArray>
                 </Property>
               </Properties>

@@ -256,6 +256,31 @@ public class Conexion {
             
     }
     
+    public void eliminarEntrenadorBd(String id){
+
+        String sentenciaSql = "DELETE FROM Entrenadores WHERE id_entrenador = ?";
+        PreparedStatement sentencia = null;
+        try {
+            connection.setAutoCommit(false);
+            sentencia = this.getConnection().prepareStatement(sentenciaSql);
+            sentencia.setInt(1,Integer.parseInt(id));
+            sentencia.executeUpdate();
+            
+            connection.commit();
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }
+            
+    }
+    
     public void consultarPatrocinadores(ArrayList<Patrocinador>patrocinadores) throws SQLException{
 
         String sentenciaSql = "SELECT * FROM Patrocinadores";

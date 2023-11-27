@@ -199,39 +199,9 @@ public class Controlador {
     }
     
     public void removeEntrenador(String id){
-        
-         System.out.println("entra canelita remove");
-        
-         int pos = 0;
-         
-        for(int i = 0; i < this.clubes.size(); i++){
-            
-            if(this.clubes.get(i).getEntrenador() != null && id.equals(this.clubes.get(i).getEntrenador().getId())){
-                this.clubes.get(i).getEntrenador().mostrarDatosEntrenador();
-                this.clubes.get(i).setEntrenador(null);
-                pos = i;
-            }
-            
-        }
-        
-        if(this.clubes.get(pos).getEntrenador() == null){
-            
-            System.out.println("canelita esta null");
-        }
-        
-        for (int i = 0; i < this.entrenadores.size(); i++) {
-            
-            if(id.equals(this.entrenadores.get(i).getId())){
-                
-                this.entrenadores.remove(i);
-            }
-        }
-        
-        //this.serializarClub();
-        
-        //this.serializarEntrenador();
-        
-         System.out.println("sale canelita remove");
+
+        this.conexionbd.eliminarEntrenadorBd(id);
+
     }
     
     public void modificarEntrenador(String id, String nombre, String apellido, String anio_nacimiento, String nacionalidad){

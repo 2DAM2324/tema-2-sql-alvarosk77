@@ -930,11 +930,11 @@ public class Ventana1 extends javax.swing.JFrame {
             }
         });
 
-        jComboBox_anio_nacimiento_entrenador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", " " }));
+        jComboBox_anio_nacimiento_entrenador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972", "1971", "1970", "1969", "1968", "1967", "1966", "1965", "1964", "1963", "1962", "1961", "1960", "1959", "1958", "1957", "1956", "1955", "1954", "1953", "1952", "1951", "1950", "1949", "1948", "1947", "1946", "1945", "1944", "1943", "1942", "1941", "1940", " " }));
 
         jLabel_ciudades_bibliotecas2.setText("Año Nacimiento:");
 
-        jComboBox_nacionalidad_entrenador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Española", "Argentina", "Alemana", "Francesa", "Inglesa", "Italiana", "Portuguesa", " " }));
+        jComboBox_nacionalidad_entrenador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "brasil", "alemania", "Argentina", "italia", "francia", "España", "Países Bajos", "Uruguay", "inglaterra", "Portugal", "México", "Suecia", "Bélgica", "croacia", "Colombia", "Chile", "Nigeria", "Ghana", "Costa de Marfil", "Camerún", "rusia", "dinamarca", "Senegal", "Polonia", "Japon", "Corea del Sur", "Estados Unidos", "Turquía", "Grecia", "Paraguay", "Australia", "Suiza", "Rumania", "Hungría", "Austria", "Escocia", "irlanda", "Egipto", "marruecos", "Argelia", "Túnez", "Ghana", "Costa Rica", "Ecuador", "Serbia", "Montenegro", "Bosnia y Herzegovina", "Ucrania", "Eslovaquia", "Eslovenia" }));
 
         jLabel_ciudades_bibliotecas3.setText("Nacionalidad:");
 
@@ -1283,7 +1283,7 @@ public class Ventana1 extends javax.swing.JFrame {
 
         jLabel_fecha_nacimiento_jugador.setText("Fecha Nacimiento:");
 
-        jComboBox_fecha_nacimiento_jugador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2006", "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994" }));
+        jComboBox_fecha_nacimiento_jugador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2005", "2004", "2003", "2002", "2001", "2000", "1999", "1998", "1997", "1996", "1995", "1994", "1993", "1992", "1991", "1990", "1989", "1988", "1987", "1986", "1985", "1984", "1983", "1982", "1981", "1980", "1979", "1978", "1977", "1976", "1975", "1974", "1973", "1972", "1971", "1970", "1969", "1968", "1967", "1966", "1965", "1964", "1963", "1962", "1961", "1960", "1959", "1958", "1957", "1956", "1955", "1954", "1953", "1952", "1951", "1950", "1949", "1948", "1947", "1946", "1945", "1944", "1943", "1942", "1941", "1940", " " }));
 
         jButton_borrar_jugador.setText("Borrar");
         jButton_borrar_jugador.addActionListener(new java.awt.event.ActionListener() {
@@ -1319,7 +1319,7 @@ public class Ventana1 extends javax.swing.JFrame {
             }
         });
 
-        jComboBox_nacionalidad_jugador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Española", "Francesa", "Inglesa", "Alemana", "Argentina", "Peruana" }));
+        jComboBox_nacionalidad_jugador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "brasil", "alemania", "Argentina", "italia", "francia", "España", "Países Bajos", "Uruguay", "inglaterra", "Portugal", "México", "Suecia", "Bélgica", "croacia", "Colombia", "Chile", "Nigeria", "Ghana", "Costa de Marfil", "Camerún", "rusia", "dinamarca", "Senegal", "Polonia", "Japon", "Corea del Sur", "Estados Unidos", "Turquía", "Grecia", "Paraguay", "Australia", "Suiza", "Rumania", "Hungría", "Austria", "Escocia", "irlanda", "Egipto", "marruecos", "Argelia", "Túnez", "Ghana", "Costa Rica", "Ecuador", "Serbia", "Montenegro", "Bosnia y Herzegovina", "Ucrania", "Eslovaquia", "Eslovenia" }));
 
         jLabel_nacionalidad_jugador.setText("Nacionalidad:");
 
@@ -1434,7 +1434,7 @@ public class Ventana1 extends javax.swing.JFrame {
         // TODO add your handling code here
         if(id_entrenador_seleccionado != null){
             controller.removeEntrenador(id_entrenador_seleccionado);
-            this.actualizarVistaClubes();
+            //this.actualizarVistaClubes();
             this.actualizarVistaEntrenadores();
         }
         else{
