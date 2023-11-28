@@ -179,6 +179,30 @@ public class Controlador {
         }
     }
     
+    public void cargarEntrenadoresBd(){
+        try {
+            conexionbd.consultarEntrenadores(this.entrenadores);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    public void cargarClubesBd(){
+        try {
+            conexionbd.consultarClubes(this.clubes);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
+    public void cargarEntrenadoresLibresBd(){
+        try {
+            conexionbd.consultarEntrenadoresLibresBd(this.entrenadores);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
     
     public void addJugador(String nombre, String apellido, String anio_nacimiento, String nacionalidad, String posicion, double salario){
 
@@ -384,9 +408,9 @@ public class Controlador {
         }
     }
     
-    public void addEntrenadorClub(String id_club, String id_entrenador){
+    public void addEntrenadorClub(String id_club){
         
-        this.comprobarIdEntrenador(id_entrenador);
+        /*this.comprobarIdEntrenador(id_entrenador);
         
         if((id_entrenador_encontrada == true) && (numero_veces_id_entrenador_repetida < 1)){
             for(int i = 0; i < this.entrenadores.size(); i++){
@@ -401,7 +425,7 @@ public class Controlador {
             }
             
             //this.serializarClub();
-        }
+        }*/
     }
     
     public void despedirEntrenadorClub(String id){

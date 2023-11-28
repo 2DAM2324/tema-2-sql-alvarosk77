@@ -1,6 +1,7 @@
 
 package Modelo;
 
+import java.lang.reflect.Array;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -511,6 +512,46 @@ public class Conexion {
             }
         }
             
+    }
+    
+    public void consultarEntrenadoresLibresBd(ArrayList<Entrenador>entrenadores) throws SQLException{
+
+        entrenadores.clear();
+        
+        String sentenciaSql = "SELECT * " +
+        "FROM Entrenadores " +
+        "LEFT JOIN Clubes ON Entrenadores.id_entrenador = Clubes.id_entrenador " +
+        "WHERE Clubes.id_entrenador IS NULL";
+        PreparedStatement sentencia = this.getConnection().prepareStatement(sentenciaSql);
+        try {
+
+            ResultSet resultado_consulta = sentencia.executeQuery();
+            int i = 0;
+            while (resultado_consulta.next()) {
+                    // Obtener los datos de cada fila
+                Entrenador entrenador = new Entrenador();
+                entrenador.setId(Integer.toString(resultado_consulta.getInt("id_entrenador")));
+                entrenador.setNombre(resultado_consulta.getString("nombre"));
+                entrenador.setApellido(resultado_consulta.getString("apellido"));
+                entrenador.setAnio_nacimiento(resultado_consulta.getString("anio_nacimiento"));
+                entrenador.setNacionalidad(resultado_consulta.getString("nacionalidad"));
+
+
+                entrenadores.add(entrenador);
+
+                i++;
+            }
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }   
     }
     
     public void consultarLigas(ArrayList<Liga>ligas) throws SQLException{
