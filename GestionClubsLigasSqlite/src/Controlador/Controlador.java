@@ -408,24 +408,10 @@ public class Controlador {
         }
     }
     
-    public void addEntrenadorClub(String id_club){
+    public void addEntrenadorClub(int id_club, int id_entrenador){
         
-        /*this.comprobarIdEntrenador(id_entrenador);
+        this.conexionbd.contratarEntrenadorClub(id_club, id_entrenador);
         
-        if((id_entrenador_encontrada == true) && (numero_veces_id_entrenador_repetida < 1)){
-            for(int i = 0; i < this.entrenadores.size(); i++){
-                if(id_entrenador.equals(this.entrenadores.get(i).getId())){
-                    for (int j = 0; j < this.clubes.size(); j++) {
-                        if(id_club.equals(this.clubes.get(j).getId())){
-                            this.clubes.get(j).setEntrenador(this.entrenadores.get(i));
-                            this.clubes.get(j).getEntrenador().setId(this.entrenadores.get(i).getId());
-                        }
-                    }
-                }
-            }
-            
-            //this.serializarClub();
-        }*/
     }
     
     public void despedirEntrenadorClub(String id){
