@@ -1678,7 +1678,7 @@ public class Ventana1 extends javax.swing.JFrame {
     private void jButtonDespedirEntrenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDespedirEntrenadorActionPerformed
         // TODO add your handling code here:
         if(id_club_seleccionado != null){
-            controller.despedirEntrenadorClub(id_club_seleccionado);
+            controller.despedirEntrenadorClub(Integer.parseInt(id_club_seleccionado));
             
             this.actualizarVistaClubes();
         }

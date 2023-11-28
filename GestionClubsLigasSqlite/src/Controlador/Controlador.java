@@ -410,19 +410,27 @@ public class Controlador {
     
     public void addEntrenadorClub(int id_club, int id_entrenador){
         
-        this.conexionbd.contratarEntrenadorClub(id_club, id_entrenador);
-        
-    }
-    
-    public void despedirEntrenadorClub(String id){
-        
-        for (int i = 0; i < this.clubes.size(); i++) {
-            if(id.equals(this.clubes.get(i).getId())){
-                this.clubes.get(i).setEntrenador(null);
+        boolean contiene_entrenador = false;
+
+        for(int i = 0; i < this.clubes.size(); i++){
+            if(this.clubes.get(i).getId().equals(Integer.toString(id_club))){
+                if(!this.clubes.get(i).getEntrenador().getId().equals(Integer.toString(0))){
+                    contiene_entrenador = true;
+                }
             }
         }
         
-        //this.serializarClub();
+        if(contiene_entrenador == false){
+        
+            this.conexionbd.contratarEntrenadorClub(id_club, id_entrenador);
+        }
+        
+    }
+    
+    public void despedirEntrenadorClub(int id_club){
+
+        this.conexionbd.despedirEntrenadorClub(id_club);
+
     }
     
     public void comprobarIdJugador(String id){
