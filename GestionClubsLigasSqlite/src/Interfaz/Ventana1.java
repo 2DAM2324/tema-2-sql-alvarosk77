@@ -270,7 +270,6 @@ public class Ventana1 extends javax.swing.JFrame {
         
         jTabbedPane.addTab("Club", null, scrollPa);
         
-        //controller.deserializarClub();
         
         this.clubes = controller.getClubes();
         
@@ -283,7 +282,9 @@ public class Ventana1 extends javax.swing.JFrame {
 
             table_model_club.addRow(new Object[]{c.getId(),c.getNombre(),c.getAnio_fundacion(),c.getEntrenador().getId()});
         }
-        
+                
+        this.actualizarJcomboxIdJugadores();
+ 
         jTable_clubes.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
         @Override
         public void valueChanged(ListSelectionEvent e) {
@@ -303,6 +304,23 @@ public class Ventana1 extends javax.swing.JFrame {
         });
     }
     
+    public void actualizarJcomboxIdJugadores(){
+        
+        jComboBox_idJugadores.removeAllItems();
+        
+        controller.cargarJugadoresBd();
+        
+        this.jugadores = controller.getJugadores();
+        
+        for(Jugador j : this.jugadores){
+            System.out.println("Nombre = " + j.getNombre() + " " +  j.getId_club());
+            if(j.getId_club() == 0){
+                jComboBox_idJugadores.addItem(Integer.toString(j.getId()));
+            }
+            
+        }
+    }
+    
     public void mostrarTablaJugadoresDeUnClub(){
         
         for(int i = table_model_jugadores_club.getRowCount()-1 ; i >= 0; i--){
@@ -311,7 +329,6 @@ public class Ventana1 extends javax.swing.JFrame {
         
         }
         
-        //controller.deserializarClub();
         
         this.jugadores_club = controller.getClubById(id_club_seleccionado).getJugadores();
         
@@ -501,7 +518,6 @@ public class Ventana1 extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jTextField_aniadir_jugador_club = new javax.swing.JTextField();
         jButton_aniadir_jugador_club = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableJugadoresClub = new javax.swing.JTable();
@@ -515,6 +531,7 @@ public class Ventana1 extends javax.swing.JFrame {
         jButtonDespedirEntrenador = new javax.swing.JButton();
         jButtonDespedirJugador = new javax.swing.JButton();
         jButtonDespedirPatrocinador = new javax.swing.JButton();
+        jComboBox_idJugadores = new javax.swing.JComboBox<>();
         jPanel_jugador = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable_jugador = new javax.swing.JTable();
@@ -839,8 +856,8 @@ public class Ventana1 extends javax.swing.JFrame {
                         .addComponent(jButton_borrar_patrocinador))
                     .addGroup(jPanel_patrocinadorLayout.createSequentialGroup()
                         .addGap(11, 11, 11)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(71, 71, 71)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(27, 27, 27)
                 .addGroup(jPanel_patrocinadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_telefono2)
                     .addComponent(jTextField_nombre_empresa_patrocinador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -971,8 +988,8 @@ public class Ventana1 extends javax.swing.JFrame {
                         .addComponent(jButton_borrar_entrenador))
                     .addGroup(jPanel_entrenadorLayout.createSequentialGroup()
                         .addGap(11, 11, 11)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(79, 79, 79)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(28, 28, 28)
                 .addGroup(jPanel_entrenadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_telefono1)
                     .addComponent(jTextField_nombre_entrenador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1119,6 +1136,12 @@ public class Ventana1 extends javax.swing.JFrame {
             }
         });
 
+        jComboBox_idJugadores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox_idJugadoresActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel_clubLayout = new javax.swing.GroupLayout(jPanel_club);
         jPanel_club.setLayout(jPanel_clubLayout);
         jPanel_clubLayout.setHorizontalGroup(
@@ -1161,7 +1184,7 @@ public class Ventana1 extends javax.swing.JFrame {
                                                     .addComponent(jComboBox_anio_funcdacion_club, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addComponent(jTextField_nombre_club, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
                                                     .addComponent(jTextField_aniadir_entrenador_club)
-                                                    .addComponent(jTextField_aniadir_jugador_club))))
+                                                    .addComponent(jComboBox_idJugadores, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                         .addGap(54, 54, 54)
                                         .addGroup(jPanel_clubLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1189,8 +1212,8 @@ public class Ventana1 extends javax.swing.JFrame {
                         .addComponent(jButton_borrar_club))
                     .addGroup(jPanel_clubLayout.createSequentialGroup()
                         .addGap(11, 11, 11)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(71, 71, 71)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(29, 29, 29)
                 .addGroup(jPanel_clubLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_autor)
                     .addComponent(jTextField_nombre_club, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1207,9 +1230,9 @@ public class Ventana1 extends javax.swing.JFrame {
                 .addComponent(jButtonDespedirEntrenador)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel_clubLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField_aniadir_jugador_club, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
-                    .addComponent(jButton_aniadir_jugador_club))
+                    .addComponent(jButton_aniadir_jugador_club)
+                    .addComponent(jComboBox_idJugadores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButtonDespedirJugador)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
@@ -1350,8 +1373,8 @@ public class Ventana1 extends javax.swing.JFrame {
                         .addComponent(jButton_borrar_jugador))
                     .addGroup(jPanel_jugadorLayout.createSequentialGroup()
                         .addGap(11, 11, 11)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(79, 79, 79)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(31, 31, 31)
                 .addGroup(jPanel_jugadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField_nombre_jugador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel_nombre_jugador))
@@ -1558,7 +1581,7 @@ public class Ventana1 extends javax.swing.JFrame {
 
     private void jButton_aniadir_jugador_clubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_aniadir_jugador_clubActionPerformed
         // TODO add your handling code here:
-        if(id_club_seleccionado != null){
+        /*if(id_club_seleccionado != null){
             controller.addJugadorClub(id_club_seleccionado, jTextField_aniadir_jugador_club.getText());
             this.mostrarTablaJugadoresDeUnClub();
             
@@ -1566,7 +1589,7 @@ public class Ventana1 extends javax.swing.JFrame {
         else{
                 System.out.println("error");
         }
-        jTextField_aniadir_jugador_club.setText("");
+        jTextField_aniadir_jugador_club.setText("");*/
     }//GEN-LAST:event_jButton_aniadir_jugador_clubActionPerformed
 
     private void jButton_aniadir_patrocinador_clubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_aniadir_patrocinador_clubActionPerformed
@@ -1594,6 +1617,7 @@ public class Ventana1 extends javax.swing.JFrame {
         if(Double.parseDouble(jTextField_salario_jugador.getText()) > 0.0){
             controller.addJugador(jTextField_nombre_jugador.getText(),jTextField_apellido_jugador.getText() ,jComboBox_fecha_nacimiento_jugador.getSelectedItem().toString(), jComboBox_nacionalidad_jugador.getSelectedItem().toString(), jComboBox_posicion_jugador.getSelectedItem().toString(),Double.parseDouble(jTextField_salario_jugador.getText()));
             this.actualizarVistaJugadores();
+            this.actualizarVistaClubes();
         }
         else{
             this.clearFieldsJugadores();
@@ -1621,6 +1645,7 @@ public class Ventana1 extends javax.swing.JFrame {
             controller.removeJugador(id_jugador_seleccionado);
 
             this.actualizarVistaJugadores();
+            this.actualizarVistaClubes();
 
             //this.mostrarTablaJugadoresDeUnClub();
         }
@@ -1685,6 +1710,11 @@ public class Ventana1 extends javax.swing.JFrame {
     private void jButton_aniadir_jugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_aniadir_jugadorActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton_aniadir_jugadorActionPerformed
+
+    private void jComboBox_idJugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox_idJugadoresActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jComboBox_idJugadoresActionPerformed
     
     
     
@@ -1776,6 +1806,8 @@ public class Ventana1 extends javax.swing.JFrame {
             
             this.clubes = controller.getClubes();
             
+            this.actualizarJcomboxIdJugadores();
+            
             
             for(Club c : this.clubes) {
                 
@@ -1836,6 +1868,7 @@ public class Ventana1 extends javax.swing.JFrame {
     public javax.swing.JComboBox<String> jComboBox_anio_funcdacion_club;
     public javax.swing.JComboBox<String> jComboBox_anio_nacimiento_entrenador;
     private javax.swing.JComboBox<String> jComboBox_fecha_nacimiento_jugador;
+    private javax.swing.JComboBox<String> jComboBox_idJugadores;
     public javax.swing.JComboBox<String> jComboBox_nacionalidad_entrenador;
     private javax.swing.JComboBox<String> jComboBox_nacionalidad_jugador;
     public javax.swing.JComboBox<String> jComboBox_pais_liga;
@@ -1899,7 +1932,6 @@ public class Ventana1 extends javax.swing.JFrame {
     private javax.swing.JTable jTable_patrocinador;
     public javax.swing.JTextField jTextField_aniadir_club_liga;
     private javax.swing.JTextField jTextField_aniadir_entrenador_club;
-    private javax.swing.JTextField jTextField_aniadir_jugador_club;
     private javax.swing.JTextField jTextField_aniadir_patrocinador_club;
     public javax.swing.JTextField jTextField_apellido_entrenador;
     private javax.swing.JTextField jTextField_apellido_jugador;

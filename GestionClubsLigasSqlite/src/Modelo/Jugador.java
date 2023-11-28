@@ -18,10 +18,9 @@ public class Jugador {
     private String nacionalidad;
     private String posicion;
     private double salario;
+    private int id_club;
 
-    public Jugador(int id, String nombre, String apellido, String anio_nacimiento, String nacionalidad, String posicion, double salario) {
-        
-        
+    public Jugador(int id, String nombre, String apellido, String anio_nacimiento, String nacionalidad, String posicion, double salario, int id_club) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -29,6 +28,20 @@ public class Jugador {
         this.nacionalidad = nacionalidad;
         this.posicion = posicion;
         this.salario = salario;
+        this.id_club = id_club;
+    }
+
+
+    
+    public Jugador(String nombre, String apellido, String anio_nacimiento, String nacionalidad, String posicion, double salario, int id_club) {
+        
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.anio_nacimiento = anio_nacimiento;
+        this.nacionalidad = nacionalidad;
+        this.posicion = posicion;
+        this.salario = salario;
+        this.id_club = id_club;
     }
     
     public Jugador(String nombre, String apellido, String anio_nacimiento, String nacionalidad, String posicion, double salario) {
@@ -39,11 +52,11 @@ public class Jugador {
         this.nacionalidad = nacionalidad;
         this.posicion = posicion;
         this.salario = salario;
+        this.id_club = id_club;
     }
     
  
     public Jugador() {
-        
         
         this.id = 0;
         this.nombre = "NULL";
@@ -52,6 +65,7 @@ public class Jugador {
         this.nacionalidad = "NULL";
         this.posicion = "NULL";
         this.salario = 0.0;
+        this.id_club = 0;
     }
 
 
@@ -110,6 +124,15 @@ public class Jugador {
     public void setSalario(double salario) {
         this.salario = salario;
     }
+
+    public int getId_club() {
+        return id_club;
+    }
+
+    public void setId_club(int id_club) {
+        this.id_club = id_club;
+    }
+    
 
     @Override
     public String toString() {

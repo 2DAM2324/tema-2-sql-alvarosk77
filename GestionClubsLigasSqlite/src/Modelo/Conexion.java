@@ -51,12 +51,14 @@ public class Conexion {
                     // Obtener los datos de cada fila
                 Jugador jugador = new Jugador();
                 jugador.setId(resultado_consulta.getInt("id_jugador"));
+                jugador.setId_club(resultado_consulta.getInt("id_club"));
                 jugador.setNombre(resultado_consulta.getString("nombre"));
                 jugador.setApellido(resultado_consulta.getString("apellido"));
                 jugador.setanio_nacimiento(resultado_consulta.getString("anio_nacimiento"));
                 jugador.setNacionalidad(resultado_consulta.getString("nacionalidad"));
                 jugador.setPosicion(resultado_consulta.getString("posicion"));
                 jugador.setSalario(resultado_consulta.getDouble("salario"));
+
                 jugadores.add(jugador);
 
                 i++;
@@ -102,7 +104,6 @@ public class Conexion {
                }
             }
         }
-            
     }
     
     public void modificarJugadorBd(Jugador jugador){
@@ -470,6 +471,31 @@ public class Conexion {
             sentencia.setString(1,club.getNombre());
             sentencia.setInt(2, club.getAnio_fundacion());
             sentencia.setInt(3, Integer.parseInt(club.getId()));
+            sentencia.executeUpdate();
+            
+            connection.commit();
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }
+            
+    }
+    
+    public void eliminarClubBd(String id){
+
+        String sentenciaSql = "DELETE FROM Clubes WHERE id_club = ?";
+        PreparedStatement sentencia = null;
+        try {
+            connection.setAutoCommit(false);
+            sentencia = this.getConnection().prepareStatement(sentenciaSql);
+            sentencia.setInt(1,Integer.parseInt(id));
             sentencia.executeUpdate();
             
             connection.commit();

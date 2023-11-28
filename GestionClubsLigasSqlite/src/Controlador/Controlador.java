@@ -19,6 +19,8 @@ import java.io.ObjectOutputStream;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -169,6 +171,14 @@ public class Controlador {
         conexionbd.consultarLigas(this.ligas);
     }
     
+    public void cargarJugadoresBd(){
+        try {
+            conexionbd.consultarJugadores(this.jugadores);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
     
     public void addJugador(String nombre, String apellido, String anio_nacimiento, String nacionalidad, String posicion, double salario){
 
@@ -185,7 +195,7 @@ public class Controlador {
     
     public void modificarJugador(int id, String nombre, String apellido, double salario, String anio_nacimiento, String nacionalidad, String posicion){
 
-        Jugador jugador = new Jugador(id, nombre, apellido, anio_nacimiento, nacionalidad, posicion, salario);
+        Jugador jugador = new Jugador(nombre, apellido, anio_nacimiento, nacionalidad, posicion, salario);
         
         this.conexionbd.modificarJugadorBd(jugador);
     }
@@ -243,34 +253,7 @@ public class Controlador {
     
     public void removeClub(String id){
         
-        for (int i = 0; i < this.patrocinadores.size(); i++) {
-            for(int j = 0; j < this.patrocinadores.get(i).getClubes().size(); j++){
-                if(id.equals(this.patrocinadores.get(i).getClubes().get(j).getId())){
-                    this.patrocinadores.get(i).getClubes().remove(j);
-                }
-            }
-        }
-        //this.serializarPatrocinador();
-        
-        for (int i = 0; i < this.ligas.size(); i++) {
-            for(int j = 0; j < this.ligas.get(i).getClubes().size(); j++){
-                if(id.equals(this.ligas.get(i).getClubes().get(j).getId())){
-                    this.ligas.get(i).getClubes().remove(j);
-                }
-            }
-        }
-        
-        //this.serializarLiga();
-        
-        for (int i = 0; i < this.clubes.size(); i++) {
-            
-            if(id.equals(this.clubes.get(i).getId())){
-                
-                this.clubes.remove(i);
-            }
-        }
-        
-        //this.serializarClub();
+        this.conexionbd.eliminarClubBd(id);
     }
     
     public void modificarClub(String id, String nombre, int anio_fundacion){
@@ -280,6 +263,7 @@ public class Controlador {
         this.conexionbd.modificarClubBd(club);
         
     }
+    
     
     public void addLiga(String id, String nombre, String pais, int temporada){
 
