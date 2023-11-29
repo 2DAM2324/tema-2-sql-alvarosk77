@@ -609,6 +609,113 @@ public class Conexion {
         
     }
     
+    public void consultarJugadoresLibresBd(ArrayList<Jugador>jugadores) throws SQLException{
+
+        jugadores.clear();
+        
+        String sentenciaSql = "SELECT * " + "FROM Jugadores " + "WHERE id_club IS NULL";
+        PreparedStatement sentencia = this.getConnection().prepareStatement(sentenciaSql);
+        try {
+
+            ResultSet resultado_consulta = sentencia.executeQuery();
+            int i = 0;
+            while (resultado_consulta.next()) {
+                    // Obtener los datos de cada fila
+                Jugador jugador = new Jugador();
+                jugador.setId(resultado_consulta.getInt("id_jugador"));
+                jugador.setId_club(resultado_consulta.getInt("id_club"));
+                jugador.setNombre(resultado_consulta.getString("nombre"));
+                jugador.setApellido(resultado_consulta.getString("apellido"));
+                jugador.setanio_nacimiento(resultado_consulta.getString("anio_nacimiento"));
+                jugador.setNacionalidad(resultado_consulta.getString("nacionalidad"));
+                jugador.setPosicion(resultado_consulta.getString("posicion"));
+                jugador.setSalario(resultado_consulta.getDouble("salario"));
+
+                jugadores.add(jugador);
+
+                i++;
+            }
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }   
+    }
+    
+    public void consultarJugadoresClubBd(int id_club, ArrayList<Jugador>jugadores_club) throws SQLException{
+
+        jugadores_club.clear();
+        
+        String sentenciaSql = "SELECT * " + "FROM Jugadores " + "WHERE id_club = ?";
+        PreparedStatement sentencia = this.getConnection().prepareStatement(sentenciaSql);
+        try {
+            connection.setAutoCommit(false);
+            sentencia.setInt(1, id_club);
+            ResultSet resultado_consulta = sentencia.executeQuery();
+            int i = 0;
+            while (resultado_consulta.next()) {
+                    // Obtener los datos de cada fila
+                Jugador jugador = new Jugador();
+                jugador.setId(resultado_consulta.getInt("id_jugador"));
+                jugador.setId_club(resultado_consulta.getInt("id_club"));
+                jugador.setNombre(resultado_consulta.getString("nombre"));
+                jugador.setApellido(resultado_consulta.getString("apellido"));
+                jugador.setanio_nacimiento(resultado_consulta.getString("anio_nacimiento"));
+                jugador.setNacionalidad(resultado_consulta.getString("nacionalidad"));
+                jugador.setPosicion(resultado_consulta.getString("posicion"));
+                jugador.setSalario(resultado_consulta.getDouble("salario"));
+
+                jugadores_club.add(jugador);
+
+                i++;
+            }
+            connection.commit();
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }   
+    }
+    
+    public void contratarJugadorClub(int id_club, int id_jugador){
+        
+        String sentenciaSql = "UPDATE Jugadores SET id_club = ?" + "WHERE id_jugador = ?";
+        PreparedStatement sentencia = null;
+
+        try {
+            connection.setAutoCommit(false);
+            sentencia = this.getConnection().prepareStatement(sentenciaSql);
+            sentencia.setInt(1,id_club);
+            sentencia.setInt(2, id_jugador);
+            sentencia.executeUpdate();
+            
+            connection.commit();
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }
+        
+    }
+    
     public void consultarLigas(ArrayList<Liga>ligas) throws SQLException{
 
         String sentenciaSql = "SELECT * FROM Ligas";

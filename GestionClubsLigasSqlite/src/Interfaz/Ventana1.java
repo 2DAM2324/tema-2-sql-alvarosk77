@@ -310,14 +310,12 @@ public class Ventana1 extends javax.swing.JFrame {
         
         jComboBox_idJugadores.removeAllItems();
         
-        controller.cargarJugadoresBd();
+        controller.cargarJugadoresLibresBd();
         
         this.jugadores = controller.getJugadores();
         
         for(Jugador j : this.jugadores){
-            if(j.getId_club() == 0){
-                jComboBox_idJugadores.addItem(Integer.toString(j.getId()));
-            }
+            jComboBox_idJugadores.addItem(Integer.toString(j.getId()));
             
         }
     }
@@ -337,41 +335,46 @@ public class Ventana1 extends javax.swing.JFrame {
     
     public void mostrarTablaJugadoresDeUnClub(){
         
-        for(int i = table_model_jugadores_club.getRowCount()-1 ; i >= 0; i--){
-        
-            table_model_jugadores_club.removeRow(i);
-        
-        }
-        
-        
-        this.jugadores_club = controller.getClubById(id_club_seleccionado).getJugadores();
-        
-        table_model_jugadores_club = (DefaultTableModel) jTableJugadoresClub.getModel();
-        
-        jTableJugadoresClub.setModel(table_model_jugadores_club);
-        
-        if(this.jugadores_club != null){
-       
-            for(Jugador j : this.jugadores_club) {
-                Vector<Object> row = new Vector<Object>();
-
-                table_model_jugadores_club.addRow(new Object[]{j.getId(),j.getNombre()});
+        try {
+            for(int i = table_model_jugadores_club.getRowCount()-1 ; i >= 0; i--){
+                
+                table_model_jugadores_club.removeRow(i);
+                
             }
-
-
-            jTableJugadoresClub.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
-            @Override
-            public void valueChanged(ListSelectionEvent e) {
-                if (!e.getValueIsAdjusting()) {
-                    int selectedRow = jTableJugadoresClub.getSelectedRow();
-                    System.out.println(selectedRow);
-                    if (selectedRow != -1) {
-                        id_jugador_club_seleccionado= table_model_jugadores_club.getValueAt(selectedRow,0).toString();
-                    }     
+            
+            controller.cargarJugadoresClub(Integer.parseInt(id_club_seleccionado));
+            
+            this.jugadores_club = controller.getJugadores();
+            
+            table_model_jugadores_club = (DefaultTableModel) jTableJugadoresClub.getModel();
+            
+            jTableJugadoresClub.setModel(table_model_jugadores_club);
+            
+            if(this.jugadores_club != null){
+                     
+                for(Jugador j : this.jugadores_club) {
+                    Vector<Object> row = new Vector<Object>();
+                    
+                    table_model_jugadores_club.addRow(new Object[]{j.getId(),j.getNombre()});
                 }
+                
+                
+                jTableJugadoresClub.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+                    @Override
+                    public void valueChanged(ListSelectionEvent e) {
+                        if (!e.getValueIsAdjusting()) {
+                            int selectedRow = jTableJugadoresClub.getSelectedRow();
+                            System.out.println(selectedRow);
+                            if (selectedRow != -1) {
+                                id_jugador_club_seleccionado = table_model_jugadores_club.getValueAt(selectedRow,0).toString();
+                            }
+                        }
+                    }
+                    
+                });
             }
-
-            });
+        } catch (SQLException ex) {
+            ex.printStackTrace();
         }
         
     }
@@ -1591,6 +1594,7 @@ public class Ventana1 extends javax.swing.JFrame {
         if(id_club_seleccionado != null){
             this.controller.addEntrenadorClub(Integer.parseInt(id_club_seleccionado), Integer.parseInt(jComboBox_idEntrenadores.getSelectedItem().toString()));
             this.actualizarVistaClubes();
+            this.mostrarTablaJugadoresDeUnClub();
         }
         else{
             
@@ -1601,15 +1605,14 @@ public class Ventana1 extends javax.swing.JFrame {
 
     private void jButton_aniadir_jugador_clubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_aniadir_jugador_clubActionPerformed
         // TODO add your handling code here:
-        /*if(id_club_seleccionado != null){
-            controller.addJugadorClub(id_club_seleccionado, jTextField_aniadir_jugador_club.getText());
-            this.mostrarTablaJugadoresDeUnClub();
-            
+        if(id_club_seleccionado != null){
+            controller.addJugadorClub(Integer.parseInt( id_club_seleccionado), Integer.parseInt(jComboBox_idJugadores.getSelectedItem().toString()));
+            this.actualizarVistaClubes();
         }
         else{
-                System.out.println("error");
+            System.out.println("error");
         }
-        jTextField_aniadir_jugador_club.setText("");*/
+
     }//GEN-LAST:event_jButton_aniadir_jugador_clubActionPerformed
 
     private void jButton_aniadir_patrocinador_clubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_aniadir_patrocinador_clubActionPerformed
@@ -1622,9 +1625,7 @@ public class Ventana1 extends javax.swing.JFrame {
         else{
             System.out.println("error");
         }
-        jTextField_aniadir_patrocinador_club.setText("");
-
-        
+        jTextField_aniadir_patrocinador_club.setText("");        
     }//GEN-LAST:event_jButton_aniadir_patrocinador_clubActionPerformed
 
     private void jTextField_apellido_jugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField_apellido_jugadorActionPerformed

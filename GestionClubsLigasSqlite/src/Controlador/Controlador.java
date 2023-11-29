@@ -203,6 +203,13 @@ public class Controlador {
         }
     }
     
+    public void cargarJugadoresLibresBd(){
+        try {
+            conexionbd.consultarJugadoresLibresBd(this.jugadores);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
     
     public void addJugador(String nombre, String apellido, String anio_nacimiento, String nacionalidad, String posicion, double salario){
 
@@ -433,6 +440,16 @@ public class Controlador {
 
     }
     
+    public void cargarJugadoresClub(int id_club) throws SQLException{
+        this.conexionbd.consultarJugadoresClubBd(id_club, this.jugadores);
+    }
+    
+    public void addJugadorClub(int id_club, int id_jugador){
+
+        this.conexionbd.contratarJugadorClub(id_club, id_jugador);
+        
+    }
+    
     public void comprobarIdJugador(String id){
         for (int i = 0; i < this.jugadores.size(); i++) {
             if(id.equals(this.jugadores.get(i).getId())){
@@ -454,24 +471,6 @@ public class Controlador {
     }
     
     
-    public void addJugadorClub(String id_club, String id_jugador){
-        
-        this.comprobarIdJugador(id_jugador);
-        
-        if((id_jugador_encontrada == true) && (numero_veces_id_jugador_repetida < 1)){
-            for(int i = 0; i < this.jugadores.size(); i++){
-                if(id_jugador.equals(this.jugadores.get(i).getId())){
-                    for (int j = 0; j < this.clubes.size(); j++) {
-                        if(id_club.equals(this.clubes.get(j).getId())){
-                            this.clubes.get(j).getJugadores().add(this.jugadores.get(i));
-                        }
-                    }
-                }
-            }
-            
-            //this.serializarClub();
-        }
-    }
     
     public void despedirJugadorClub(String id_club, String id_jugador){
         
