@@ -1546,6 +1546,7 @@ public class Ventana1 extends javax.swing.JFrame {
         if(id_club_seleccionado != null){
             controller.removeClub(id_club_seleccionado);
             this.actualizarVistaClubes();
+            this.mostrarTablaJugadoresDeUnClub();
         }
         else{
             System.out.println("error");
@@ -1594,7 +1595,7 @@ public class Ventana1 extends javax.swing.JFrame {
         if(id_club_seleccionado != null){
             this.controller.addEntrenadorClub(Integer.parseInt(id_club_seleccionado), Integer.parseInt(jComboBox_idEntrenadores.getSelectedItem().toString()));
             this.actualizarVistaClubes();
-            this.mostrarTablaJugadoresDeUnClub();
+            
         }
         else{
             
@@ -1608,6 +1609,7 @@ public class Ventana1 extends javax.swing.JFrame {
         if(id_club_seleccionado != null){
             controller.addJugadorClub(Integer.parseInt( id_club_seleccionado), Integer.parseInt(jComboBox_idJugadores.getSelectedItem().toString()));
             this.actualizarVistaClubes();
+            this.mostrarTablaJugadoresDeUnClub();
         }
         else{
             System.out.println("error");
@@ -1692,7 +1694,8 @@ public class Ventana1 extends javax.swing.JFrame {
     private void jButtonDespedirJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDespedirJugadorActionPerformed
         // TODO add your handling code here:
         if(id_club_seleccionado != null && id_jugador_club_seleccionado != null){
-            controller.despedirJugadorClub(id_club_seleccionado, id_jugador_club_seleccionado);
+            controller.despedirJugadorClub(Integer.parseInt(id_jugador_club_seleccionado));
+            this.actualizarVistaClubes();
             this.mostrarTablaJugadoresDeUnClub();
         }
         else{

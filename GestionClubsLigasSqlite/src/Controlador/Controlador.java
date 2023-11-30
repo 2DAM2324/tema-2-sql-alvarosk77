@@ -283,8 +283,9 @@ public class Controlador {
     }
     
     public void removeClub(String id){
-        
+        this.conexionbd.desasignarJugadoresClub(Integer.parseInt(id));
         this.conexionbd.eliminarClubBd(id);
+
     }
     
     public void modificarClub(String id, String nombre, int anio_fundacion){
@@ -472,19 +473,9 @@ public class Controlador {
     
     
     
-    public void despedirJugadorClub(String id_club, String id_jugador){
+    public void despedirJugadorClub(int id_jugador){
         
-        for (int i = 0; i < this.clubes.size(); i++) {
-            if(id_club.equals(this.clubes.get(i).getId())){
-                for(int j = 0; j < this.clubes.get(i).getJugadores().size(); j++){
-                    if(id_jugador.equals(this.clubes.get(i).getJugadores().get(j).getId())){
-                        this.clubes.get(i).getJugadores().remove(j);
-                    }
-                }
-            }
-        }
-        
-        //this.serializarClub();
+        this.conexionbd.despedirJugadorClub(id_jugador);
     }
     
     public void comprobarIdPatrocinador(String id){

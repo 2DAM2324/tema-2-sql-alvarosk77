@@ -515,6 +515,32 @@ public class Conexion {
             
     }
     
+    public void desasignarJugadoresClub(int id_club){
+        
+        String sentenciaSql = "UPDATE Jugadores SET id_club = ?" + "WHERE id_club = ?";
+        PreparedStatement sentencia = null;
+
+        try {
+            connection.setAutoCommit(false);
+            sentencia = this.getConnection().prepareStatement(sentenciaSql);
+            sentencia.setNull(1, Types.INTEGER);
+            sentencia.setInt(2, id_club);
+            sentencia.executeUpdate();
+            
+            connection.commit();
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }
+    }
+    
     public void consultarEntrenadoresLibresBd(ArrayList<Entrenador>entrenadores) throws SQLException{
 
         entrenadores.clear();
@@ -698,6 +724,33 @@ public class Conexion {
             connection.setAutoCommit(false);
             sentencia = this.getConnection().prepareStatement(sentenciaSql);
             sentencia.setInt(1,id_club);
+            sentencia.setInt(2, id_jugador);
+            sentencia.executeUpdate();
+            
+            connection.commit();
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }
+        
+    }
+    
+    public void despedirJugadorClub(int id_jugador){
+        
+        String sentenciaSql = "UPDATE Jugadores SET id_club = ?" + "WHERE id_jugador = ?";
+        PreparedStatement sentencia = null;
+
+        try {
+            connection.setAutoCommit(false);
+            sentencia = this.getConnection().prepareStatement(sentenciaSql);
+            sentencia.setNull(1, Types.INTEGER);
             sentencia.setInt(2, id_jugador);
             sentencia.executeUpdate();
             
