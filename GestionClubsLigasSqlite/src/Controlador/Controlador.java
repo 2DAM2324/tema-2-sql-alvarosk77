@@ -211,6 +211,14 @@ public class Controlador {
         }
     }
     
+    public void cargarPatrocinadoresLibresParaUnClub(int id_club){
+        try {
+            conexionbd.consultarPatrocinadoresLibresParaUnClubBd(id_club, this.patrocinadores);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+    }
+    
     public void addJugador(String nombre, String apellido, String anio_nacimiento, String nacionalidad, String posicion, double salario){
 
         Jugador jugador = new Jugador(nombre, apellido, anio_nacimiento, nacionalidad, posicion, salario);
@@ -400,21 +408,7 @@ public class Controlador {
             //this.serializarLiga();
         }
     }
-    
-    public void comprobarIdEntrenador(String id){
-        for (int i = 0; i < this.entrenadores.size(); i++) {
-            if(id.equals(this.entrenadores.get(i).getId())){
-                id_entrenador_encontrada = true;
-            }
-        }
-        
-        numero_veces_id_entrenador_repetida = 0;
-        for(int i = 0; i < this.clubes.size(); i++){
-            if(id.equals(this.clubes.get(i).getEntrenador().getId())){
-                numero_veces_id_entrenador_repetida++; 
-            }
-        }
-    }
+   
     
     public void addEntrenadorClub(int id_club, int id_entrenador){
         
@@ -478,33 +472,7 @@ public class Controlador {
     
     public void addPatrocinadorClub(String id_club, String id_patrocinador){
         
-        this.comprobarIdPatrocinadorEnClub(id_club, id_patrocinador);
-        
-        if(id_patrocinador_encontrada == true && id_patrocinador_en_club_encontrada == false){
-            for(int i = 0; i < this.patrocinadores.size(); i++){
-                if(id_patrocinador.equals(this.patrocinadores.get(i).getId_patrocinador())){
-                    for (int j = 0; j < this.clubes.size(); j++) {
-                        if(id_club.equals(this.clubes.get(j).getId())){
-                            this.clubes.get(j).getPatrocinadores().add(this.patrocinadores.get(i));
-                            
-                        }
-                    }
-                }
-            }
-            
-            //this.serializarClub();
-            
-            for(int i = 0; i < this.patrocinadores.size(); i++){
-                if(id_patrocinador.equals(this.patrocinadores.get(i).getId_patrocinador())){
-                    for(int j = 0; j < this.clubes.size(); j++){
-                        if(id_club.equals(this.clubes.get(j).getId())){
-                            this.patrocinadores.get(i).getClubes().add(this.clubes.get(j));
-                        }
-                    }
-                }
-            }
-            //this.serializarPatrocinador();
-        }
+        this.conexionbd.contratarPatrocinadorClub(Integer.parseInt(id_club),Integer.parseInt(id_patrocinador));
 
     }
     

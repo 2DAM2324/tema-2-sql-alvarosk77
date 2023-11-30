@@ -1081,11 +1081,7 @@
                                   <Group type="102" attributes="0">
                                       <EmptySpace min="15" pref="15" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                              <Component id="jTextField_aniadir_patrocinador_club" min="-2" pref="268" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -1100,10 +1096,11 @@
                                                       <Group type="103" groupAlignment="0" attributes="0">
                                                           <Component id="jComboBox_anio_funcdacion_club" alignment="0" min="-2" max="-2" attributes="0"/>
                                                           <Component id="jTextField_nombre_club" alignment="0" min="-2" pref="245" max="-2" attributes="0"/>
-                                                          <Component id="jComboBox_idJugadores" alignment="0" min="-2" pref="111" max="-2" attributes="0"/>
                                                           <Component id="jComboBox_idEntrenadores" min="-2" pref="111" max="-2" attributes="0"/>
+                                                          <Component id="jComboBox_idJugadores" alignment="0" min="-2" pref="111" max="-2" attributes="0"/>
                                                       </Group>
                                                   </Group>
+                                                  <Component id="jComboBoxPatrocinadoresLibresClub" alignment="0" min="-2" pref="111" max="-2" attributes="0"/>
                                               </Group>
                                               <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -1179,12 +1176,14 @@
                       <Component id="jScrollPane1" min="-2" pref="158" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField_aniadir_patrocinador_club" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jButton_aniadir_patrocinador_club" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jButtonDespedirPatrocinador" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jButtonDespedirPatrocinador" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jComboBoxPatrocinadoresLibresClub" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -1451,10 +1450,8 @@
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel5">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Id_patrocinador"/>
+                <Property name="text" type="java.lang.String" value="Patrocinadores libres para el club seleccionado:"/>
               </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="jTextField_aniadir_patrocinador_club">
             </Component>
             <Component class="javax.swing.JButton" name="jButton_aniadir_patrocinador_club">
               <Properties>
@@ -1551,6 +1548,16 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jComboBox_idEntrenadoresActionPerformed"/>
               </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="jComboBoxPatrocinadoresLibresClub">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="0"/>
+                </Property>
+              </Properties>
               <AuxValues>
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>

@@ -805,6 +805,69 @@ public class Conexion {
         }   
     }
     
+    public void consultarPatrocinadoresLibresParaUnClubBd(int id_club, ArrayList<Patrocinador>patrocinadores_libres) throws SQLException{
+
+        patrocinadores_libres.clear();
+        
+        String sentenciaSql = "SELECT P.* " + "FROM Patrocinadores P " + "WHERE P.id_patrocinador NOT IN (SELECT CP.id_patrocinador FROM Clubes_Patrocinadores CP " + "WHERE CP.id_club = ?)";
+        PreparedStatement sentencia = this.getConnection().prepareStatement(sentenciaSql);
+        try {
+            connection.setAutoCommit(false);
+            sentencia.setInt(1, id_club);
+            ResultSet resultado_consulta = sentencia.executeQuery();
+            int i = 0;
+            while (resultado_consulta.next()) {
+                    // Obtener los datos de cada fila
+                Patrocinador patrocinador = new Patrocinador();
+                patrocinador.setId_patrocinador(Integer.toString(resultado_consulta.getInt("id_patrocinador")));
+                patrocinador.setNombre_empresa(resultado_consulta.getString("nombre_empresa"));
+                patrocinador.setTipo_patrocinio(resultado_consulta.getString("tipo_patrocinio"));
+                patrocinador.setDuracion_contrato(resultado_consulta.getInt("duracion_contrato"));
+                patrocinadores_libres.add(patrocinador);
+
+                i++;
+            }
+            connection.commit();
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }   
+    }
+    
+    public void contratarPatrocinadorClub(int id_club, int id_jugador){
+        
+        String sentenciaSql = "INSERT INTO Clubes_Patrocinadores (id_club, id_patrocinador) VALUES (?, ?)";
+        PreparedStatement sentencia = null;
+
+        try {
+            connection.setAutoCommit(false);
+            sentencia = this.getConnection().prepareStatement(sentenciaSql);
+            sentencia.setInt(1,id_club);
+            sentencia.setInt(2, id_jugador);
+            sentencia.executeUpdate();
+            
+            connection.commit();
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }
+        
+    }
+    
     public void consultarLigas(ArrayList<Liga>ligas) throws SQLException{
 
         String sentenciaSql = "SELECT * FROM Ligas";
