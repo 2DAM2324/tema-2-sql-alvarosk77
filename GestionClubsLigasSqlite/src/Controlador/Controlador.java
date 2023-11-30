@@ -451,39 +451,13 @@ public class Controlador {
         
     }
     
-    public void comprobarIdJugador(String id){
-        for (int i = 0; i < this.jugadores.size(); i++) {
-            if(id.equals(this.jugadores.get(i).getId())){
-                id_jugador_encontrada = true;
-            }
-        }
-        
-        numero_veces_id_jugador_repetida = 0;
-        
-        for(int i = 0; i < this.clubes.size(); i++){
-            if(this.clubes.get(i).getJugadores() != null){
-                for(int j = 0; j < this.clubes.get(i).getJugadores().size(); j++)
-                    if(id.equals(this.clubes.get(i).getJugadores().get(j).getId())){
-                        numero_veces_id_jugador_repetida++; 
-                    }
-            }
-        }
-
-    }
-    
-    
-    
     public void despedirJugadorClub(int id_jugador){
         
         this.conexionbd.despedirJugadorClub(id_jugador);
     }
     
-    public void comprobarIdPatrocinador(String id){
-        for (int i = 0; i < this.patrocinadores.size(); i++) {
-            if(id.equals(this.patrocinadores.get(i).getId_patrocinador())){
-                id_patrocinador_encontrada = true;
-            }
-        }
+    public void cargarPatrocinadoresClub(int id_club) throws SQLException{
+        this.conexionbd.consultarPatrocinadoresClubBd(id_club, this.patrocinadores);
     }
     
     public void comprobarIdPatrocinadorEnClub(String id_club, String id_patrocinador){
@@ -503,8 +477,6 @@ public class Controlador {
     }
     
     public void addPatrocinadorClub(String id_club, String id_patrocinador){
-        
-        this.comprobarIdPatrocinador(id_patrocinador);
         
         this.comprobarIdPatrocinadorEnClub(id_club, id_patrocinador);
         

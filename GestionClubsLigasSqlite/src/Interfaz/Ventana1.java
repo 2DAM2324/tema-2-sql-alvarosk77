@@ -216,43 +216,47 @@ public class Ventana1 extends javax.swing.JFrame {
     
     public void mostrarTablaPatrocinadoresDeUnClub(){
         
-        for(int i = table_model_patrocinadores_club.getRowCount()-1 ; i >= 0; i--){
-        
-            table_model_patrocinadores_club.removeRow(i);
-        
-        }
-        
-        //controller.deserializarClub();
-        
-        this.patrocinadores_club = controller.getClubById(id_club_seleccionado).getPatrocinadores();
-        
-        table_model_patrocinadores_club = (DefaultTableModel) jTablePatrocinadoresClub.getModel();
-        
-        jTablePatrocinadoresClub.setModel(table_model_patrocinadores_club);
-       
-        if(this.patrocinadores_club != null){
-        
-            for(Patrocinador p : this.patrocinadores_club) {
-                Vector<Object> row = new Vector<Object>();
-
-                table_model_patrocinadores_club.addRow(new Object[]{p.getId_patrocinador(),p.getNombre_empresa()});
-
-                //p.mostrarDatos();
+        try {
+            for(int i = table_model_patrocinadores_club.getRowCount()-1 ; i >= 0; i--){
+                
+                table_model_patrocinadores_club.removeRow(i);
+                
             }
-
-            jTablePatrocinadoresClub.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
-            @Override
-            public void valueChanged(ListSelectionEvent e) {
-                if (!e.getValueIsAdjusting()) {
-                    int selectedRow = jTablePatrocinadoresClub.getSelectedRow();
-                    System.out.println(selectedRow);
-                    if (selectedRow != -1) {
-                        id_patrocinador_club_seleccionado = table_model_patrocinadores_club.getValueAt(selectedRow,0).toString();
-                    }     
+            
+            this.controller.cargarPatrocinadoresClub(Integer.parseInt(id_club_seleccionado));
+            
+            this.patrocinadores_club = this.controller.getPatrocinadores();
+            
+            table_model_patrocinadores_club = (DefaultTableModel) jTablePatrocinadoresClub.getModel();
+            
+            jTablePatrocinadoresClub.setModel(table_model_patrocinadores_club);
+            
+            if(this.patrocinadores_club != null){
+                
+                for(Patrocinador p : this.patrocinadores_club) {     
+                    Vector<Object> row = new Vector<Object>();
+                    
+                    table_model_patrocinadores_club.addRow(new Object[]{p.getId_patrocinador(),p.getNombre_empresa()});
+                    
+                    //p.mostrarDatos();
                 }
+                
+                jTablePatrocinadoresClub.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+                    @Override
+                    public void valueChanged(ListSelectionEvent e) {
+                        if (!e.getValueIsAdjusting()) {
+                            int selectedRow = jTablePatrocinadoresClub.getSelectedRow();
+                            System.out.println(selectedRow);
+                            if (selectedRow != -1) {
+                                id_patrocinador_club_seleccionado = table_model_patrocinadores_club.getValueAt(selectedRow,0).toString();
+                            }
+                        }
+                    }
+                    
+                });
             }
-
-            });
+        } catch (SQLException ex) {
+            ex.printStackTrace();
         }
     }
     

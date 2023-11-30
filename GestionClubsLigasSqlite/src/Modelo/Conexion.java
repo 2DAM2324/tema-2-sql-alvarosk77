@@ -769,6 +769,42 @@ public class Conexion {
         
     }
     
+    public void consultarPatrocinadoresClubBd(int id_club, ArrayList<Patrocinador>patrocinadores_club) throws SQLException{
+
+        patrocinadores_club.clear();
+        
+        String sentenciaSql = "SELECT DISTINCT P.* " + "FROM Patrocinadores P " + "JOIN Clubes_Patrocinadores CP ON P.id_patrocinador = CP.id_patrocinador " + "WHERE CP.id_club = ?";
+        PreparedStatement sentencia = this.getConnection().prepareStatement(sentenciaSql);
+        try {
+            connection.setAutoCommit(false);
+            sentencia.setInt(1, id_club);
+            ResultSet resultado_consulta = sentencia.executeQuery();
+            int i = 0;
+            while (resultado_consulta.next()) {
+                    // Obtener los datos de cada fila
+                Patrocinador patrocinador = new Patrocinador();
+                patrocinador.setId_patrocinador(Integer.toString(resultado_consulta.getInt("id_patrocinador")));
+                patrocinador.setNombre_empresa(resultado_consulta.getString("nombre_empresa"));
+                patrocinador.setTipo_patrocinio(resultado_consulta.getString("tipo_patrocinio"));
+                patrocinador.setDuracion_contrato(resultado_consulta.getInt("duracion_contrato"));
+                patrocinadores_club.add(patrocinador);
+
+                i++;
+            }
+            connection.commit();
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }   
+    }
+    
     public void consultarLigas(ArrayList<Liga>ligas) throws SQLException{
 
         String sentenciaSql = "SELECT * FROM Ligas";
