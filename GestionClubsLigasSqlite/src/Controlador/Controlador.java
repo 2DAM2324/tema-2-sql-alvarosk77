@@ -478,28 +478,8 @@ public class Controlador {
     
     public void despedirPatrocinadorClub(String id_club, String id_patrocinador){
         
-        for (int i = 0; i < this.clubes.size(); i++) {
-            if(id_club.equals(this.clubes.get(i).getId())){
-                for(int j = 0; j < this.clubes.get(i).getPatrocinadores().size(); j++){
-                    if(id_patrocinador.equals(this.clubes.get(i).getPatrocinadores().get(j).getId_patrocinador())){
-                        this.clubes.get(i).getPatrocinadores().remove(j); 
-                    }
-                }
-            }
-        }
+        this.conexionbd.despedirPatrocinadorClub(Integer.parseInt(id_club),Integer.parseInt(id_patrocinador));
         
-        //this.serializarClub();
-        
-        for(int i = 0; i < this.patrocinadores.size(); i++){
-            if(id_patrocinador.equals(this.patrocinadores.get(i).getId_patrocinador())){
-                for(int j = 0; j < this.patrocinadores.get(i).getClubes().size(); j++){
-                    if(id_club.equals(this.patrocinadores.get(i).getClubes().get(j).getId())){
-                            this.patrocinadores.get(i).getClubes().remove(j);
-                    }
-                }
-            }
-        }
-        //this.serializarPatrocinador();
     }
 
 }

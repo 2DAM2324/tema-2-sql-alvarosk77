@@ -1727,6 +1727,7 @@ public class Ventana1 extends javax.swing.JFrame {
         // TODO add your handling code here
         if(id_club_seleccionado != null && id_patrocinador_club_seleccionado != null){
             controller.despedirPatrocinadorClub(id_club_seleccionado, id_patrocinador_club_seleccionado);
+            this.actualizarJcomboxIdPatrocinadores();
             this.mostrarTablaPatrocinadoresDeUnClub();
             this.mostrarTablaClubesDeUnPatrocinador();
         }

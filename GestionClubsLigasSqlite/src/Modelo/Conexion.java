@@ -868,6 +868,33 @@ public class Conexion {
         
     }
     
+    public void despedirPatrocinadorClub(int id_club, int id_patrocinador){
+        
+        String sentenciaSql = "DELETE FROM Clubes_Patrocinadores WHERE id_club = ? AND id_patrocinador = ?";
+        PreparedStatement sentencia = null;
+
+        try {
+            connection.setAutoCommit(false);
+            sentencia = this.getConnection().prepareStatement(sentenciaSql);
+            sentencia.setInt(1,id_club);
+            sentencia.setInt(2, id_patrocinador);
+            sentencia.executeUpdate();
+            
+            connection.commit();
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }
+        
+    }
+    
     public void consultarLigas(ArrayList<Liga>ligas) throws SQLException{
 
         String sentenciaSql = "SELECT * FROM Ligas";
