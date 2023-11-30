@@ -400,6 +400,44 @@ public class Conexion {
             
     }
     
+    public void consultarClubesPatrocinador(int id_patrocinador, ArrayList<Club>clubes_patrocinador) throws SQLException{
+
+        clubes_patrocinador.clear();
+        
+        String sentenciaSql = "SELECT C.* FROM Clubes C JOIN Clubes_Patrocinadores CP ON C.id_club = CP.id_club WHERE CP.id_patrocinador = ?";
+        PreparedStatement sentencia = this.getConnection().prepareStatement(sentenciaSql);
+        try {
+            connection.setAutoCommit(false);
+            sentencia.setInt(1, id_patrocinador);
+            ResultSet resultado_consulta = sentencia.executeQuery();
+            int i = 0;
+            while (resultado_consulta.next()) {
+                    // Obtener los datos de cada fila
+                Club club = new Club();
+                club.setId(Integer.toString(resultado_consulta.getInt("id_club")));
+                club.setNombre(resultado_consulta.getString("nombre"));
+                club.setAnio_fundacion(resultado_consulta.getInt("anio_fundacion"));
+                club.getEntrenador().setId(Integer.toString(resultado_consulta.getInt("id_entrenador")));
+
+                clubes_patrocinador.add(club);
+
+                i++;
+            }
+            connection.commit();
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }
+
+    }
+    
     public void consultarClubes(ArrayList<Club>clubes) throws SQLException{
 
         clubes.clear();
@@ -525,6 +563,31 @@ public class Conexion {
             sentencia = this.getConnection().prepareStatement(sentenciaSql);
             sentencia.setNull(1, Types.INTEGER);
             sentencia.setInt(2, id_club);
+            sentencia.executeUpdate();
+            
+            connection.commit();
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }
+    }
+    
+    public void desasignarPatrocinadoresClub(int id_club){
+        
+        String sentenciaSql = "DELETE FROM Clubes_Patrocinadores " + "WHERE id_club = ?";
+        PreparedStatement sentencia = null;
+
+        try {
+            connection.setAutoCommit(false);
+            sentencia = this.getConnection().prepareStatement(sentenciaSql);
+            sentencia.setInt(1, id_club);
             sentencia.executeUpdate();
             
             connection.commit();

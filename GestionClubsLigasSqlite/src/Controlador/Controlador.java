@@ -260,6 +260,10 @@ public class Controlador {
         this.conexionbd.modificarEntrenadorBd(entrenador);
     }
     
+    public void cargarClubesPatrocinador(int id_patrocinador) throws SQLException{
+        this.conexionbd.consultarClubesPatrocinador(id_patrocinador, this.clubes);
+    }
+    
     public void addPatrocinador(String nombre_empresa, String tipo_patrocinador, int duracion_contrato){
 
         Patrocinador patrocinador = new Patrocinador(nombre_empresa, tipo_patrocinador, duracion_contrato);
@@ -292,6 +296,7 @@ public class Controlador {
     
     public void removeClub(String id){
         this.conexionbd.desasignarJugadoresClub(Integer.parseInt(id));
+        this.conexionbd.desasignarPatrocinadoresClub(Integer.parseInt(id));
         this.conexionbd.eliminarClubBd(id);
 
     }
@@ -372,28 +377,9 @@ public class Controlador {
         //this.serializarLiga();
     }
     
-    public void comprobarIdClub(String id){
-        for (int i = 0; i < this.clubes.size(); i++) {
-            if(id.equals(this.clubes.get(i).getId())){
-                id_club_encontrado = true;
-            }
-        }
-        
-        
-        numero_veces_id_club_repetida = 0;
-        for(int i = 0; i < this.ligas.size(); i++){
-            for(int j = 0; j < this.ligas.get(i).getClubes().size(); j++){
-                if(id.equals(this.ligas.get(i).getClubes().get(j).getId())){
-                    numero_veces_id_club_repetida++; 
-                }
-            }
-
-        }
-    }
-    
     public void addClubLiga(String id_liga, String id_club){
 
-        this.comprobarIdClub(id_club);
+
         
         if(id_club_encontrado == true && numero_veces_id_club_repetida < 1){
             for(int i = 0; i < this.ligas.size(); i++){

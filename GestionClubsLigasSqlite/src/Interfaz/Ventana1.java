@@ -155,29 +155,32 @@ public class Ventana1 extends javax.swing.JFrame {
     
     public void mostrarTablaClubesDeUnPatrocinador(){
         
-        for(int i = table_model_clubes_patrocinador.getRowCount()-1 ; i >= 0; i--){
-        
-            table_model_clubes_patrocinador.removeRow(i);
-        
-        }
-        
-        //controller.deserializarPatrocinador();
-        
-        if(id_patrocinador_seleccionado != null){
-        
-            this.clubes_patrocinador = controller.getPatrocinadorById(id_patrocinador_seleccionado).getClubes();
-        
-        }
-        table_model_clubes_patrocinador = (DefaultTableModel) jTableClubesPatrocinador.getModel();
-        
-        jTableClubesPatrocinador.setModel(table_model_clubes_patrocinador);
-       
-        for(Club c : this.clubes_patrocinador) {
-            Vector<Object> row = new Vector<Object>();
-
-            table_model_clubes_patrocinador.addRow(new Object[]{c.getId(),c.getNombre()});
+        try {
+            for(int i = table_model_clubes_patrocinador.getRowCount()-1 ; i >= 0; i--){
+                
+                table_model_clubes_patrocinador.removeRow(i);
+                
+            }
             
-            //c.mostrarDatos();
+            this.controller.cargarClubesPatrocinador(Integer.parseInt(id_patrocinador_seleccionado));
+            
+            //if(id_patrocinador_seleccionado != null){
+                
+            this.clubes_patrocinador = this.controller.getClubes();
+                
+            
+            table_model_clubes_patrocinador = (DefaultTableModel) jTableClubesPatrocinador.getModel();
+            
+            jTableClubesPatrocinador.setModel(table_model_clubes_patrocinador);
+            
+            for(Club c : this.clubes_patrocinador) {
+                Vector<Object> row = new Vector<Object>();
+                
+                table_model_clubes_patrocinador.addRow(new Object[]{c.getId(),c.getNombre()});
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Ventana1.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }
@@ -344,7 +347,11 @@ public class Ventana1 extends javax.swing.JFrame {
         
         jComboBoxPatrocinadoresLibresClub.removeAllItems();
         
-        controller.cargarPatrocinadoresLibresParaUnClub(Integer.parseInt(id_club_seleccionado));
+        if(id_club_seleccionado != null){
+        
+            controller.cargarPatrocinadoresLibresParaUnClub(Integer.parseInt(id_club_seleccionado));
+        
+        }
         
         this.patrocinadores = controller.getPatrocinadores();
         
@@ -1566,6 +1573,7 @@ public class Ventana1 extends javax.swing.JFrame {
             controller.removeClub(id_club_seleccionado);
             this.actualizarVistaClubes();
             this.mostrarTablaJugadoresDeUnClub();
+            this.mostrarTablaPatrocinadoresDeUnClub();
         }
         else{
             System.out.println("error");
