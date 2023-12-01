@@ -310,41 +310,11 @@ public class Controlador {
     }
     
     
-    public void addLiga(String id, String nombre, String pais, int temporada){
+    public void addLiga(String nombre, String pais, int temporada){
 
-        boolean id_encontrada = false;
-
-        //this.deserializarLiga();
-
-        for (int i = 0; (i < this.ligas.size()) && (this.ligas.get(i).getId()!= id); i++) {
-            
-            if(this.ligas.get(i).getId().equals(id)){
-
-                id_encontrada = true;
-            }
-        }
-
-        if(id_encontrada == false){
-            
-            Liga liga = new Liga(id, nombre, pais, temporada);
-
-            if(this.ligas != null){
-
-                this.ligas.add(liga);
-
-                //this.serializarLiga();
-
-            }
-            else{
-
-                System.out.println("ERROR");
-            }
-
-        }
-        else{
-
-            System.out.println("ID REPETIDA");
-        }
+        Liga liga = new Liga(nombre, pais, temporada);
+        
+        this.conexionbd.insertarLigaBd(liga);
 
     }
     

@@ -428,7 +428,6 @@ public class Ventana1 extends javax.swing.JFrame {
                 
                 table_model_clubes_liga.addRow(new Object[]{c.getId(),c.getNombre()});
                 
-                //p.mostrarDatos();
             }
         } catch (SQLException ex) {
             Logger.getLogger(Ventana1.class.getName()).log(Level.SEVERE, null, ex);
@@ -489,7 +488,6 @@ public class Ventana1 extends javax.swing.JFrame {
     }
     
     public void clearFieldsLigas(){
-        jTextField_id_liga.setText("");
         jTextField_nombre_liga.setText("");
     }
       
@@ -501,10 +499,8 @@ public class Ventana1 extends javax.swing.JFrame {
         jPanel_liga = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable_liga = new javax.swing.JTable();
-        jLabel_nombre_biblioteca = new javax.swing.JLabel();
         jLabel_telefono = new javax.swing.JLabel();
         jLabel_direccion = new javax.swing.JLabel();
-        jTextField_id_liga = new javax.swing.JTextField();
         jTextField_nombre_liga = new javax.swing.JTextField();
         jButton_aniadir_liga = new javax.swing.JButton();
         jButton_modificar_liga = new javax.swing.JButton();
@@ -622,8 +618,6 @@ public class Ventana1 extends javax.swing.JFrame {
             jTable_liga.getColumnModel().getColumn(1).setResizable(false);
         }
 
-        jLabel_nombre_biblioteca.setText("ID:");
-
         jLabel_telefono.setText("Nombre:");
 
         jButton_aniadir_liga.setText("Añadir");
@@ -702,7 +696,6 @@ public class Ventana1 extends javax.swing.JFrame {
                         .addGroup(jPanel_ligaLayout.createSequentialGroup()
                             .addGap(27, 27, 27)
                             .addGroup(jPanel_ligaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel_nombre_biblioteca)
                                 .addComponent(jLabel_telefono)
                                 .addComponent(jLabel_direccion)
                                 .addComponent(jLabel_ciudades_bibliotecas)
@@ -718,9 +711,7 @@ public class Ventana1 extends javax.swing.JFrame {
                                 .addGroup(jPanel_ligaLayout.createSequentialGroup()
                                     .addGroup(jPanel_ligaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jComboBox_pais_liga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(jPanel_ligaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jTextField_id_liga, javax.swing.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE)
-                                            .addComponent(jTextField_nombre_liga))
+                                        .addComponent(jTextField_nombre_liga, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jComboBox_temporada_liga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGap(0, 0, Short.MAX_VALUE))))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel_ligaLayout.createSequentialGroup()
@@ -742,11 +733,7 @@ public class Ventana1 extends javax.swing.JFrame {
                     .addGroup(jPanel_ligaLayout.createSequentialGroup()
                         .addGap(11, 11, 11)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(42, 42, 42)
-                .addGroup(jPanel_ligaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel_nombre_biblioteca)
-                    .addComponent(jTextField_id_liga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(71, 71, 71)
                 .addGroup(jPanel_ligaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel_telefono)
                     .addComponent(jTextField_nombre_liga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -769,7 +756,7 @@ public class Ventana1 extends javax.swing.JFrame {
                 .addComponent(jLabel8)
                 .addGap(26, 26, 26)
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(426, Short.MAX_VALUE))
+                .addContainerGap(428, Short.MAX_VALUE))
         );
 
         jTabbedPane.addTab("Liga", jPanel_liga);
@@ -1521,13 +1508,9 @@ public class Ventana1 extends javax.swing.JFrame {
 
     private void jButton_aniadir_ligaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_aniadir_ligaActionPerformed
         // TODO add your handling code here:
-        if(!jTextField_id_liga.getText().equals("")){
-            this.controller.addLiga(jTextField_id_liga.getText(), jTextField_nombre_liga.getText(), jComboBox_pais_liga.getSelectedItem().toString(), Integer.parseInt(jComboBox_temporada_liga.getSelectedItem().toString()));
-            this.actualizarVistaLigas();
-        }
-        else{
-            System.out.println("error");
-        }
+        this.controller.addLiga(jTextField_nombre_liga.getText(), jComboBox_pais_liga.getSelectedItem().toString(), Integer.parseInt(jComboBox_temporada_liga.getSelectedItem().toString()));
+        this.actualizarVistaLigas();
+
         this.clearFieldsLigas();
     }//GEN-LAST:event_jButton_aniadir_ligaActionPerformed
 
@@ -1967,7 +1950,6 @@ public class Ventana1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel_direccion2;
     private javax.swing.JLabel jLabel_fecha_nacimiento_jugador;
     private javax.swing.JLabel jLabel_nacionalidad_jugador;
-    private javax.swing.JLabel jLabel_nombre_biblioteca;
     private javax.swing.JLabel jLabel_nombre_jugador;
     private javax.swing.JLabel jLabel_nombre_persona2;
     private javax.swing.JLabel jLabel_posicion_jugador;
@@ -2004,7 +1986,6 @@ public class Ventana1 extends javax.swing.JFrame {
     public javax.swing.JTextField jTextField_apellido_entrenador;
     private javax.swing.JTextField jTextField_apellido_jugador;
     public javax.swing.JTextField jTextField_duracion_contrato_patrocinador;
-    public javax.swing.JTextField jTextField_id_liga;
     private javax.swing.JTextField jTextField_nombre_club;
     public javax.swing.JTextField jTextField_nombre_empresa_patrocinador;
     public javax.swing.JTextField jTextField_nombre_entrenador;

@@ -992,6 +992,87 @@ public class Conexion {
 
     }
     
+    public void insertarLigaBd(Liga liga){
+
+        String sentenciaSql = "INSERT INTO Ligas (nombre, pais, temporada) VALUES (?, ?, ?)";
+        PreparedStatement sentencia = null;
+        try {
+            connection.setAutoCommit(false);
+            sentencia = this.getConnection().prepareStatement(sentenciaSql);
+            sentencia.setString(1,liga.getNombre());
+            sentencia.setString(2, liga.getPais());
+            sentencia.setInt(3, liga.getTemporada());
+            sentencia.executeUpdate();
+            
+            connection.commit();
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }
+            
+    }
+    
+    /*public void modificarPatrocinadorBd(Patrocinador patrocinador){
+
+        String sentenciaSql = "UPDATE Patrocinadores SET nombre_empresa = ?, tipo_patrocinio = ?, duracion_contrato = ?" + "WHERE id_patrocinador = ?";
+        PreparedStatement sentencia = null;
+
+        try {
+            connection.setAutoCommit(false);
+            sentencia = this.getConnection().prepareStatement(sentenciaSql);
+            sentencia.setString(1,patrocinador.getNombre_empresa());
+            sentencia.setString(2, patrocinador.getTipo_patrocinio());
+            sentencia.setInt(3, patrocinador.getDuracion_contrato());
+            sentencia.setInt(4, Integer.parseInt(patrocinador.getId_patrocinador()));
+            sentencia.executeUpdate();
+            
+            connection.commit();
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }
+            
+    }
+    
+    public void eliminarPatrocinadorBd(String id){
+
+        String sentenciaSql = "DELETE FROM Patrocinadores WHERE id_patrocinador = ?";
+        PreparedStatement sentencia = null;
+        try {
+            connection.setAutoCommit(false);
+            sentencia = this.getConnection().prepareStatement(sentenciaSql);
+            sentencia.setInt(1,Integer.parseInt(id));
+            sentencia.executeUpdate();
+            
+            connection.commit();
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }
+            
+    }*/
+    
     public void consultarClubesLigaBd(int id_liga, ArrayList<Club>clubes_liga) throws SQLException{
 
         clubes_liga.clear();

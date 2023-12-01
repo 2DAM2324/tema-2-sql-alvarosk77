@@ -68,7 +68,6 @@
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel_nombre_biblioteca" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel_telefono" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel_direccion" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel_ciudades_bibliotecas" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -86,10 +85,7 @@
                                       <Group type="102" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jComboBox_pais_liga" min="-2" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="jTextField_id_liga" alignment="0" pref="245" max="32767" attributes="0"/>
-                                                  <Component id="jTextField_nombre_liga" alignment="0" max="32767" attributes="0"/>
-                                              </Group>
+                                              <Component id="jTextField_nombre_liga" alignment="0" min="-2" pref="245" max="-2" attributes="0"/>
                                               <Component id="jComboBox_temporada_liga" alignment="0" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -123,12 +119,7 @@
                               <Component id="jScrollPane2" min="-2" pref="92" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel_nombre_biblioteca" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField_id_liga" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel_telefono" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jTextField_nombre_liga" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -156,7 +147,7 @@
                       <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                       <Component id="jScrollPane9" min="-2" pref="139" max="-2" attributes="0"/>
-                      <EmptySpace pref="426" max="32767" attributes="0"/>
+                      <EmptySpace pref="428" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -210,22 +201,12 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Component class="javax.swing.JLabel" name="jLabel_nombre_biblioteca">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="ID:"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel_telefono">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Nombre:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel_direccion">
-            </Component>
-            <Component class="javax.swing.JTextField" name="jTextField_id_liga">
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-              </AuxValues>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField_nombre_liga">
               <AuxValues>

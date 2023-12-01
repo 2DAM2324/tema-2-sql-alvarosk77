@@ -22,6 +22,12 @@ public class Liga{
         this.temporada = temporada;
     }
     
+    public Liga(String nombre, String pais, int temporada) {
+        this.nombre = nombre;
+        this.pais = pais;
+        this.temporada = temporada;
+    }
+    
     public Liga() {
         this.id = "NULL";
         this.nombre = "NULL";
