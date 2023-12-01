@@ -408,27 +408,30 @@ public class Ventana1 extends javax.swing.JFrame {
     
     public void mostrarTablaClubesDeUnaLiga(){
         
-        for(int i = table_model_clubes_liga.getRowCount()-1 ; i >= 0; i--){
-        
-            table_model_clubes_liga.removeRow(i);
-        
-        }
-        
-        //controller.deserializarLiga();
-        
-        this.clubes_liga = controller.getLigaById(id_liga_seleccionada).getClubes();
-        
-        
-        table_model_clubes_liga = (DefaultTableModel) jTableClubesLiga.getModel();
-        
-        jTableClubesLiga.setModel(table_model_clubes_liga);
-       
-        for(Club c : this.clubes_liga) {
-            Vector<Object> row = new Vector<Object>();
-
-            table_model_clubes_liga.addRow(new Object[]{c.getId(),c.getNombre()});
+        try {
+            for(int i = table_model_clubes_liga.getRowCount()-1 ; i >= 0; i--){
+                
+                table_model_clubes_liga.removeRow(i);
+                
+            }
             
-            //p.mostrarDatos();
+            this.controller.cargarClubesLiga(Integer.parseInt(id_liga_seleccionada));
+            
+            this.clubes_liga = this.controller.getClubes();
+            
+            table_model_clubes_liga = (DefaultTableModel) jTableClubesLiga.getModel();
+            
+            jTableClubesLiga.setModel(table_model_clubes_liga);
+            
+            for(Club c : this.clubes_liga) {
+                Vector<Object> row = new Vector<Object>();
+                
+                table_model_clubes_liga.addRow(new Object[]{c.getId(),c.getNombre()});
+                
+                //p.mostrarDatos();
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Ventana1.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -1883,20 +1886,25 @@ public class Ventana1 extends javax.swing.JFrame {
     
     public void actualizarVistaLigas(){
         
-        for(int i = table_model_liga.getRowCount()-1 ; i >= 0; i--){
-        
-            table_model_liga.removeRow(i);
-        
-        }
-
-        
-        this.ligas = controller.getLigas();
-        
-        
-        for(Liga l : this.ligas) {
-            Vector<Object> row = new Vector<Object>();
-
-            table_model_liga.addRow(new Object[]{l.getId(),l.getNombre(),l.getPais(),l.getTemporada()});
+        try {
+            for(int i = table_model_liga.getRowCount()-1 ; i >= 0; i--){
+                
+                table_model_liga.removeRow(i);
+                
+            }
+            
+            this.controller.CargarTablasBaseDatos();
+            
+            this.ligas = controller.getLigas();
+            
+            
+            for(Liga l : this.ligas) {
+                Vector<Object> row = new Vector<Object>();
+                
+                table_model_liga.addRow(new Object[]{l.getId(),l.getNombre(),l.getPais(),l.getTemporada()});
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Ventana1.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }

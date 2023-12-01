@@ -992,6 +992,43 @@ public class Conexion {
 
     }
     
+    public void consultarClubesLigaBd(int id_liga, ArrayList<Club>clubes_liga) throws SQLException{
+
+        clubes_liga.clear();
+        
+        String sentenciaSql = "SELECT * FROM Clubes WHERE id_liga = ?";
+        PreparedStatement sentencia = this.getConnection().prepareStatement(sentenciaSql);
+        try {
+            sentencia.setInt(1, id_liga);
+            ResultSet resultado_consulta = sentencia.executeQuery();
+            int i = 0;
+            while (resultado_consulta.next()) {
+                    // Obtener los datos de cada fila
+                Club club = new Club();
+                club.setId(Integer.toString(resultado_consulta.getInt("id_club")));
+                club.setNombre(resultado_consulta.getString("nombre"));
+                club.setAnio_fundacion(resultado_consulta.getInt("anio_fundacion"));
+                club.getEntrenador().setId(Integer.toString(resultado_consulta.getInt("id_entrenador")));
+
+                clubes_liga.add(club);
+
+                i++;
+            }
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }
+
+    }
+    
+    
     public static void close() {
         try {
             if (connection != null) {

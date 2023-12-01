@@ -391,7 +391,7 @@ public class Controlador {
                     }
                 }
             }
-            //this.serializarLiga();
+
         }
     }
    
@@ -440,21 +440,6 @@ public class Controlador {
         this.conexionbd.consultarPatrocinadoresClubBd(id_club, this.patrocinadores);
     }
     
-    public void comprobarIdPatrocinadorEnClub(String id_club, String id_patrocinador){
-        
-        for (int i = 0; i < this.clubes.size(); i++) {
-            if(id_club.equals(this.clubes.get(i).getId())){
-                if(this.clubes.get(i).getPatrocinadores() != null){
-                    for(int j = 0; j < this.clubes.get(i).getPatrocinadores().size(); j++){
-                        if(id_patrocinador.equals(this.clubes.get(i).getPatrocinadores().get(j).getId_patrocinador())){
-                            id_patrocinador_en_club_encontrada = true;
-                        }
-                    }
-                }
-                
-            }
-        }
-    }
     
     public void addPatrocinadorClub(String id_club, String id_patrocinador){
         
@@ -466,6 +451,10 @@ public class Controlador {
         
         this.conexionbd.despedirPatrocinadorClub(Integer.parseInt(id_club),Integer.parseInt(id_patrocinador));
         
+    }
+    
+    public void cargarClubesLiga(int id_liga) throws SQLException{
+        this.conexionbd.consultarClubesLigaBd(id_liga, this.clubes);
     }
 
 }
