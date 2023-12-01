@@ -337,6 +337,11 @@ public class Controlador {
         this.conexionbd.aniadirClubLiga(Integer.parseInt(id_liga), Integer.parseInt(id_club));
         
     }
+    
+    public void eliminarClubLiga(int id_club){
+        
+        this.conexionbd.eliminarClubLiga(id_club);
+    }
    
     
     public void addEntrenadorClub(int id_club, int id_entrenador){

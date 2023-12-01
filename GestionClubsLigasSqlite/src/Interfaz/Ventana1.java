@@ -69,6 +69,7 @@ public class Ventana1 extends javax.swing.JFrame {
     String id_jugador_club_seleccionado;
     String id_patrocinador_club_seleccionado;
     String id_liga_seleccionada;
+    String id_club_liga_seleccionada;
     
     
     /**
@@ -447,6 +448,19 @@ public class Ventana1 extends javax.swing.JFrame {
                 table_model_clubes_liga.addRow(new Object[]{c.getId(),c.getNombre()});
                 
             }
+            
+            jTableClubesLiga.getSelectionModel().addListSelectionListener(new ListSelectionListener() {
+                @Override
+                public void valueChanged(ListSelectionEvent e) {
+                    if (!e.getValueIsAdjusting()) {
+                        int selectedRow = jTableClubesLiga.getSelectedRow();
+                        if (selectedRow != -1) {
+                            id_club_liga_seleccionada = table_model_clubes_liga.getValueAt(selectedRow,0).toString();
+                        }
+                    }
+                }
+                    
+            });
         } catch (SQLException ex) {
             Logger.getLogger(Ventana1.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -535,6 +549,7 @@ public class Ventana1 extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jComboBoxClubesLibres = new javax.swing.JComboBox<>();
         jButtonAniadirClubLiga = new javax.swing.JButton();
+        jButtonEliminarClubLiga = new javax.swing.JButton();
         jPanel_patrocinador = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         jTable_patrocinador = new javax.swing.JTable();
@@ -698,6 +713,13 @@ public class Ventana1 extends javax.swing.JFrame {
             }
         });
 
+        jButtonEliminarClubLiga.setText("Eliminar Club");
+        jButtonEliminarClubLiga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEliminarClubLigaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel_ligaLayout = new javax.swing.GroupLayout(jPanel_liga);
         jPanel_liga.setLayout(jPanel_ligaLayout);
         jPanel_ligaLayout.setHorizontalGroup(
@@ -728,11 +750,13 @@ public class Ventana1 extends javax.swing.JFrame {
                                     .addComponent(jComboBox_pais_liga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextField_nombre_liga, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jComboBox_temporada_liga, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel_ligaLayout.createSequentialGroup()
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel_ligaLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jComboBoxClubesLibres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButtonAniadirClubLiga))))
+                                .addComponent(jButtonAniadirClubLiga)))
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonEliminarClubLiga))
                     .addGroup(jPanel_ligaLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -770,7 +794,8 @@ public class Ventana1 extends javax.swing.JFrame {
                 .addGroup(jPanel_ligaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(jComboBoxClubesLibres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonAniadirClubLiga))
+                    .addComponent(jButtonAniadirClubLiga)
+                    .addComponent(jButtonEliminarClubLiga))
                 .addGap(52, 52, 52)
                 .addComponent(jLabel8)
                 .addGap(26, 26, 26)
@@ -1603,6 +1628,7 @@ public class Ventana1 extends javax.swing.JFrame {
         if(id_liga_seleccionada != null){
             this.controller.removeLiga(id_liga_seleccionada);
             this.actualizarVistaLigas();
+            this.mostrarTablaClubesDeUnaLiga();
         }
         else{
             System.out.println("error");
@@ -1773,6 +1799,21 @@ public class Ventana1 extends javax.swing.JFrame {
             System.out.println("error");
         }
     }//GEN-LAST:event_jButtonAniadirClubLigaActionPerformed
+
+    private void jButtonEliminarClubLigaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarClubLigaActionPerformed
+        // TODO add your handling code here:
+        if(id_liga_seleccionada != null && id_club_liga_seleccionada != null){
+            //controller.despedirJugadorClub(Integer.parseInt(id_jugador_club_seleccionado));
+            //this.actualizarVistaClubes();
+            //this.mostrarTablaJugadoresDeUnClub();
+            this.controller.eliminarClubLiga(Integer.parseInt(id_club_liga_seleccionada));
+            this.actualizarVistaLigas();
+            this.mostrarTablaClubesDeUnaLiga();
+        }
+        else{
+            System.err.println("error");
+        }
+    }//GEN-LAST:event_jButtonEliminarClubLigaActionPerformed
     
     
     
@@ -1916,6 +1957,7 @@ public class Ventana1 extends javax.swing.JFrame {
     private javax.swing.JButton jButtonDespedirEntrenador;
     private javax.swing.JButton jButtonDespedirJugador;
     private javax.swing.JButton jButtonDespedirPatrocinador;
+    private javax.swing.JButton jButtonEliminarClubLiga;
     private javax.swing.JButton jButton_aniadir_entrenador;
     public javax.swing.JButton jButton_aniadir_jugador;
     private javax.swing.JButton jButton_aniadir_jugador_club;

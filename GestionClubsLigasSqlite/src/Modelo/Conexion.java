@@ -1164,6 +1164,33 @@ public class Conexion {
         
     }
     
+    public void eliminarClubLiga(int id_club){
+        
+        String sentenciaSql = "UPDATE Clubes SET id_liga = ?" + "WHERE id_club = ?";
+        PreparedStatement sentencia = null;
+
+        try {
+            connection.setAutoCommit(false);
+            sentencia = this.getConnection().prepareStatement(sentenciaSql);
+            sentencia.setNull(1, Types.INTEGER);
+            sentencia.setInt(2, id_club);
+            sentencia.executeUpdate();
+            
+            connection.commit();
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }
+        
+    }
+    
     public void consultarClubesLigaBd(int id_liga, ArrayList<Club>clubes_liga) throws SQLException{
 
         clubes_liga.clear();
