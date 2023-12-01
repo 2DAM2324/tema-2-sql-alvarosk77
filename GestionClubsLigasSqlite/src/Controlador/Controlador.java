@@ -334,20 +334,8 @@ public class Controlador {
     
     public void addClubLiga(String id_liga, String id_club){
 
-
+        this.conexionbd.aniadirClubLiga(Integer.parseInt(id_liga), Integer.parseInt(id_club));
         
-        if(id_club_encontrado == true && numero_veces_id_club_repetida < 1){
-            for(int i = 0; i < this.ligas.size(); i++){
-                if(id_liga.equals(this.ligas.get(i).getId())){
-                    for (int j = 0; j < this.clubes.size(); j++) {
-                        if(id_club.equals(this.clubes.get(j).getId())){
-                            this.ligas.get(i).getClubes().add(this.clubes.get(j));
-                        }
-                    }
-                }
-            }
-
-        }
     }
    
     
@@ -410,6 +398,11 @@ public class Controlador {
     
     public void cargarClubesLiga(int id_liga) throws SQLException{
         this.conexionbd.consultarClubesLigaBd(id_liga, this.clubes);
+    }
+    
+    public void cargarClubesLibres() throws SQLException{
+        
+        this.conexionbd.consultarClubesLibresBd(this.clubes);
     }
 
 }
