@@ -1019,18 +1019,18 @@ public class Conexion {
             
     }
     
-    /*public void modificarPatrocinadorBd(Patrocinador patrocinador){
+    public void modificarLigaBd(Liga liga){
 
-        String sentenciaSql = "UPDATE Patrocinadores SET nombre_empresa = ?, tipo_patrocinio = ?, duracion_contrato = ?" + "WHERE id_patrocinador = ?";
+        String sentenciaSql = "UPDATE Ligas SET nombre = ?, pais = ?, temporada = ?" + "WHERE id_liga = ?";
         PreparedStatement sentencia = null;
 
         try {
             connection.setAutoCommit(false);
             sentencia = this.getConnection().prepareStatement(sentenciaSql);
-            sentencia.setString(1,patrocinador.getNombre_empresa());
-            sentencia.setString(2, patrocinador.getTipo_patrocinio());
-            sentencia.setInt(3, patrocinador.getDuracion_contrato());
-            sentencia.setInt(4, Integer.parseInt(patrocinador.getId_patrocinador()));
+            sentencia.setString(1,liga.getNombre());
+            sentencia.setString(2, liga.getPais());
+            sentencia.setInt(3, liga.getTemporada());
+            sentencia.setInt(4, Integer.parseInt(liga.getId()));
             sentencia.executeUpdate();
             
             connection.commit();
@@ -1048,7 +1048,7 @@ public class Conexion {
             
     }
     
-    public void eliminarPatrocinadorBd(String id){
+    /*public void eliminarPatrocinadorBd(String id){
 
         String sentenciaSql = "DELETE FROM Patrocinadores WHERE id_patrocinador = ?";
         PreparedStatement sentencia = null;

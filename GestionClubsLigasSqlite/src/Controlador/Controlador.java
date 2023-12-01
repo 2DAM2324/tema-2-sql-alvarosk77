@@ -333,18 +333,9 @@ public class Controlador {
     
     public void modificarLiga(String id, String nombre, String pais, int temporada){
         
+        Liga liga = new Liga(id, nombre, pais, temporada);
         
-        for (int i = 0; i < this.ligas.size(); i++) {
-            
-            if(id.equals(this.ligas.get(i).getId())){
-                
-                this.ligas.get(i).setNombre(nombre);
-                this.ligas.get(i).setPais(pais);
-                this.ligas.get(i).setTemporada(temporada);
-            }
-        }
-        
-        //this.serializarLiga();
+        this.conexionbd.modificarLigaBd(liga);
     }
     
     public void addClubLiga(String id_liga, String id_club){
