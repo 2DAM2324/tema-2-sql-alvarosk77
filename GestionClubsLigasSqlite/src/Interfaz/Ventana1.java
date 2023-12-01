@@ -1887,7 +1887,7 @@ public class Ventana1 extends javax.swing.JFrame {
                 table_model_liga.addRow(new Object[]{l.getId(),l.getNombre(),l.getPais(),l.getTemporada()});
             }
         } catch (SQLException ex) {
-            Logger.getLogger(Ventana1.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
         
     }

@@ -960,6 +960,8 @@ public class Conexion {
     
     public void consultarLigas(ArrayList<Liga>ligas) throws SQLException{
 
+        ligas.clear();
+        
         String sentenciaSql = "SELECT * FROM Ligas";
         PreparedStatement sentencia = this.getConnection().prepareStatement(sentenciaSql);
         try {
@@ -1048,9 +1050,36 @@ public class Conexion {
             
     }
     
-    /*public void eliminarPatrocinadorBd(String id){
+    public void desasignarLigaClubes(int id_liga){
+        
+        String sentenciaSql = "UPDATE Clubes SET id_liga = ?" + "WHERE id_liga = ?";
+        PreparedStatement sentencia = null;
 
-        String sentenciaSql = "DELETE FROM Patrocinadores WHERE id_patrocinador = ?";
+        try {
+            connection.setAutoCommit(false);
+            sentencia = this.getConnection().prepareStatement(sentenciaSql);
+            sentencia.setNull(1, Types.INTEGER);
+            sentencia.setInt(2, id_liga);
+            sentencia.executeUpdate();
+            
+            connection.commit();
+        } catch (SQLException sqle) {
+            sqle.printStackTrace();
+        } finally {
+            if (sentencia != null){
+                try {
+                    sentencia.close();
+                } catch (SQLException sqle) {
+                    sqle.printStackTrace();
+               }
+            }
+        }
+        
+    }
+    
+    public void eliminarLigaBd(String id){
+
+        String sentenciaSql = "DELETE FROM Ligas WHERE id_liga = ?";
         PreparedStatement sentencia = null;
         try {
             connection.setAutoCommit(false);
@@ -1071,7 +1100,7 @@ public class Conexion {
             }
         }
             
-    }*/
+    }
     
     public void consultarClubesLigaBd(int id_liga, ArrayList<Club>clubes_liga) throws SQLException{
 

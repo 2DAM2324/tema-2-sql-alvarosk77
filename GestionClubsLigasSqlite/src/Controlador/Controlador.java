@@ -320,15 +320,9 @@ public class Controlador {
     
     public void removeLiga(String id){
         
-        for (int i = 0; i < this.ligas.size(); i++) {
-            
-            if(id.equals(this.ligas.get(i).getId())){
-                
-                this.ligas.remove(i);
-            }
-        }
+        this.conexionbd.desasignarLigaClubes(Integer.parseInt(id));
+        this.conexionbd.eliminarLigaBd(id);
         
-        //this.serializarLiga();
     }
     
     public void modificarLiga(String id, String nombre, String pais, int temporada){
