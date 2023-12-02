@@ -181,7 +181,9 @@ public class Ventana1 extends javax.swing.JFrame {
                 
             }
         } catch (SQLException ex) {
-            Logger.getLogger(Ventana1.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+        } catch (ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
         }
         
     }
@@ -260,7 +262,9 @@ public class Ventana1 extends javax.swing.JFrame {
                 });
             }
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+        } catch (ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
         }
     }
     
@@ -319,28 +323,40 @@ public class Ventana1 extends javax.swing.JFrame {
     
     public void actualizarJcomboxIdJugadores(){
         
-        jComboBox_idJugadores.removeAllItems();
-        
-        controller.cargarJugadoresLibresBd();
-        
-        this.jugadores = controller.getJugadores();
-        
-        for(Jugador j : this.jugadores){
-            jComboBox_idJugadores.addItem(Integer.toString(j.getId()));
+        try {
+            jComboBox_idJugadores.removeAllItems();
             
+            controller.cargarJugadoresLibresBd();
+            
+            this.jugadores = controller.getJugadores();
+            
+            for(Jugador j : this.jugadores){
+                jComboBox_idJugadores.addItem(Integer.toString(j.getId()));
+                
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+        } catch (ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
         }
     }
     
     public void actualizarJcomboxIdEntrenadores(){
         
-        jComboBox_idEntrenadores.removeAllItems();
-        
-        controller.cargarEntrenadoresLibresBd();
-        
-        this.entrenadores = controller.getEntrenadores();
-        
-        for(Entrenador e : this.entrenadores){
-            jComboBox_idEntrenadores.addItem(e.getId()); 
+        try {
+            jComboBox_idEntrenadores.removeAllItems();
+            
+            controller.cargarEntrenadoresLibresBd();
+            
+            this.entrenadores = controller.getEntrenadores();
+            
+            for(Entrenador e : this.entrenadores){ 
+                jComboBox_idEntrenadores.addItem(e.getId());
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+        } catch (ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
         }
     }
     
@@ -350,7 +366,13 @@ public class Ventana1 extends javax.swing.JFrame {
         
         if(id_club_seleccionado != null){
         
-            controller.cargarPatrocinadoresLibresParaUnClub(Integer.parseInt(id_club_seleccionado));
+            try {
+                controller.cargarPatrocinadoresLibresParaUnClub(Integer.parseInt(id_club_seleccionado));
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+            } catch (ClassNotFoundException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
+            }
         
         }
         
@@ -402,7 +424,9 @@ public class Ventana1 extends javax.swing.JFrame {
                 });
             }
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+        } catch (ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
         }
         
     }
@@ -421,7 +445,9 @@ public class Ventana1 extends javax.swing.JFrame {
                 
             }
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+        } catch (ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
         }
     }
     
@@ -462,7 +488,9 @@ public class Ventana1 extends javax.swing.JFrame {
                     
             });
         } catch (SQLException ex) {
-            Logger.getLogger(Ventana1.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+        } catch (ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
         }
     }
     
@@ -1507,19 +1535,31 @@ public class Ventana1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField_nombre_entrenadorActionPerformed
 
     private void jButton_aniadir_entrenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_aniadir_entrenadorActionPerformed
-        // TODO add your handling code here:
-        controller.addEntrenador(jTextField_nombre_entrenador.getText(), jTextField_apellido_entrenador.getText(), jComboBox_anio_nacimiento_entrenador.getSelectedItem().toString(),jComboBox_nacionalidad_entrenador.getSelectedItem().toString());
-        this.actualizarVistaClubes();
-        this.actualizarVistaEntrenadores();
-        this.clearFieldsEntrenadores();
+        try {
+            // TODO add your handling code here:
+            controller.addEntrenador(jTextField_nombre_entrenador.getText(), jTextField_apellido_entrenador.getText(), jComboBox_anio_nacimiento_entrenador.getSelectedItem().toString(),jComboBox_nacionalidad_entrenador.getSelectedItem().toString());
+            this.actualizarVistaClubes();
+            this.actualizarVistaEntrenadores();
+            this.clearFieldsEntrenadores();
+        } catch (ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+        }
     }//GEN-LAST:event_jButton_aniadir_entrenadorActionPerformed
 
     private void jButton_borrar_entrenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_borrar_entrenadorActionPerformed
         // TODO add your handling code here
         if(id_entrenador_seleccionado != null){
-            controller.removeEntrenador(id_entrenador_seleccionado);
-            this.actualizarVistaClubes();
-            this.actualizarVistaEntrenadores();
+            try {
+                controller.removeEntrenador(id_entrenador_seleccionado);
+                this.actualizarVistaClubes();
+                this.actualizarVistaEntrenadores();
+            } catch (ClassNotFoundException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+            }
         }
         else{
             System.out.println("error");
@@ -1530,8 +1570,14 @@ public class Ventana1 extends javax.swing.JFrame {
     private void jButton_modificar_entrenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_modificar_entrenadorActionPerformed
         // TODO add your handling code here:
         if(id_entrenador_seleccionado != null){
-            controller.modificarEntrenador(id_entrenador_seleccionado,jTextField_nombre_entrenador.getText(), jTextField_apellido_entrenador.getText(), jComboBox_anio_nacimiento_entrenador.getSelectedItem().toString(), jComboBox_nacionalidad_entrenador.getSelectedItem().toString());
-            this.actualizarVistaEntrenadores();
+            try {
+                controller.modificarEntrenador(id_entrenador_seleccionado,jTextField_nombre_entrenador.getText(), jTextField_apellido_entrenador.getText(), jComboBox_anio_nacimiento_entrenador.getSelectedItem().toString(), jComboBox_nacionalidad_entrenador.getSelectedItem().toString());
+                this.actualizarVistaEntrenadores();
+            } catch (ClassNotFoundException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+            }
         }
         else{
             System.out.println("error");
@@ -1542,8 +1588,14 @@ public class Ventana1 extends javax.swing.JFrame {
     private void jButton_aniadir_patrocinadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_aniadir_patrocinadorActionPerformed
         // TODO add your handling code here:
         if(Integer.parseInt(jTextField_duracion_contrato_patrocinador.getText()) > 0){
-            controller.addPatrocinador(jTextField_nombre_empresa_patrocinador.getText(), jComboBox_tipo_patrocinio.getSelectedItem().toString(), Integer.parseInt(jTextField_duracion_contrato_patrocinador.getText()));
-            this.actualizarVistaPatrocinadores();
+            try {
+                controller.addPatrocinador(jTextField_nombre_empresa_patrocinador.getText(), jComboBox_tipo_patrocinio.getSelectedItem().toString(), Integer.parseInt(jTextField_duracion_contrato_patrocinador.getText()));
+                this.actualizarVistaPatrocinadores();
+            } catch (ClassNotFoundException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+            }
             
         }
         
@@ -1551,20 +1603,32 @@ public class Ventana1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton_aniadir_patrocinadorActionPerformed
 
     private void jButton_aniadir_ligaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_aniadir_ligaActionPerformed
-        // TODO add your handling code here:
-        this.controller.addLiga(jTextField_nombre_liga.getText(), jComboBox_pais_liga.getSelectedItem().toString(), Integer.parseInt(jComboBox_temporada_liga.getSelectedItem().toString()));
-        this.actualizarVistaLigas();
-
-        this.clearFieldsLigas();
+        try {
+            // TODO add your handling code here:
+            this.controller.addLiga(jTextField_nombre_liga.getText(), jComboBox_pais_liga.getSelectedItem().toString(), Integer.parseInt(jComboBox_temporada_liga.getSelectedItem().toString()));
+            this.actualizarVistaLigas();
+            
+            this.clearFieldsLigas();
+        } catch (ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+        }
     }//GEN-LAST:event_jButton_aniadir_ligaActionPerformed
 
     private void jButton_borrar_patrocinadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_borrar_patrocinadorActionPerformed
         // TODO add your handling code here:
         
         if(id_patrocinador_seleccionado != null){
-            controller.removePatrocinador(id_patrocinador_seleccionado);
-            this.actualizarVistaPatrocinadores();
-            //this.mostrarTablaPatrocinadoresDeUnClub();
+            try {
+                controller.removePatrocinador(id_patrocinador_seleccionado);
+                this.actualizarVistaPatrocinadores();
+                //this.mostrarTablaPatrocinadoresDeUnClub();
+            } catch (ClassNotFoundException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+            }
         }
         else{
             
@@ -1577,8 +1641,14 @@ public class Ventana1 extends javax.swing.JFrame {
     private void jButton_modificar_biblioteca2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_modificar_biblioteca2ActionPerformed
         // TODO add your handling code here:
         if(id_patrocinador_seleccionado != null){
-            controller.modificarPatrocinador(id_patrocinador_seleccionado, jTextField_nombre_empresa_patrocinador.getText(), jComboBox_tipo_patrocinio.getSelectedItem().toString(), Integer.parseInt(jTextField_duracion_contrato_patrocinador.getText()));
-            this.actualizarVistaPatrocinadores();
+            try {
+                controller.modificarPatrocinador(id_patrocinador_seleccionado, jTextField_nombre_empresa_patrocinador.getText(), jComboBox_tipo_patrocinio.getSelectedItem().toString(), Integer.parseInt(jTextField_duracion_contrato_patrocinador.getText()));
+                this.actualizarVistaPatrocinadores();
+            } catch (ClassNotFoundException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+            }
         
         }
         else{
@@ -1591,19 +1661,31 @@ public class Ventana1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton_modificar_biblioteca2ActionPerformed
 
     private void jButton_aniadir_libroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_aniadir_libroActionPerformed
-        // TODO add your handling code here:
-        controller.addClub(jTextField_nombre_club.getText(), Integer.parseInt(jComboBox_anio_funcdacion_club.getSelectedItem().toString()));
-        this.actualizarVistaClubes();
+        try {
+            // TODO add your handling code here:
+            controller.addClub(jTextField_nombre_club.getText(), Integer.parseInt(jComboBox_anio_funcdacion_club.getSelectedItem().toString()));
+            this.actualizarVistaClubes();
+        } catch (ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+        }
         
     }//GEN-LAST:event_jButton_aniadir_libroActionPerformed
 
     private void jButton_borrar_clubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_borrar_clubActionPerformed
         // TODO add your handling code here:
         if(id_club_seleccionado != null){
-            controller.removeClub(id_club_seleccionado);
-            this.actualizarVistaClubes();
-            this.mostrarTablaJugadoresDeUnClub();
-            this.mostrarTablaPatrocinadoresDeUnClub();
+            try {
+                controller.removeClub(id_club_seleccionado);
+                this.actualizarVistaClubes();
+                this.mostrarTablaJugadoresDeUnClub();
+                this.mostrarTablaPatrocinadoresDeUnClub();
+            } catch (ClassNotFoundException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+            }
         }
         else{
             System.out.println("error");
@@ -1614,8 +1696,14 @@ public class Ventana1 extends javax.swing.JFrame {
     private void jButton_modificar_clubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_modificar_clubActionPerformed
         // TODO add your handling code here:
         if(id_club_seleccionado != null){
-            controller.modificarClub(id_club_seleccionado, jTextField_nombre_club.getText(), Integer.parseInt(jComboBox_anio_funcdacion_club.getSelectedItem().toString()));
-            this.actualizarVistaClubes();
+            try {
+                controller.modificarClub(id_club_seleccionado, jTextField_nombre_club.getText(), Integer.parseInt(jComboBox_anio_funcdacion_club.getSelectedItem().toString()));
+                this.actualizarVistaClubes();
+            } catch (ClassNotFoundException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+            }
         }
         else{
             System.out.println("error");
@@ -1626,9 +1714,15 @@ public class Ventana1 extends javax.swing.JFrame {
     private void jButton_borrar_ligaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_borrar_ligaActionPerformed
         // TODO add your handling code here:
         if(id_liga_seleccionada != null){
-            this.controller.removeLiga(id_liga_seleccionada);
-            this.actualizarVistaLigas();
-            this.mostrarTablaClubesDeUnaLiga();
+            try {
+                this.controller.removeLiga(id_liga_seleccionada);
+                this.actualizarVistaLigas();
+                this.mostrarTablaClubesDeUnaLiga();
+            } catch (ClassNotFoundException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+            }
         }
         else{
             System.out.println("error");
@@ -1639,8 +1733,14 @@ public class Ventana1 extends javax.swing.JFrame {
     private void jButton_modificar_ligaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_modificar_ligaActionPerformed
         // TODO add your handling code here:
         if(id_liga_seleccionada != null){
-            this.controller.modificarLiga(id_liga_seleccionada, jTextField_nombre_liga.getText(), jComboBox_pais_liga.getSelectedItem().toString(), Integer.parseInt(jComboBox_temporada_liga.getSelectedItem().toString()));
-            this.actualizarVistaLigas();
+            try {
+                this.controller.modificarLiga(id_liga_seleccionada, jTextField_nombre_liga.getText(), jComboBox_pais_liga.getSelectedItem().toString(), Integer.parseInt(jComboBox_temporada_liga.getSelectedItem().toString()));
+                this.actualizarVistaLigas();
+            } catch (ClassNotFoundException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+            }
         }
         else{
             System.out.println("error");
@@ -1651,8 +1751,14 @@ public class Ventana1 extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         if(id_club_seleccionado != null){
-            this.controller.addEntrenadorClub(Integer.parseInt(id_club_seleccionado), Integer.parseInt(jComboBox_idEntrenadores.getSelectedItem().toString()));
-            this.actualizarVistaClubes();
+            try {
+                this.controller.addEntrenadorClub(Integer.parseInt(id_club_seleccionado), Integer.parseInt(jComboBox_idEntrenadores.getSelectedItem().toString()));
+                this.actualizarVistaClubes();
+            } catch (ClassNotFoundException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+            }
             
         }
         else{
@@ -1665,9 +1771,15 @@ public class Ventana1 extends javax.swing.JFrame {
     private void jButton_aniadir_jugador_clubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_aniadir_jugador_clubActionPerformed
         // TODO add your handling code here:
         if(id_club_seleccionado != null){
-            controller.addJugadorClub(Integer.parseInt( id_club_seleccionado), Integer.parseInt(jComboBox_idJugadores.getSelectedItem().toString()));
-            this.actualizarVistaClubes();
-            this.mostrarTablaJugadoresDeUnClub();
+            try {
+                controller.addJugadorClub(Integer.parseInt( id_club_seleccionado), Integer.parseInt(jComboBox_idJugadores.getSelectedItem().toString()));
+                this.actualizarVistaClubes();
+                this.mostrarTablaJugadoresDeUnClub();
+            } catch (ClassNotFoundException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+            }
         }
         else{
             System.out.println("error");
@@ -1678,10 +1790,16 @@ public class Ventana1 extends javax.swing.JFrame {
     private void jButton_aniadir_patrocinador_clubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_aniadir_patrocinador_clubActionPerformed
         // TODO add your handling code here:
         if(id_club_seleccionado != null){
-            controller.addPatrocinadorClub(id_club_seleccionado, jComboBoxPatrocinadoresLibresClub.getSelectedItem().toString());
-            this.actualizarJcomboxIdPatrocinadores();
-            this.mostrarTablaPatrocinadoresDeUnClub();
-            this.mostrarTablaClubesDeUnPatrocinador();
+            try {
+                controller.addPatrocinadorClub(id_club_seleccionado, jComboBoxPatrocinadoresLibresClub.getSelectedItem().toString());
+                this.actualizarJcomboxIdPatrocinadores();
+                this.mostrarTablaPatrocinadoresDeUnClub();
+                this.mostrarTablaClubesDeUnPatrocinador();
+            } catch (ClassNotFoundException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+            }
         }
         else{
             System.out.println("error");
@@ -1696,9 +1814,15 @@ public class Ventana1 extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         if(Double.parseDouble(jTextField_salario_jugador.getText()) > 0.0){
-            controller.addJugador(jTextField_nombre_jugador.getText(),jTextField_apellido_jugador.getText() ,jComboBox_fecha_nacimiento_jugador.getSelectedItem().toString(), jComboBox_nacionalidad_jugador.getSelectedItem().toString(), jComboBox_posicion_jugador.getSelectedItem().toString(),Double.parseDouble(jTextField_salario_jugador.getText()));
-            this.actualizarVistaJugadores();
-            this.actualizarVistaClubes();
+            try {
+                controller.addJugador(jTextField_nombre_jugador.getText(),jTextField_apellido_jugador.getText() ,jComboBox_fecha_nacimiento_jugador.getSelectedItem().toString(), jComboBox_nacionalidad_jugador.getSelectedItem().toString(), jComboBox_posicion_jugador.getSelectedItem().toString(),Double.parseDouble(jTextField_salario_jugador.getText()));
+                this.actualizarVistaJugadores();
+                this.actualizarVistaClubes();
+            } catch (ClassNotFoundException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+            }
         }
         else{
             this.clearFieldsJugadores();
@@ -1711,8 +1835,14 @@ public class Ventana1 extends javax.swing.JFrame {
 
         
         if((id_jugador_seleccionado != null)){
-            controller.modificarJugador( Integer.parseInt(id_jugador_seleccionado),jTextField_nombre_jugador.getText(), jTextField_apellido_jugador.getText(), Double.parseDouble(jTextField_salario_jugador.getText()), jComboBox_fecha_nacimiento_jugador.getSelectedItem().toString(), jComboBox_nacionalidad_jugador.getSelectedItem().toString(), jComboBox_posicion_jugador.getSelectedItem().toString());
-            this.actualizarVistaJugadores();
+            try {
+                controller.modificarJugador( Integer.parseInt(id_jugador_seleccionado),jTextField_nombre_jugador.getText(), jTextField_apellido_jugador.getText(), Double.parseDouble(jTextField_salario_jugador.getText()), jComboBox_fecha_nacimiento_jugador.getSelectedItem().toString(), jComboBox_nacionalidad_jugador.getSelectedItem().toString(), jComboBox_posicion_jugador.getSelectedItem().toString());
+                this.actualizarVistaJugadores();
+            } catch (ClassNotFoundException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+            }
         }
         else{
             this.clearFieldsJugadores();
@@ -1723,12 +1853,18 @@ public class Ventana1 extends javax.swing.JFrame {
     private void jButton_borrar_jugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_borrar_jugadorActionPerformed
         // TODO add your handling code here:
         if(id_jugador_seleccionado != null){
-            controller.removeJugador(id_jugador_seleccionado);
-
-            this.actualizarVistaJugadores();
-            this.actualizarVistaClubes();
-
-            //this.mostrarTablaJugadoresDeUnClub();
+            try {
+                controller.removeJugador(id_jugador_seleccionado);
+                
+                this.actualizarVistaJugadores();
+                this.actualizarVistaClubes();
+                
+                //this.mostrarTablaJugadoresDeUnClub();
+            } catch (ClassNotFoundException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+            }
         }
         else{
             System.out.println("error");
@@ -1739,9 +1875,15 @@ public class Ventana1 extends javax.swing.JFrame {
     private void jButtonDespedirEntrenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDespedirEntrenadorActionPerformed
         // TODO add your handling code here:
         if(id_club_seleccionado != null){
-            controller.despedirEntrenadorClub(Integer.parseInt(id_club_seleccionado));
-            
-            this.actualizarVistaClubes();
+            try {
+                controller.despedirEntrenadorClub(Integer.parseInt(id_club_seleccionado));
+                
+                this.actualizarVistaClubes();
+            } catch (ClassNotFoundException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+            }
         }
         else{
             System.err.println("error");
@@ -1752,9 +1894,15 @@ public class Ventana1 extends javax.swing.JFrame {
     private void jButtonDespedirJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDespedirJugadorActionPerformed
         // TODO add your handling code here:
         if(id_club_seleccionado != null && id_jugador_club_seleccionado != null){
-            controller.despedirJugadorClub(Integer.parseInt(id_jugador_club_seleccionado));
-            this.actualizarVistaClubes();
-            this.mostrarTablaJugadoresDeUnClub();
+            try {
+                controller.despedirJugadorClub(Integer.parseInt(id_jugador_club_seleccionado));
+                this.actualizarVistaClubes();
+                this.mostrarTablaJugadoresDeUnClub();
+            } catch (ClassNotFoundException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+            }
         }
         else{
             System.err.println("error");
@@ -1765,10 +1913,16 @@ public class Ventana1 extends javax.swing.JFrame {
     private void jButtonDespedirPatrocinadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDespedirPatrocinadorActionPerformed
         // TODO add your handling code here
         if(id_club_seleccionado != null && id_patrocinador_club_seleccionado != null){
-            controller.despedirPatrocinadorClub(id_club_seleccionado, id_patrocinador_club_seleccionado);
-            this.actualizarJcomboxIdPatrocinadores();
-            this.mostrarTablaPatrocinadoresDeUnClub();
-            this.mostrarTablaClubesDeUnPatrocinador();
+            try {
+                controller.despedirPatrocinadorClub(id_club_seleccionado, id_patrocinador_club_seleccionado);
+                this.actualizarJcomboxIdPatrocinadores();
+                this.mostrarTablaPatrocinadoresDeUnClub();
+                this.mostrarTablaClubesDeUnPatrocinador();
+            } catch (ClassNotFoundException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+            }
         }
         else{
             System.err.println("error");
@@ -1791,9 +1945,15 @@ public class Ventana1 extends javax.swing.JFrame {
     private void jButtonAniadirClubLigaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAniadirClubLigaActionPerformed
         // TODO add your handling code here:
         if(id_liga_seleccionada != null){
-            this.controller.addClubLiga(id_liga_seleccionada, jComboBoxClubesLibres.getSelectedItem().toString());
-            this.actualizarVistaLigas();
-            this.mostrarTablaClubesDeUnaLiga();
+            try {
+                this.controller.addClubLiga(id_liga_seleccionada, jComboBoxClubesLibres.getSelectedItem().toString());
+                this.actualizarVistaLigas();
+                this.mostrarTablaClubesDeUnaLiga();
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
+            } catch (ClassNotFoundException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+            }
         }
         else{
             System.out.println("error");
@@ -1803,12 +1963,18 @@ public class Ventana1 extends javax.swing.JFrame {
     private void jButtonEliminarClubLigaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEliminarClubLigaActionPerformed
         // TODO add your handling code here:
         if(id_liga_seleccionada != null && id_club_liga_seleccionada != null){
-            //controller.despedirJugadorClub(Integer.parseInt(id_jugador_club_seleccionado));
-            //this.actualizarVistaClubes();
-            //this.mostrarTablaJugadoresDeUnClub();
-            this.controller.eliminarClubLiga(Integer.parseInt(id_club_liga_seleccionada));
-            this.actualizarVistaLigas();
-            this.mostrarTablaClubesDeUnaLiga();
+            try {
+                //controller.despedirJugadorClub(Integer.parseInt(id_jugador_club_seleccionado));
+                //this.actualizarVistaClubes();
+                //this.mostrarTablaJugadoresDeUnClub();
+                this.controller.eliminarClubLiga(Integer.parseInt(id_club_liga_seleccionada));
+                this.actualizarVistaLigas();
+                this.mostrarTablaClubesDeUnaLiga();
+            } catch (SQLException ex) {
+                Logger.getLogger(Ventana1.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (ClassNotFoundException ex) {
+                JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+            }
         }
         else{
             System.err.println("error");
@@ -1836,7 +2002,9 @@ public class Ventana1 extends javax.swing.JFrame {
                 table_model_jugador.addRow(new Object[]{jugador.getId(),jugador.getNombre(),jugador.getApellido(),jugador.getSalario(),jugador.getanio_nacimiento(),jugador.getNacionalidad(),jugador.getPosicion()});
             }
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+        } catch (ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
         }
         
     }
@@ -1861,7 +2029,9 @@ public class Ventana1 extends javax.swing.JFrame {
                 table_model_entrenador.addRow(new Object[]{e.getId(),e.getNombre(),e.getApellido(),e.getAnio_nacimiento(),e.getNacionalidad()});
             }
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+        } catch (ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
         }
         
     }
@@ -1886,7 +2056,9 @@ public class Ventana1 extends javax.swing.JFrame {
                 table_model_patrocinador.addRow(new Object[]{p.getId_patrocinador(),p.getNombre_empresa(),p.getTipo_patrocinio(),p.getDuracion_contrato()});
             }
         } catch (SQLException ex) {
-            
+            JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+        } catch (ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
         }
         
     }
@@ -1919,7 +2091,9 @@ public class Ventana1 extends javax.swing.JFrame {
                 table_model_club.addRow(new Object[]{c.getId(),c.getNombre(),c.getAnio_fundacion(),c.getEntrenador().getId()});
             }
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+        } catch (ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
         }
         
     }
@@ -1945,7 +2119,9 @@ public class Ventana1 extends javax.swing.JFrame {
                 table_model_liga.addRow(new Object[]{l.getId(),l.getNombre(),l.getPais(),l.getTemporada()});
             }
         } catch (SQLException ex) {
-            ex.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql");
+        } catch (ClassNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Ocurrio un error de excepcion sql: No se encontro la clase");
         }
         
     }

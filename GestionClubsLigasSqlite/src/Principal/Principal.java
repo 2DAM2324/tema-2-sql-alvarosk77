@@ -8,6 +8,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.NotSerializableException;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.xml.sax.SAXException;
 
 /**
@@ -22,7 +24,11 @@ public class Principal {
         prueba.setVisible(true);
         
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-            Conexion.close();
+            try {
+                Conexion.close();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
         }));
 
     }

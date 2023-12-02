@@ -50,19 +50,7 @@ public class Controlador {
     private ArrayList<Club>clubes;
     private ArrayList<Liga>ligas;
     
-    private boolean id_jugador_encontrada = false;
-    private int numero_veces_id_jugador_repetida = 0;
-    
-    private boolean id_entrenador_encontrada = false;
-    private int numero_veces_id_entrenador_repetida = 0;
-    
-    private boolean id_patrocinador_encontrada = false;
-    private boolean id_patrocinador_en_club_encontrada = false;
-    
-    private boolean id_club_encontrado = false;
-    private int numero_veces_id_club_repetida = 0;
-    
-    public Controlador() throws SQLException {
+    public Controlador() throws SQLException, ClassNotFoundException {
 
         this.jugadores = new ArrayList<>();
         this.entrenadores = new ArrayList<>();
@@ -158,7 +146,7 @@ public class Controlador {
     }
 
     
-    public void CargarTablasBaseDatos() throws SQLException{
+    public void CargarTablasBaseDatos() throws SQLException, ClassNotFoundException{
         
         conexionbd.consultarJugadores(this.jugadores);
 
@@ -171,75 +159,52 @@ public class Controlador {
         conexionbd.consultarLigas(this.ligas);
     }
     
-    public void cargarJugadoresBd(){
-        try {
+    public void cargarJugadoresBd() throws SQLException, ClassNotFoundException{
             conexionbd.consultarJugadores(this.jugadores);
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
     }
     
-    public void cargarEntrenadoresBd(){
-        try {
-            conexionbd.consultarEntrenadores(this.entrenadores);
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
+    public void cargarEntrenadoresBd() throws SQLException, ClassNotFoundException{
+        conexionbd.consultarEntrenadores(this.entrenadores);
     }
     
-    public void cargarClubesBd(){
-        try {
-            conexionbd.consultarClubes(this.clubes);
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
+    public void cargarClubesBd() throws SQLException, ClassNotFoundException{
+        conexionbd.consultarClubes(this.clubes);
     }
     
-    public void cargarEntrenadoresLibresBd(){
-        try {
-            conexionbd.consultarEntrenadoresLibresBd(this.entrenadores);
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
+    public void cargarEntrenadoresLibresBd() throws SQLException, ClassNotFoundException{
+        conexionbd.consultarEntrenadoresLibresBd(this.entrenadores);
     }
     
-    public void cargarJugadoresLibresBd(){
-        try {
-            conexionbd.consultarJugadoresLibresBd(this.jugadores);
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
+    public void cargarJugadoresLibresBd() throws SQLException, ClassNotFoundException{
+
+        conexionbd.consultarJugadoresLibresBd(this.jugadores);
     }
     
-    public void cargarPatrocinadoresLibresParaUnClub(int id_club){
-        try {
-            conexionbd.consultarPatrocinadoresLibresParaUnClubBd(id_club, this.patrocinadores);
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-        }
+    public void cargarPatrocinadoresLibresParaUnClub(int id_club) throws SQLException, ClassNotFoundException{
+        conexionbd.consultarPatrocinadoresLibresParaUnClubBd(id_club, this.patrocinadores);
     }
     
-    public void addJugador(String nombre, String apellido, String anio_nacimiento, String nacionalidad, String posicion, double salario){
+    public void addJugador(String nombre, String apellido, String anio_nacimiento, String nacionalidad, String posicion, double salario) throws ClassNotFoundException, SQLException{
 
         Jugador jugador = new Jugador(nombre, apellido, anio_nacimiento, nacionalidad, posicion, salario);
 
         conexionbd.insertarJugadorBd(jugador);       
     }
     
-    public void removeJugador(String id){
+    public void removeJugador(String id) throws ClassNotFoundException, SQLException{
 
         conexionbd.eliminarJugadorBd(id);
         
     }
     
-    public void modificarJugador(int id, String nombre, String apellido, double salario, String anio_nacimiento, String nacionalidad, String posicion){
+    public void modificarJugador(int id, String nombre, String apellido, double salario, String anio_nacimiento, String nacionalidad, String posicion) throws ClassNotFoundException, SQLException{
 
         Jugador jugador = new Jugador(nombre, apellido, anio_nacimiento, nacionalidad, posicion, salario);
         
         this.conexionbd.modificarJugadorBd(jugador);
     }
     
-    public void addEntrenador(String nombre, String apellido, String anio_nacimiento, String nacionalidad){
+    public void addEntrenador(String nombre, String apellido, String anio_nacimiento, String nacionalidad) throws ClassNotFoundException, SQLException{
 
         Entrenador entrenador = new Entrenador(nombre, apellido, anio_nacimiento, nacionalidad);
         
@@ -247,24 +212,24 @@ public class Controlador {
         
     }
     
-    public void removeEntrenador(String id){
+    public void removeEntrenador(String id) throws ClassNotFoundException, SQLException{
 
         this.conexionbd.eliminarEntrenadorBd(id);
 
     }
     
-    public void modificarEntrenador(String id, String nombre, String apellido, String anio_nacimiento, String nacionalidad){
+    public void modificarEntrenador(String id, String nombre, String apellido, String anio_nacimiento, String nacionalidad) throws ClassNotFoundException, SQLException{
         
         Entrenador entrenador = new Entrenador(id, nombre, apellido, anio_nacimiento, nacionalidad);
         
         this.conexionbd.modificarEntrenadorBd(entrenador);
     }
     
-    public void cargarClubesPatrocinador(int id_patrocinador) throws SQLException{
+    public void cargarClubesPatrocinador(int id_patrocinador) throws SQLException, ClassNotFoundException{
         this.conexionbd.consultarClubesPatrocinador(id_patrocinador, this.clubes);
     }
     
-    public void addPatrocinador(String nombre_empresa, String tipo_patrocinador, int duracion_contrato){
+    public void addPatrocinador(String nombre_empresa, String tipo_patrocinador, int duracion_contrato) throws ClassNotFoundException, SQLException{
 
         Patrocinador patrocinador = new Patrocinador(nombre_empresa, tipo_patrocinador, duracion_contrato);
         
@@ -272,20 +237,20 @@ public class Controlador {
 
     }
     
-    public void removePatrocinador(String id){
+    public void removePatrocinador(String id) throws ClassNotFoundException, SQLException{
         
         this.conexionbd.eliminarPatrocinadorBd(id);
         
     }
     
-    public void modificarPatrocinador(String id, String nombre_empresa, String tipo_patrocinio, int duracion_contrato){
+    public void modificarPatrocinador(String id, String nombre_empresa, String tipo_patrocinio, int duracion_contrato) throws ClassNotFoundException, SQLException{
         
         Patrocinador patrocinador = new Patrocinador(id, nombre_empresa, tipo_patrocinio, duracion_contrato);
         
         this.conexionbd.modificarPatrocinadorBd(patrocinador);
     }
     
-    public void addClub(String nombre, int anio_fundacion){
+    public void addClub(String nombre, int anio_fundacion) throws ClassNotFoundException, SQLException{
 
         Club club = new Club(nombre, anio_fundacion);
         
@@ -294,14 +259,14 @@ public class Controlador {
 
     }
     
-    public void removeClub(String id){
+    public void removeClub(String id) throws ClassNotFoundException, SQLException{
         this.conexionbd.desasignarJugadoresClub(Integer.parseInt(id));
         this.conexionbd.desasignarPatrocinadoresClub(Integer.parseInt(id));
         this.conexionbd.eliminarClubBd(id);
 
     }
     
-    public void modificarClub(String id, String nombre, int anio_fundacion){
+    public void modificarClub(String id, String nombre, int anio_fundacion) throws ClassNotFoundException, SQLException{
         
         Club club = new Club(id, nombre, anio_fundacion);
         
@@ -310,7 +275,7 @@ public class Controlador {
     }
     
     
-    public void addLiga(String nombre, String pais, int temporada){
+    public void addLiga(String nombre, String pais, int temporada) throws ClassNotFoundException, SQLException{
 
         Liga liga = new Liga(nombre, pais, temporada);
         
@@ -318,33 +283,33 @@ public class Controlador {
 
     }
     
-    public void removeLiga(String id){
+    public void removeLiga(String id) throws ClassNotFoundException, SQLException{
         
         this.conexionbd.desasignarLigaClubes(Integer.parseInt(id));
         this.conexionbd.eliminarLigaBd(id);
         
     }
     
-    public void modificarLiga(String id, String nombre, String pais, int temporada){
+    public void modificarLiga(String id, String nombre, String pais, int temporada) throws ClassNotFoundException, SQLException{
         
         Liga liga = new Liga(id, nombre, pais, temporada);
         
         this.conexionbd.modificarLigaBd(liga);
     }
     
-    public void addClubLiga(String id_liga, String id_club){
+    public void addClubLiga(String id_liga, String id_club) throws SQLException, ClassNotFoundException{
 
         this.conexionbd.aniadirClubLiga(Integer.parseInt(id_liga), Integer.parseInt(id_club));
         
     }
     
-    public void eliminarClubLiga(int id_club){
+    public void eliminarClubLiga(int id_club) throws SQLException, ClassNotFoundException{
         
         this.conexionbd.eliminarClubLiga(id_club);
     }
    
     
-    public void addEntrenadorClub(int id_club, int id_entrenador){
+    public void addEntrenadorClub(int id_club, int id_entrenador) throws ClassNotFoundException, SQLException{
         
         boolean contiene_entrenador = false;
 
@@ -363,49 +328,49 @@ public class Controlador {
         
     }
     
-    public void despedirEntrenadorClub(int id_club){
+    public void despedirEntrenadorClub(int id_club) throws ClassNotFoundException, SQLException{
 
         this.conexionbd.despedirEntrenadorClub(id_club);
 
     }
     
-    public void cargarJugadoresClub(int id_club) throws SQLException{
+    public void cargarJugadoresClub(int id_club) throws SQLException, ClassNotFoundException{
         this.conexionbd.consultarJugadoresClubBd(id_club, this.jugadores);
     }
     
-    public void addJugadorClub(int id_club, int id_jugador){
+    public void addJugadorClub(int id_club, int id_jugador) throws ClassNotFoundException, SQLException{
 
         this.conexionbd.contratarJugadorClub(id_club, id_jugador);
         
     }
     
-    public void despedirJugadorClub(int id_jugador){
+    public void despedirJugadorClub(int id_jugador) throws ClassNotFoundException, SQLException{
         
         this.conexionbd.despedirJugadorClub(id_jugador);
     }
     
-    public void cargarPatrocinadoresClub(int id_club) throws SQLException{
+    public void cargarPatrocinadoresClub(int id_club) throws SQLException, ClassNotFoundException{
         this.conexionbd.consultarPatrocinadoresClubBd(id_club, this.patrocinadores);
     }
     
     
-    public void addPatrocinadorClub(String id_club, String id_patrocinador){
+    public void addPatrocinadorClub(String id_club, String id_patrocinador) throws ClassNotFoundException, SQLException{
         
         this.conexionbd.contratarPatrocinadorClub(Integer.parseInt(id_club),Integer.parseInt(id_patrocinador));
 
     }
     
-    public void despedirPatrocinadorClub(String id_club, String id_patrocinador){
+    public void despedirPatrocinadorClub(String id_club, String id_patrocinador) throws ClassNotFoundException, SQLException{
         
         this.conexionbd.despedirPatrocinadorClub(Integer.parseInt(id_club),Integer.parseInt(id_patrocinador));
         
     }
     
-    public void cargarClubesLiga(int id_liga) throws SQLException{
+    public void cargarClubesLiga(int id_liga) throws SQLException, ClassNotFoundException{
         this.conexionbd.consultarClubesLigaBd(id_liga, this.clubes);
     }
     
-    public void cargarClubesLibres() throws SQLException{
+    public void cargarClubesLibres() throws SQLException, ClassNotFoundException{
         
         this.conexionbd.consultarClubesLibresBd(this.clubes);
     }
