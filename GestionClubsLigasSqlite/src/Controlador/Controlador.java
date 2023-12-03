@@ -62,6 +62,10 @@ public class Controlador {
         this.CargarTablasBaseDatos();
     }
     
+    public void configurarConexion(Conexion conexion) {
+        this.conexionbd = conexion;
+
+    }
     
     public ArrayList<Jugador> getJugadores() {
         return jugadores;
