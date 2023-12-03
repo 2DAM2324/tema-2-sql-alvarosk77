@@ -33,6 +33,8 @@ public class Conexion {
         
         return connection;
     }
+    
+    //Metodos CRUD del objeto Jugadores
 
     public void consultarJugadores(ArrayList<Jugador>jugadores) throws SQLException, ClassNotFoundException{
 
@@ -62,6 +64,34 @@ public class Conexion {
         }
         sentencia.close();
         
+    }
+    
+    public void consultarJugadoresLibresBd(ArrayList<Jugador>jugadores) throws SQLException, ClassNotFoundException{
+
+        jugadores.clear();
+        
+        String sentenciaSql = "SELECT * " + "FROM Jugadores " + "WHERE id_club IS NULL";
+        PreparedStatement sentencia = this.getConnection().prepareStatement(sentenciaSql);
+
+        ResultSet resultado_consulta = sentencia.executeQuery();
+        int i = 0;
+        while (resultado_consulta.next()) {
+                // Obtener los datos de cada fila
+            Jugador jugador = new Jugador();
+            jugador.setId(resultado_consulta.getInt("id_jugador"));
+            jugador.setId_club(resultado_consulta.getInt("id_club"));
+            jugador.setNombre(resultado_consulta.getString("nombre"));
+            jugador.setApellido(resultado_consulta.getString("apellido"));
+            jugador.setanio_nacimiento(resultado_consulta.getString("anio_nacimiento"));
+            jugador.setNacionalidad(resultado_consulta.getString("nacionalidad"));
+            jugador.setPosicion(resultado_consulta.getString("posicion"));
+            jugador.setSalario(resultado_consulta.getDouble("salario"));
+
+            jugadores.add(jugador);
+
+            i++;
+        }
+        sentencia.close();
     }
     
     public void insertarJugadorBd(Jugador jugador) throws ClassNotFoundException, SQLException{
@@ -120,6 +150,8 @@ public class Conexion {
           
     }
     
+    //Metodos CRUD del objeto Entrenador
+    
     public void consultarEntrenadores(ArrayList<Entrenador>entrenadores) throws SQLException, ClassNotFoundException{
         
         entrenadores.clear();
@@ -138,6 +170,35 @@ public class Conexion {
             entrenador.setApellido(resultado_consulta.getString("apellido"));
             entrenador.setAnio_nacimiento(resultado_consulta.getString("anio_nacimiento"));
             entrenador.setNacionalidad(resultado_consulta.getString("nacionalidad"));
+            entrenadores.add(entrenador);
+
+            i++;
+        }
+        sentencia.close();
+    }
+    
+    public void consultarEntrenadoresLibresBd(ArrayList<Entrenador>entrenadores) throws SQLException, ClassNotFoundException{
+
+        entrenadores.clear();
+        
+        String sentenciaSql = "SELECT * " +
+        "FROM Entrenadores " +
+        "LEFT JOIN Clubes ON Entrenadores.id_entrenador = Clubes.id_entrenador " +
+        "WHERE Clubes.id_entrenador IS NULL";
+        PreparedStatement sentencia = this.getConnection().prepareStatement(sentenciaSql);
+
+        ResultSet resultado_consulta = sentencia.executeQuery();
+        int i = 0;
+        while (resultado_consulta.next()) {
+                // Obtener los datos de cada fila
+            Entrenador entrenador = new Entrenador();
+            entrenador.setId(Integer.toString(resultado_consulta.getInt("id_entrenador")));
+            entrenador.setNombre(resultado_consulta.getString("nombre"));
+            entrenador.setApellido(resultado_consulta.getString("apellido"));
+            entrenador.setAnio_nacimiento(resultado_consulta.getString("anio_nacimiento"));
+            entrenador.setNacionalidad(resultado_consulta.getString("nacionalidad"));
+
+
             entrenadores.add(entrenador);
 
             i++;
@@ -196,6 +257,8 @@ public class Conexion {
         sentencia.close();
             
     }
+    
+    //Metodos CRUD del objeto Patrocinadores
     
     public void consultarPatrocinadores(ArrayList<Patrocinador>patrocinadores) throws SQLException, ClassNotFoundException{
 
@@ -299,6 +362,8 @@ public class Conexion {
 
     }
     
+    //Metodos CRUD del objeto Club
+    
     public void consultarClubes(ArrayList<Club>clubes) throws SQLException, ClassNotFoundException{
 
         clubes.clear();
@@ -322,6 +387,32 @@ public class Conexion {
         }
         sentencia.close();
 
+    }
+    
+    public void consultarClubesLibresBd(ArrayList<Club>clubes_libres) throws SQLException, ClassNotFoundException{
+
+        clubes_libres.clear();
+        
+        String sentenciaSql = "SELECT * " + "FROM Clubes " + "WHERE id_liga IS NULL";
+        PreparedStatement sentencia = this.getConnection().prepareStatement(sentenciaSql);
+
+
+        ResultSet resultado_consulta = sentencia.executeQuery();
+        int i = 0;
+        while (resultado_consulta.next()) {
+                // Obtener los datos de cada fila
+            Club club = new Club();
+            club.setId(Integer.toString(resultado_consulta.getInt("id_club")));
+            club.setNombre(resultado_consulta.getString("nombre"));
+            club.setAnio_fundacion(resultado_consulta.getInt("anio_fundacion"));
+            club.getEntrenador().setId(Integer.toString(resultado_consulta.getInt("id_entrenador")));
+
+            clubes_libres.add(club);
+
+            i++;
+        }
+
+        sentencia.close();   
     }
     
     public void insertarClubBd(Club club) throws ClassNotFoundException, SQLException{
@@ -399,34 +490,7 @@ public class Conexion {
         sentencia.close();
     }
     
-    public void consultarEntrenadoresLibresBd(ArrayList<Entrenador>entrenadores) throws SQLException, ClassNotFoundException{
 
-        entrenadores.clear();
-        
-        String sentenciaSql = "SELECT * " +
-        "FROM Entrenadores " +
-        "LEFT JOIN Clubes ON Entrenadores.id_entrenador = Clubes.id_entrenador " +
-        "WHERE Clubes.id_entrenador IS NULL";
-        PreparedStatement sentencia = this.getConnection().prepareStatement(sentenciaSql);
-
-        ResultSet resultado_consulta = sentencia.executeQuery();
-        int i = 0;
-        while (resultado_consulta.next()) {
-                // Obtener los datos de cada fila
-            Entrenador entrenador = new Entrenador();
-            entrenador.setId(Integer.toString(resultado_consulta.getInt("id_entrenador")));
-            entrenador.setNombre(resultado_consulta.getString("nombre"));
-            entrenador.setApellido(resultado_consulta.getString("apellido"));
-            entrenador.setAnio_nacimiento(resultado_consulta.getString("anio_nacimiento"));
-            entrenador.setNacionalidad(resultado_consulta.getString("nacionalidad"));
-
-
-            entrenadores.add(entrenador);
-
-            i++;
-        }
-        sentencia.close();
-    }
     
     public void contratarEntrenadorClub(int id_club, int id_entrenador) throws ClassNotFoundException, SQLException{
         
@@ -460,33 +524,7 @@ public class Conexion {
         
     }
     
-    public void consultarJugadoresLibresBd(ArrayList<Jugador>jugadores) throws SQLException, ClassNotFoundException{
 
-        jugadores.clear();
-        
-        String sentenciaSql = "SELECT * " + "FROM Jugadores " + "WHERE id_club IS NULL";
-        PreparedStatement sentencia = this.getConnection().prepareStatement(sentenciaSql);
-
-        ResultSet resultado_consulta = sentencia.executeQuery();
-        int i = 0;
-        while (resultado_consulta.next()) {
-                // Obtener los datos de cada fila
-            Jugador jugador = new Jugador();
-            jugador.setId(resultado_consulta.getInt("id_jugador"));
-            jugador.setId_club(resultado_consulta.getInt("id_club"));
-            jugador.setNombre(resultado_consulta.getString("nombre"));
-            jugador.setApellido(resultado_consulta.getString("apellido"));
-            jugador.setanio_nacimiento(resultado_consulta.getString("anio_nacimiento"));
-            jugador.setNacionalidad(resultado_consulta.getString("nacionalidad"));
-            jugador.setPosicion(resultado_consulta.getString("posicion"));
-            jugador.setSalario(resultado_consulta.getDouble("salario"));
-
-            jugadores.add(jugador);
-
-            i++;
-        }
-        sentencia.close();
-    }
     
     public void consultarJugadoresClubBd(int id_club, ArrayList<Jugador>jugadores_club) throws SQLException, ClassNotFoundException{
 
@@ -632,6 +670,8 @@ public class Conexion {
         sentencia.close();
     }
     
+    //Metodos CRUD del objeto Liga
+    
     public void consultarLigas(ArrayList<Liga>ligas) throws SQLException, ClassNotFoundException{
 
         ligas.clear();
@@ -716,32 +756,6 @@ public class Conexion {
 
         connection.commit();
         sentencia.close();
-    }
-    
-    public void consultarClubesLibresBd(ArrayList<Club>clubes_libres) throws SQLException, ClassNotFoundException{
-
-        clubes_libres.clear();
-        
-        String sentenciaSql = "SELECT * " + "FROM Clubes " + "WHERE id_liga IS NULL";
-        PreparedStatement sentencia = this.getConnection().prepareStatement(sentenciaSql);
-
-
-        ResultSet resultado_consulta = sentencia.executeQuery();
-        int i = 0;
-        while (resultado_consulta.next()) {
-                // Obtener los datos de cada fila
-            Club club = new Club();
-            club.setId(Integer.toString(resultado_consulta.getInt("id_club")));
-            club.setNombre(resultado_consulta.getString("nombre"));
-            club.setAnio_fundacion(resultado_consulta.getInt("anio_fundacion"));
-            club.getEntrenador().setId(Integer.toString(resultado_consulta.getInt("id_entrenador")));
-
-            clubes_libres.add(club);
-
-            i++;
-        }
-
-        sentencia.close();   
     }
     
     public void aniadirClubLiga(int id_liga, int id_club) throws SQLException, ClassNotFoundException{

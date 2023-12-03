@@ -164,8 +164,6 @@ public class Ventana1 extends javax.swing.JFrame {
             }
             
             this.controller.cargarClubesPatrocinador(Integer.parseInt(id_patrocinador_seleccionado));
-            
-            //if(id_patrocinador_seleccionado != null){
                 
             this.clubes_patrocinador = this.controller.getClubes();
                 
